@@ -5,6 +5,8 @@ import tailwind from '@astrojs/tailwind';
 // Static SEO dashboard for theturfyard.com.
 // Data is read from data/seo.db (SQLite) at BUILD TIME via src/lib/db.ts.
 export default defineConfig({
+  site: 'https://dwskillman.github.io',
+  base: process.env.GITHUB_PAGES === 'true' ? '/turf-yard-seo-dashboard' : '/',
   output: 'static',
   integrations: [tailwind()],
   vite: {
