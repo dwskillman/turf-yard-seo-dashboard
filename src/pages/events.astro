@@ -1,0 +1,236 @@
+---
+/**
+ * events.astro — Events & Conversions page.
+ * Shows conversion KPI strip, funnel cards, event table by category,
+ * and a daily events line chart.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import KpiCard from '../components/KpiCard.astro';
+import LineChart from '../components/LineChart.astro';
+import DataTable from '../components/DataTable.astro';
+import {
+  getEventWeekly,
+  getEventWeeklyAllWeeks,
+  getEventDaily,
+  latestWeek,
+} from '../lib/db';
+import { num, delta } from '../lib/formatters';
+import { formatDateShort } from '../lib/dates';
+
+const eventsWeekly = getEventWeekly();
+const allWeeksEvents = getEventWeeklyAllWeeks();
+const eventsDaily = getEventDaily(60);
+const latestWk = latestWeek('event_weekly');
+
+// Build week list
+const weekList = [...new Set(allWeeksEvents.map((r) => r.week_start))].sort();
+const prevWk = weekList.length >= 2 ? weekList[weekList.length - 2] : null;
+
+// Helper: get event count for an event name in a week
+function eventCount(eventName: string, rows: typeof eventsWeekly): number {
+  return rows.find((r) => r.event_name === eventName)?.event_count ?? 0;
+}
+function prevEventRows() {
+  if (!prevWk) return [];
+  return allWeeksEvents.filter((r) => r.week_start === prevWk);
+}
+const prevRows = prevEventRows();
+
+// KPI strip events
+const KPI_EVENTS = [
+  { name: 'form_submit', label: 'Form Submits', icon: '$' },
+  { name: 'generate_lead', label: 'Leads Generated', icon: '★' },
+  { name: 'phone_click', label: 'Phone Clicks', icon: '☎' },
+  { name: 'quote_request_click', label: 'Quote Requests', icon: '✉' },
+  { name: 'calculator_complete', label: 'Calc Completes', icon: '✓' },
+];
+
+// Funnel data
+const formStart = eventCount('form_start', eventsWeekly);
+const formSubmit = eventCount('form_submit', eventsWeekly);
+const calcStart = eventCount('calculator_start', eventsWeekly);
+const calcComplete = eventCount('calculator_complete', eventsWeekly);
+
+const formRate = formStart > 0 ? ((formSubmit / formStart) * 100).toFixed(1) : null;
+const calcRate = calcStart > 0 ? ((calcComplete / calcStart) * 100).toFixed(1) : null;
+
+// Group events by category
+const CATEGORY_ORDER = ['conversion', 'engagement', 'navigation', 'other'];
+const categories = CATEGORY_ORDER.filter((cat) => eventsWeekly.some((r) => r.category === cat));
+
+// Sparkline per event name (count per week)
+function eventSparkData(eventName: string): number[] {
+  return weekList.map((w) =>
+    allWeeksEvents.find((r) => r.week_start === w && r.event_name === eventName)?.event_count ?? 0
+  );
+}
+
+// Daily chart: aggregate total events per date
+const dailyMap = new Map<string, number>();
+for (const row of eventsDaily) {
+  dailyMap.set(row.date, (dailyMap.get(row.date) ?? 0) + row.event_count);
+}
+const dailyDates = [...dailyMap.keys()].sort();
+const dailyTotals = dailyDates.map((d) => dailyMap.get(d)!);
+const dailyLabels = dailyDates.map((d) => {
+  const [, m, day] = d.split('-');
+  return `${parseInt(m)}/${parseInt(day)}`;
+});
+
+// Table rows per category
+const CATEGORY_LABELS: Record<string, string> = {
+  conversion: 'Conversion',
+  engagement: 'Engagement',
+  navigation: 'Navigation',
+  other: 'Other',
+};
+const CATEGORY_COLORS: Record<string, string> = {
+  conversion: '#2F6B3A',
+  engagement: '#C9A271',
+  navigation: '#6FA86B',
+  other: '#8E978D',
+};
+
+// Build per-category rows for the combined table
+const tableRows = eventsWeekly.map((row) => {
+  const spark = eventSparkData(row.event_name);
+  const max = Math.max(...spark, 1);
+  const sparkHtml = `<div class="flex items-end gap-0.5 h-5 w-16">${spark.map((v) => {
+    const h = Math.max(2, Math.round((v / max) * 20));
+    return `<div class="flex-1 rounded-sm" style="height:${h}px;background:${CATEGORY_COLORS[row.category] ?? '#8E978D'};opacity:0.7"></div>`;
+  }).join('')}</div>`;
+  return [
+    { html: `<span class="font-mono text-xs text-ink">${row.event_name}</span>`, sort: row.event_name },
+    {
+      html: `<span class="inline-flex items-center text-[10px] font-bold px-2 py-0.5 rounded-full" style="background:${CATEGORY_COLORS[row.category] ?? '#ccc'}22;color:${CATEGORY_COLORS[row.category] ?? '#666'}">${CATEGORY_LABELS[row.category] ?? row.category}</span>`,
+      sort: row.category,
+    },
+    { html: `<span class="tabular-nums font-medium">${num(row.event_count)}</span>`, sort: row.event_count ?? 0 },
+    { html: `<span class="tabular-nums text-ink-muted">${num(row.total_users)}</span>`, sort: row.total_users ?? 0 },
+    { html: sparkHtml, sort: row.event_count ?? 0 },
+  ];
+});
+---
+
+<Layout title="Events" active="events">
+  {latestWk && (
+    <p class="text-xs text-ink-faint mb-4">Week of <span class="font-medium text-ink-muted">{latestWk}</span></p>
+  )}
+
+  <!-- Conversion KPI strip -->
+  <Section eyebrow="Key Conversions" title="Conversion events" subtitle="Primary business conversion signals from GA4." />
+  <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-8">
+    {KPI_EVENTS.map(({ name, label, icon }) => {
+      const cur = eventCount(name, eventsWeekly);
+      const prev = eventCount(name, prevRows);
+      const pct = prev > 0 ? ((cur - prev) / prev) * 100 : null;
+      const dl = pct !== null ? delta(pct) : null;
+      return (
+        <KpiCard
+          title={label}
+          value={num(cur) === '0' ? '—' : num(cur)}
+          delta={dl}
+          sublabel={`${icon} ${name}`}
+        />
+      );
+    })}
+  </div>
+
+  <!-- Funnel cards -->
+  <Section eyebrow="Funnels" title="Conversion funnels" subtitle="Step-by-step conversion rates this week." />
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+    <!-- Form funnel -->
+    <div class="card p-5">
+      <p class="text-[11px] font-heading font-semibold uppercase tracking-wider text-ink-muted mb-3">Form Funnel</p>
+      <div class="flex items-center gap-3">
+        <div class="flex-1 rounded-lg border border-border-faint p-3 text-center">
+          <p class="text-[10px] text-ink-faint uppercase tracking-wide mb-1">form_start</p>
+          <p class="font-heading font-bold text-2xl text-ink tabular-nums">{num(formStart)}</p>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8E978D" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="flex-1 rounded-lg border border-brand-green/30 bg-brand-green-soft/30 p-3 text-center">
+          <p class="text-[10px] text-ink-faint uppercase tracking-wide mb-1">form_submit</p>
+          <p class="font-heading font-bold text-2xl text-brand-green tabular-nums">{num(formSubmit)}</p>
+        </div>
+      </div>
+      <div class="mt-3 flex items-center justify-between text-sm">
+        <span class="text-ink-muted">Submit rate</span>
+        <span class="font-heading font-bold text-brand-green">{formRate ? `${formRate}%` : '—'}</span>
+      </div>
+      {formStart === 0 && (
+        <p class="text-xs text-ink-faint mt-2">No form_start events recorded in this window.</p>
+      )}
+    </div>
+
+    <!-- Calculator funnel -->
+    <div class="card p-5">
+      <p class="text-[11px] font-heading font-semibold uppercase tracking-wider text-ink-muted mb-3">Calculator Funnel</p>
+      <div class="flex items-center gap-3">
+        <div class="flex-1 rounded-lg border border-border-faint p-3 text-center">
+          <p class="text-[10px] text-ink-faint uppercase tracking-wide mb-1">calculator_start</p>
+          <p class="font-heading font-bold text-2xl text-ink tabular-nums">{num(calcStart)}</p>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8E978D" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="flex-1 rounded-lg border border-brand-green/30 bg-brand-green-soft/30 p-3 text-center">
+          <p class="text-[10px] text-ink-faint uppercase tracking-wide mb-1">calculator_complete</p>
+          <p class="font-heading font-bold text-2xl text-brand-green tabular-nums">{num(calcComplete)}</p>
+        </div>
+      </div>
+      <div class="mt-3 flex items-center justify-between text-sm">
+        <span class="text-ink-muted">Completion rate</span>
+        <span class="font-heading font-bold text-brand-green">{calcRate ? `${calcRate}%` : '—'}</span>
+      </div>
+      {calcStart === 0 && (
+        <p class="text-xs text-ink-faint mt-2">No calculator_start events recorded in this window.</p>
+      )}
+    </div>
+  </div>
+
+  <!-- Daily events line chart -->
+  <div class="card p-5 mb-8">
+    <Section eyebrow="Daily Trend" title="Total events per day" subtitle="All event types combined, last 60 days from event_daily." />
+    {dailyTotals.length > 0 ? (
+      <LineChart
+        id="events-daily-trend"
+        labels={dailyLabels}
+        datasets={[{
+          label: 'Total Events',
+          data: dailyTotals,
+          color: '#2F6B3A',
+          fill: true,
+        }]}
+      />
+    ) : (
+      <p class="text-sm text-ink-faint">No daily event data available.</p>
+    )}
+  </div>
+
+  <!-- Events table grouped by category -->
+  <div class="mb-2">
+    <Section eyebrow="All Events" title="Events by category" subtitle="Weekly totals with sparkline trend across the 4-week baseline window." />
+  </div>
+  {eventsWeekly.length > 0 ? (
+    <DataTable
+      id="events-table"
+      initialSort={2}
+      initialDir="desc"
+      columns={[
+        { key: 'event', label: 'Event Name', align: 'left', sortType: 'text' },
+        { key: 'category', label: 'Category', align: 'left', sortType: 'text' },
+        { key: 'count', label: 'Count (wk)', align: 'right', sortType: 'number' },
+        { key: 'users', label: 'Users (wk)', align: 'right', sortType: 'number' },
+        { key: 'spark', label: 'Trend', align: 'left', sortType: 'number' },
+      ]}
+      rows={tableRows}
+    />
+  ) : (
+    <div class="card p-8 text-center text-ink-faint">
+      <p class="text-sm">No event data seeded. Run <code class="font-mono text-xs">npm run setup</code> to populate.</p>
+    </div>
+  )}
+</Layout>

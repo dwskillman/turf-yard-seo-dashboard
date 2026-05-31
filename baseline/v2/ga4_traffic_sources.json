@@ -1,0 +1,684 @@
+{
+  "dimensionHeaders": [
+    {
+      "name": "sessionSource"
+    },
+    {
+      "name": "sessionMedium"
+    }
+  ],
+  "metricHeaders": [
+    {
+      "name": "sessions",
+      "type": "TYPE_INTEGER"
+    },
+    {
+      "name": "totalUsers",
+      "type": "TYPE_INTEGER"
+    },
+    {
+      "name": "engagedSessions",
+      "type": "TYPE_INTEGER"
+    },
+    {
+      "name": "averageSessionDuration",
+      "type": "TYPE_SECONDS"
+    }
+  ],
+  "rows": [
+    {
+      "dimensionValues": [
+        {
+          "value": "google"
+        },
+        {
+          "value": "organic"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1053"
+        },
+        {
+          "value": "694"
+        },
+        {
+          "value": "646"
+        },
+        {
+          "value": "272.57428813960115"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "(direct)"
+        },
+        {
+          "value": "(none)"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "543"
+        },
+        {
+          "value": "437"
+        },
+        {
+          "value": "200"
+        },
+        {
+          "value": "161.45313883793739"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "(not set)"
+        },
+        {
+          "value": "(not set)"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "145"
+        },
+        {
+          "value": "123"
+        },
+        {
+          "value": "82"
+        },
+        {
+          "value": "216.28420215862067"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "bing"
+        },
+        {
+          "value": "organic"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "66"
+        },
+        {
+          "value": "46"
+        },
+        {
+          "value": "53"
+        },
+        {
+          "value": "469.21866319696971"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "youtube.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "47"
+        },
+        {
+          "value": "26"
+        },
+        {
+          "value": "26"
+        },
+        {
+          "value": "257.43233487234045"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "wordpress.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "31"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "21"
+        },
+        {
+          "value": "569.548852"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "yahoo"
+        },
+        {
+          "value": "organic"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "25"
+        },
+        {
+          "value": "20"
+        },
+        {
+          "value": "18"
+        },
+        {
+          "value": "143.76382388"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "duckduckgo"
+        },
+        {
+          "value": "organic"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "23"
+        },
+        {
+          "value": "19"
+        },
+        {
+          "value": "15"
+        },
+        {
+          "value": "210.47829626086957"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "reddit.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "17"
+        },
+        {
+          "value": "9"
+        },
+        {
+          "value": "8"
+        },
+        {
+          "value": "75.312645352941175"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "ca.search.yahoo.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "4"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "549.21240675"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "facebook.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "4"
+        },
+        {
+          "value": "4"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "36.09978325"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "ig"
+        },
+        {
+          "value": "social"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "4"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "131.50248125"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "chatgpt.com"
+        },
+        {
+          "value": "(not set)"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "3"
+        },
+        {
+          "value": "3"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "355.050625"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "tarkettsports.lightning.force.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "3"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "46.480236"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "app.gohighlevel.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "2"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "526.156203"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "ensun.io"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "2"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "14.071843"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "snucm.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "2"
+        },
+        {
+          "value": "2"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "11.1022425"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "synthetic-turf.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "2"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "4.549254"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "anoox.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "13.224119"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "bize.admin.yelp.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "261.475786"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "m.facebook.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "0"
+        },
+        {
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "manyget.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "0"
+        },
+        {
+          "value": "0"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "tagassistant.google.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "110.143217"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "thebrewermagazine.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "30.722758"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "us.search.yahoo.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1195.114582"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "vercel.com"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "1415.839449"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "zsio.net"
+        },
+        {
+          "value": "referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        },
+        {
+          "value": "0"
+        },
+        {
+          "value": "0"
+        }
+      ]
+    }
+  ],
+  "rowCount": 27,
+  "metadata": {
+    "currencyCode": "USD",
+    "timeZone": "America/Phoenix"
+  },
+  "kind": "analyticsData#runReport"
+}

@@ -492,6 +492,206 @@ export function getRedesignImpact(redesignDate: string, now: Date = new Date()):
   };
 }
 
+/* ========== v2 query helpers ========== */
+
+export interface TrafficSource {
+  week_start: string;
+  source: string;
+  medium: string;
+  bucket: string;
+  sessions: number;
+  users: number;
+  engaged_sessions: number;
+  avg_session_duration: number;
+}
+
+export interface TrafficChannel {
+  week_start: string;
+  channel: string;
+  sessions: number;
+  users: number;
+  engaged_sessions: number;
+  avg_session_duration: number;
+}
+
+export interface EventDaily {
+  date: string;
+  event_name: string;
+  event_count: number;
+  total_users: number;
+}
+
+export interface EventWeekly {
+  week_start: string;
+  event_name: string;
+  category: string;
+  event_count: number;
+  total_users: number;
+}
+
+export interface ConversionAttribution {
+  week_start: string;
+  source: string;
+  bucket: string;
+  event_name: string;
+  event_count: number;
+  total_users: number;
+}
+
+export interface DeviceWeekly {
+  week_start: string;
+  device_category: string;
+  sessions: number;
+  users: number;
+  engaged_sessions: number;
+}
+
+export interface GeoWeekly {
+  week_start: string;
+  city: string;
+  region: string | null;
+  is_target_market: number;
+  sessions: number;
+  users: number;
+  engaged_sessions: number;
+}
+
+export interface GbpWeekly {
+  week_start: string;
+  rating: number | null;
+  review_count: number | null;
+  new_reviews: number | null;
+  avg_new_rating: number | null;
+  recent_post_count: number | null;
+  most_recent_post_date: string | null;
+  search_views: number | null;
+  maps_views: number | null;
+  direction_requests: number | null;
+  phone_calls: number | null;
+  website_clicks: number | null;
+}
+
+export interface AiEvaluation {
+  week_start: string;
+  generated_at: string;
+  model: string;
+  redesign_verdict: string | null;
+  one_line_headline: string | null;
+  what_changed: string | null;
+  biggest_risk: string | null;
+  biggest_opportunity: string | null;
+  recommended_actions: string | null;
+}
+
+/** Traffic sources for the latest week, sorted by sessions desc. */
+export function getTrafficSources(weekStart?: string): TrafficSource[] {
+  const db = getDb();
+  const ws = weekStart ?? latestWeek('traffic_source_weekly');
+  if (!ws) return [];
+  return db
+    .prepare('SELECT * FROM traffic_source_weekly WHERE week_start = ? ORDER BY sessions DESC')
+    .all(ws) as TrafficSource[];
+}
+
+/** All 4 weeks of traffic sources (for sparklines). */
+export function getTrafficSourcesAllWeeks(): TrafficSource[] {
+  const db = getDb();
+  return db
+    .prepare('SELECT * FROM traffic_source_weekly ORDER BY week_start ASC, sessions DESC')
+    .all() as TrafficSource[];
+}
+
+/** Traffic channels for the latest week, sorted by sessions desc. */
+export function getTrafficChannels(weekStart?: string): TrafficChannel[] {
+  const db = getDb();
+  const ws = weekStart ?? latestWeek('traffic_channel_weekly');
+  if (!ws) return [];
+  return db
+    .prepare('SELECT * FROM traffic_channel_weekly WHERE week_start = ? ORDER BY sessions DESC')
+    .all(ws) as TrafficChannel[];
+}
+
+/** All 4 weeks of traffic channels. */
+export function getTrafficChannelsAllWeeks(): TrafficChannel[] {
+  const db = getDb();
+  return db
+    .prepare('SELECT * FROM traffic_channel_weekly ORDER BY week_start ASC')
+    .all() as TrafficChannel[];
+}
+
+/** Daily events for the last N days, oldest first. */
+export function getEventDaily(days = 60): EventDaily[] {
+  const db = getDb();
+  const rows = db
+    .prepare('SELECT * FROM event_daily ORDER BY date DESC, event_name ASC LIMIT ?')
+    .all(days * 20) as EventDaily[];
+  return rows.reverse();
+}
+
+/** Weekly events for the latest week, grouped by category. */
+export function getEventWeekly(weekStart?: string): EventWeekly[] {
+  const db = getDb();
+  const ws = weekStart ?? latestWeek('event_weekly');
+  if (!ws) return [];
+  return db
+    .prepare('SELECT * FROM event_weekly WHERE week_start = ? ORDER BY category ASC, event_count DESC')
+    .all(ws) as EventWeekly[];
+}
+
+/** All 4 weeks of event_weekly (for sparklines). */
+export function getEventWeeklyAllWeeks(): EventWeekly[] {
+  const db = getDb();
+  return db
+    .prepare('SELECT * FROM event_weekly ORDER BY week_start ASC')
+    .all() as EventWeekly[];
+}
+
+/** Conversion attribution rows for the latest week. */
+export function getConversionAttribution(weekStart?: string): ConversionAttribution[] {
+  const db = getDb();
+  const ws = weekStart ?? latestWeek('conversion_attribution_weekly');
+  if (!ws) return [];
+  return db
+    .prepare('SELECT * FROM conversion_attribution_weekly WHERE week_start = ? ORDER BY event_count DESC')
+    .all(ws) as ConversionAttribution[];
+}
+
+/** Device weekly for the latest week. */
+export function getDeviceWeekly(weekStart?: string): DeviceWeekly[] {
+  const db = getDb();
+  const ws = weekStart ?? latestWeek('device_weekly');
+  if (!ws) return [];
+  return db
+    .prepare('SELECT * FROM device_weekly WHERE week_start = ? ORDER BY sessions DESC')
+    .all(ws) as DeviceWeekly[];
+}
+
+/** Geo weekly for the latest week, sorted by sessions desc. */
+export function getGeoWeekly(weekStart?: string): GeoWeekly[] {
+  const db = getDb();
+  const ws = weekStart ?? latestWeek('geo_weekly');
+  if (!ws) return [];
+  return db
+    .prepare('SELECT * FROM geo_weekly WHERE week_start = ? ORDER BY sessions DESC')
+    .all(ws) as GeoWeekly[];
+}
+
+/** Latest GBP row. */
+export function getGbpLatest(): GbpWeekly | null {
+  const db = getDb();
+  const ws = latestWeek('gbp_weekly');
+  if (!ws) return null;
+  return (db.prepare('SELECT * FROM gbp_weekly WHERE week_start = ?').get(ws) as GbpWeekly) ?? null;
+}
+
+/** Latest AI evaluation row. */
+export function getAiEvaluationLatest(): AiEvaluation | null {
+  const db = getDb();
+  const ws = latestWeek('ai_evaluation_weekly');
+  if (!ws) return null;
+  return (db.prepare('SELECT * FROM ai_evaluation_weekly WHERE week_start = ?').get(ws) as AiEvaluation) ?? null;
+}
+
 /** Tracked-keyword rank distribution buckets for the latest week. */
 export function getRankDistribution(weekStart?: string): { label: string; count: number }[] {
   const db = getDb();

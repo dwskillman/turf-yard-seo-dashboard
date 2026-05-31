@@ -1,0 +1,160 @@
+---
+/**
+ * local-business.astro — Google Business Profile page.
+ * Shows GBP rating, review count, new reviews, recent post,
+ * and GBP performance insights when available.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import KpiCard from '../components/KpiCard.astro';
+import { getGbpLatest } from '../lib/db';
+import { num, decimal } from '../lib/formatters';
+
+const gbp = getGbpLatest();
+
+// Check if performance API data is available
+const hasInsights = gbp &&
+  (gbp.search_views !== null || gbp.maps_views !== null || gbp.phone_calls !== null);
+
+// Rating stars HTML
+function renderStars(rating: number | null): string {
+  if (rating === null) return '—';
+  const full = Math.floor(rating);
+  const half = rating - full >= 0.5;
+  let html = '';
+  for (let i = 0; i < 5; i++) {
+    if (i < full) html += '<span class="text-brand-gold">★</span>';
+    else if (i === full && half) html += '<span class="text-brand-gold opacity-60">★</span>';
+    else html += '<span class="text-border-soft">★</span>';
+  }
+  return html;
+}
+---
+
+<Layout title="Local Business" active="local-business">
+  <Section eyebrow="Google Business Profile" title="Local Business Performance" subtitle="GBP data populated weekly by the cron snapshot importer." />
+
+  {!gbp || (gbp.rating === null && gbp.review_count === null) ? (
+    <!-- Empty state -->
+    <div class="card p-8 flex flex-col items-center text-center gap-3 mb-6">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C9A271" stroke-width="1.5">
+        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <p class="font-heading font-semibold text-ink text-lg">GBP data not yet imported</p>
+        <p class="text-sm text-ink-muted mt-1">Google Business Profile data will appear here after the first weekly cron run imports a snapshot with GBP fields.</p>
+      </div>
+      <div class="mt-2 rounded-lg bg-brand-green-soft/60 border border-brand-green-pale px-5 py-3 text-sm text-ink-muted">
+        Run <code class="font-mono text-xs font-bold">npm run import:snapshot</code> with a snapshot containing a <code class="font-mono text-xs font-bold">gbp</code> key to populate this page.
+      </div>
+    </div>
+  ) : (
+    <>
+      <!-- Rating + reviews hero -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        <div class="card p-5 col-span-2 flex flex-col gap-2">
+          <p class="text-[11px] font-heading font-semibold uppercase tracking-[0.1em] text-ink-muted">Google Rating</p>
+          <div class="flex items-center gap-3 mt-1">
+            <span class="font-heading font-bold text-[46px] leading-none text-ink tabular-nums">
+              {gbp.rating !== null ? decimal(gbp.rating) : '—'}
+            </span>
+            <div class="flex flex-col gap-1">
+              <div class="flex text-xl" set:html={renderStars(gbp.rating)} />
+              <p class="text-xs text-ink-faint">{gbp.review_count !== null ? `${num(gbp.review_count)} reviews` : 'Review count pending'}</p>
+            </div>
+          </div>
+        </div>
+
+        <KpiCard
+          title="New Reviews (this wk)"
+          value={gbp.new_reviews !== null ? num(gbp.new_reviews) : '—'}
+          sublabel={gbp.avg_new_rating !== null ? `Avg rating: ${decimal(gbp.avg_new_rating)}` : 'Avg rating pending'}
+        />
+
+        <div class="card p-4 flex flex-col gap-2">
+          <p class="text-[11px] font-heading font-semibold uppercase tracking-[0.1em] text-ink-muted">Most Recent Post</p>
+          <div class="flex-1 flex flex-col justify-center">
+            {gbp.most_recent_post_date ? (
+              <>
+                <p class="font-heading font-bold text-lg text-ink">{gbp.most_recent_post_date}</p>
+                {gbp.recent_post_count !== null && (
+                  <p class="text-xs text-ink-faint">{num(gbp.recent_post_count)} post{gbp.recent_post_count === 1 ? '' : 's'} this week</p>
+                )}
+              </>
+            ) : (
+              <p class="text-sm text-ink-faint">No post date recorded</p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      <!-- GBP Insights strip -->
+      {hasInsights ? (
+        <>
+          <Section eyebrow="GBP Performance API" title="Business insights" subtitle="Visibility and engagement metrics from the GBP Performance API." />
+          <div class="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-8">
+            <KpiCard
+              title="Search Views"
+              value={gbp.search_views !== null ? num(gbp.search_views) : '—'}
+              sublabel="Times appeared in search"
+            />
+            <KpiCard
+              title="Maps Views"
+              value={gbp.maps_views !== null ? num(gbp.maps_views) : '—'}
+              sublabel="Times appeared in maps"
+            />
+            <KpiCard
+              title="Direction Requests"
+              value={gbp.direction_requests !== null ? num(gbp.direction_requests) : '—'}
+              sublabel="Get-directions taps"
+            />
+            <KpiCard
+              title="Phone Calls"
+              value={gbp.phone_calls !== null ? num(gbp.phone_calls) : '—'}
+              sublabel="Calls from GBP listing"
+            />
+            <KpiCard
+              title="Website Clicks"
+              value={gbp.website_clicks !== null ? num(gbp.website_clicks) : '—'}
+              sublabel="Clicks to website"
+            />
+          </div>
+        </>
+      ) : (
+        <div class="rounded-lg bg-brand-sand/10 border border-brand-sand/30 p-5 mb-8 flex items-start gap-3">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A271" stroke-width="2" class="shrink-0 mt-0.5">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01" stroke-linecap="round"/>
+          </svg>
+          <div>
+            <p class="font-heading font-semibold text-ink text-sm">GBP Performance API not yet wired</p>
+            <p class="text-sm text-ink-muted mt-0.5">Search views, maps views, direction requests, phone calls and website clicks will appear here once the GBP Performance API is connected and populates on the next cron run.</p>
+          </div>
+        </div>
+      )}
+
+      <!-- Explanation card -->
+      <div class="card p-5">
+        <Section eyebrow="About this page" title="What GBP data tracks" />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-ink-muted">
+          <div>
+            <p class="font-heading font-semibold text-ink mb-1">Reviews</p>
+            <p>Tracks total review count and new reviews each week. Average rating of new reviews helps detect sentiment shifts immediately after the redesign.</p>
+          </div>
+          <div>
+            <p class="font-heading font-semibold text-ink mb-1">Posts</p>
+            <p>Tracks post activity so the team can confirm GBP is kept up to date. Consistent posting is a local ranking signal.</p>
+          </div>
+          <div>
+            <p class="font-heading font-semibold text-ink mb-1">Impressions &amp; Actions</p>
+            <p>Search and Maps views measure GBP visibility. Direction requests, phone calls, and website clicks measure conversion from the listing.</p>
+          </div>
+          <div>
+            <p class="font-heading font-semibold text-ink mb-1">Data cadence</p>
+            <p>Populated once per week by the import_snapshot cron. Each snapshot JSON should include a <code class="font-mono text-xs">gbp</code> object with the fields documented in SNAPSHOT_SCHEMA.md.</p>
+          </div>
+        </div>
+      </div>
+    </>
+  )}
+</Layout>

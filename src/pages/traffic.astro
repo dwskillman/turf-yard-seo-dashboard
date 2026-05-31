@@ -1,0 +1,208 @@
+---
+/**
+ * traffic.astro — Traffic Sources page.
+ * Shows traffic by bucket (AI, Reddit, Social, Search, Direct, Referral),
+ * a detail source/medium table, and a channel donut chart.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import KpiCard from '../components/KpiCard.astro';
+import DonutChart from '../components/DonutChart.astro';
+import DataTable from '../components/DataTable.astro';
+import {
+  getTrafficSources,
+  getTrafficSourcesAllWeeks,
+  getTrafficChannels,
+  latestWeek,
+} from '../lib/db';
+import { num, decimal, duration } from '../lib/formatters';
+
+const sources = getTrafficSources();
+const allWeeks = getTrafficSourcesAllWeeks();
+const channels = getTrafficChannels();
+const latestWk = latestWeek('traffic_source_weekly');
+
+// Build week list (sorted)
+const weekList = [...new Set(allWeeks.map((r) => r.week_start))].sort();
+const prevWk = weekList.length >= 2 ? weekList[weekList.length - 2] : null;
+
+// Bucket aggregation for latest week
+const BUCKETS = ['search', 'direct', 'ai', 'reddit', 'social', 'referral', 'other'] as const;
+type Bucket = typeof BUCKETS[number];
+
+const BUCKET_META: Record<Bucket, { label: string; color: string; badge?: string; badgeColor?: string }> = {
+  search:   { label: 'Organic Search', color: '#2F6B3A' },
+  direct:   { label: 'Direct', color: '#6FA86B' },
+  ai:       { label: 'AI Referral', color: '#C9A271', badge: 'Emerging', badgeColor: 'bg-brand-sand/20 text-brand-sand' },
+  reddit:   { label: 'Reddit', color: '#A84B2F', badge: 'Community', badgeColor: 'bg-brand-terra/10 text-brand-terra' },
+  social:   { label: 'Social', color: '#D19900' },
+  referral: { label: 'Referral', color: '#8E978D' },
+  other:    { label: 'Other', color: '#D8E6CF' },
+};
+
+function bucketSessions(bucket: Bucket, rows: typeof sources): number {
+  return rows.filter((r) => r.bucket === bucket).reduce((s, r) => s + (r.sessions ?? 0), 0);
+}
+
+const bucketTotals = Object.fromEntries(
+  BUCKETS.map((b) => [b, bucketSessions(b, sources)])
+) as Record<Bucket, number>;
+
+// Previous week bucket totals for WoW delta
+const prevSources = prevWk
+  ? allWeeks.filter((r) => r.week_start === prevWk)
+  : [];
+const prevBucketTotals = Object.fromEntries(
+  BUCKETS.map((b) => [b, bucketSessions(b, prevSources)])
+) as Record<Bucket, number>;
+
+function wowDelta(cur: number, prev: number): string | null {
+  if (!prev) return null;
+  const pct = ((cur - prev) / prev) * 100;
+  const sign = pct >= 0 ? '+' : '';
+  return `${sign}${pct.toFixed(1)}%`;
+}
+
+// Sparkline data per bucket (sessions per week, all 4 weeks)
+function bucketSparkData(bucket: Bucket): number[] {
+  return weekList.map((w) =>
+    allWeeks.filter((r) => r.week_start === w && r.bucket === bucket).reduce((s, r) => s + (r.sessions ?? 0), 0)
+  );
+}
+
+// Total sessions this week
+const totalSessions = sources.reduce((s, r) => s + (r.sessions ?? 0), 0);
+
+// Channel donut chart
+const donutColors = ['#2F6B3A', '#6FA86B', '#C9A271', '#D19900', '#A84B2F', '#8E978D', '#D8E6CF'];
+const donutLabels = channels.map((c) => c.channel);
+const donutData = channels.map((c) => c.sessions ?? 0);
+
+// Detail table rows
+const tableRows = sources.map((r) => [
+  { html: `<span class="font-medium">${r.source}</span>`, sort: r.source },
+  { html: `<span class="text-ink-muted">${r.medium}</span>`, sort: r.medium },
+  {
+    html: `<span class="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full" style="background:${BUCKET_META[r.bucket as Bucket]?.color ?? '#ccc'}22;color:${BUCKET_META[r.bucket as Bucket]?.color ?? '#666'}">${r.bucket}</span>`,
+    sort: r.bucket,
+  },
+  { html: num(r.sessions), sort: r.sessions ?? 0 },
+  { html: num(r.users), sort: r.users ?? 0 },
+  { html: num(r.engaged_sessions), sort: r.engaged_sessions ?? 0 },
+  { html: duration(r.avg_session_duration), sort: r.avg_session_duration ?? 0 },
+]);
+
+// Buckets for KPI display (6 primary, drop 'other' from KPI strip)
+const kpiBuckets: Bucket[] = ['search', 'direct', 'ai', 'reddit', 'social', 'referral'];
+---
+
+<Layout title="Traffic Sources" active="traffic">
+  <!-- Week label -->
+  {latestWk && (
+    <p class="text-xs text-ink-faint mb-4">Week of <span class="font-medium text-ink-muted">{latestWk}</span> · {totalSessions.toLocaleString()} total sessions</p>
+  )}
+
+  <!-- Bucket KPI Grid: 3×2 -->
+  <Section eyebrow="Traffic Sources" title="Sessions by acquisition bucket" subtitle="4-week baseline distributed across weekly windows." />
+  <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+    {kpiBuckets.map((bucket) => {
+      const meta = BUCKET_META[bucket];
+      const cur = bucketTotals[bucket];
+      const prev = prevBucketTotals[bucket];
+      const wow = wowDelta(cur, prev);
+      const sparkData = bucketSparkData(bucket);
+      const positive = wow ? !wow.startsWith('-') : null;
+      return (
+        <div class="card p-4 flex flex-col gap-2">
+          <div class="flex items-center justify-between gap-2">
+            <p class="text-[11px] font-heading font-semibold uppercase tracking-[0.1em] text-ink-muted">{meta.label}</p>
+            {meta.badge && (
+              <span class={`text-[10px] font-bold px-2 py-0.5 rounded-full ${meta.badgeColor}`}>{meta.badge}</span>
+            )}
+          </div>
+          <div class="flex items-end justify-between gap-2">
+            <span class="font-heading font-bold text-[26px] leading-none text-ink tabular-nums">{num(cur)}</span>
+            {wow && (
+              <span class={`text-xs font-semibold tabular-nums ${positive ? 'text-brand-green' : 'text-brand-terra'}`}>
+                {positive ? '▲' : '▼'} {wow}
+              </span>
+            )}
+          </div>
+          <!-- Mini sparkline -->
+          <div class="flex items-end gap-0.5 h-8 mt-1">
+            {sparkData.map((v) => {
+              const max = Math.max(...sparkData, 1);
+              const h = Math.max(2, Math.round((v / max) * 32));
+              return (
+                <div
+                  class="flex-1 rounded-sm"
+                  style={`height:${h}px;background:${meta.color};opacity:0.7`}
+                />
+              );
+            })}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Channel share donut -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    <div class="card p-5">
+      <Section eyebrow="GA4 Channels" title="Channel share" subtitle="Sessions by default channel group (latest week)." />
+      {donutData.length > 0 ? (
+        <DonutChart
+          id="channel-donut"
+          labels={donutLabels}
+          data={donutData}
+          colors={donutColors.slice(0, donutLabels.length)}
+          height={260}
+        />
+      ) : (
+        <p class="text-sm text-ink-faint">No channel data available.</p>
+      )}
+    </div>
+    <div class="card p-5">
+      <Section eyebrow="Channels" title="Session breakdown" subtitle="All channel groups this week." />
+      <div class="space-y-3 mt-2">
+        {channels.map((c, i) => {
+          const pct = totalSessions > 0 ? ((c.sessions ?? 0) / totalSessions) * 100 : 0;
+          return (
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-sm font-medium text-ink">{c.channel}</span>
+                <span class="text-sm tabular-nums text-ink-muted">{num(c.sessions)} <span class="text-ink-faint">({pct.toFixed(1)}%)</span></span>
+              </div>
+              <div class="h-2 w-full rounded-full bg-brand-green-soft/60 overflow-hidden">
+                <div
+                  class="h-2 rounded-full"
+                  style={`width:${pct}%;background:${donutColors[i % donutColors.length]}`}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </div>
+
+  <!-- Source/Medium detail table -->
+  <div class="mb-2">
+    <Section eyebrow="Detail" title="All traffic sources" subtitle="Sorted by sessions descending. Click headers to re-sort." />
+  </div>
+  <DataTable
+    id="traffic-sources-table"
+    initialSort={3}
+    initialDir="desc"
+    columns={[
+      { key: 'source', label: 'Source', align: 'left', sortType: 'text' },
+      { key: 'medium', label: 'Medium', align: 'left', sortType: 'text' },
+      { key: 'bucket', label: 'Bucket', align: 'left', sortType: 'text' },
+      { key: 'sessions', label: 'Sessions', align: 'right', sortType: 'number' },
+      { key: 'users', label: 'Users', align: 'right', sortType: 'number' },
+      { key: 'engaged', label: 'Engaged', align: 'right', sortType: 'number' },
+      { key: 'dur', label: 'Avg Duration', align: 'right', sortType: 'number' },
+    ]}
+    rows={tableRows}
+  />
+</Layout>

@@ -93,12 +93,17 @@ Weekly cost: **~$0.12** in DataForSEO. Ahrefs uses your existing Lite plan budge
 
 | Page              | What it shows                                                                  |
 | ----------------- | ------------------------------------------------------------------------------ |
-| `/`               | Overview: 4 KPI tiles, redesign banner, GSC + GA4 trends, top keywords + pages |
+| `/`               | Overview: 4 KPI tiles, redesign banner, redesign tracker, **AI Strategist card**, GSC + GA4 trends, top keywords + pages |
 | `/redesign-impact`| **The client centerpiece.** Pre vs post redesign by metric, trajectory chart   |
 | `/keywords`       | All 70 tracked keywords with rank movement, filters by group                   |
 | `/pages`          | Per-page GSC + GA4 joined view, top movers cards                               |
 | `/competitors`    | DR + organic traffic vs Turf Yard, keyword overlap                             |
 | `/audit`          | Active findings grouped by severity, with fix recommendations                  |
+| `/traffic`        | Sessions by bucket (AI, Reddit, Social, Search, Direct, Referral), channel donut, source/medium table |
+| `/events`         | Conversion KPI strip, form + calculator funnels, event table by category, daily trend chart |
+| `/devices-geo`    | Mobile/desktop/tablet KPI cards, device donut, top-15 target-market cities bar chart, full city table |
+| `/local-business` | Google Business Profile: rating, reviews, GBP performance metrics when available |
+| `/attribution`    | Which channels drive which conversion events — horizontal bar charts + source × event matrix |
 
 ---
 
@@ -106,6 +111,7 @@ Weekly cost: **~$0.12** in DataForSEO. Ahrefs uses your existing Lite plan budge
 
 The dashboard reads `data/seo.db` **at build time** via `src/lib/db.ts`. The schema lives in `db/schema.sql`:
 
+**Original tables:**
 - `gsc_daily`, `gsc_query_weekly`, `gsc_page_weekly`
 - `ga4_daily`, `ga4_channel_weekly`, `ga4_landing_weekly`
 - `keyword_meta` (the 70 tracked keywords + their group/intent/priority)
@@ -114,6 +120,17 @@ The dashboard reads `data/seo.db` **at build time** via `src/lib/db.ts`. The sch
 - `audit_findings` (open/fixed/wontfix lifecycle)
 - `backlinks_weekly`
 - `weekly_summary` (one row per week — headline + JSON blob)
+
+**v2 tables (weekly refresh):**
+- `traffic_source_weekly` — GA4 source × medium with bucket classification (AI, Reddit, Social, Search, Direct, Referral, Other)
+- `traffic_channel_weekly` — GA4 default channel group rollup
+- `event_daily` — daily event counts per event name
+- `event_weekly` — weekly aggregated event totals with category (conversion/engagement/navigation)
+- `conversion_attribution_weekly` — source × event matrix for key conversion events
+- `device_weekly` — mobile/desktop/tablet session breakdown
+- `geo_weekly` — city-level sessions with target-market flag (Phoenix Metro + Utah service areas)
+- `gbp_weekly` — Google Business Profile rating, reviews, and performance API metrics
+- `ai_evaluation_weekly` — AI-generated strategic verdict, risks, opportunities, and recommended actions
 
 The `seo.db` file is **gitignored** — re-seed from JSON snapshots via `npm run setup` then `npm run import:latest`.
 

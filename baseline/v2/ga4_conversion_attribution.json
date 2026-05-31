@@ -1,0 +1,388 @@
+{
+  "dimensionHeaders": [
+    {
+      "name": "sessionSource"
+    },
+    {
+      "name": "eventName"
+    }
+  ],
+  "metricHeaders": [
+    {
+      "name": "eventCount",
+      "type": "TYPE_INTEGER"
+    },
+    {
+      "name": "totalUsers",
+      "type": "TYPE_INTEGER"
+    }
+  ],
+  "rows": [
+    {
+      "dimensionValues": [
+        {
+          "value": "google"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "119"
+        },
+        {
+          "value": "109"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "(not set)"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "23"
+        },
+        {
+          "value": "22"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "(direct)"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "12"
+        },
+        {
+          "value": "11"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "wordpress.com"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "8"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "bing"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "6"
+        },
+        {
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "youtube.com"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "5"
+        },
+        {
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "duckduckgo"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "3"
+        },
+        {
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "tagassistant.google.com"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "2"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "tagassistant.google.com"
+        },
+        {
+          "value": "quote_request_click"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "2"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "wordpress.com"
+        },
+        {
+          "value": "form_submit"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "2"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "yahoo"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "2"
+        },
+        {
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "(direct)"
+        },
+        {
+          "value": "form_submit"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "ca.search.yahoo.com"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "chatgpt.com"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "facebook.com"
+        },
+        {
+          "value": "form_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "google"
+        },
+        {
+          "value": "file_download"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "tagassistant.google.com"
+        },
+        {
+          "value": "calculator_complete"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "tagassistant.google.com"
+        },
+        {
+          "value": "calculator_start"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "tagassistant.google.com"
+        },
+        {
+          "value": "generate_lead"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "tagassistant.google.com"
+        },
+        {
+          "value": "phone_click"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "rowCount": 20,
+  "metadata": {
+    "currencyCode": "USD",
+    "timeZone": "America/Phoenix"
+  },
+  "kind": "analyticsData#runReport"
+}

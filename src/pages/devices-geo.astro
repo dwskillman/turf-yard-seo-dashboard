@@ -1,0 +1,170 @@
+---
+/**
+ * devices-geo.astro — Devices & Geography page.
+ * Shows device KPI cards, device donut, top-15 city bar chart,
+ * and a full city table.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import KpiCard from '../components/KpiCard.astro';
+import DonutChart from '../components/DonutChart.astro';
+import BarChart from '../components/BarChart.astro';
+import DataTable from '../components/DataTable.astro';
+import {
+  getDeviceWeekly,
+  getGeoWeekly,
+  latestWeek,
+} from '../lib/db';
+import { num, decimal } from '../lib/formatters';
+
+const devices = getDeviceWeekly();
+const geos = getGeoWeekly();
+const latestWk = latestWeek('device_weekly');
+
+// Device totals
+const totalDeviceSessions = devices.reduce((s, d) => s + (d.sessions ?? 0), 0);
+
+function deviceRow(cat: string) {
+  return devices.find((d) => d.device_category === cat);
+}
+
+const mobile = deviceRow('mobile');
+const desktop = deviceRow('desktop');
+const tablet = deviceRow('tablet');
+
+function sharePct(sessions: number | undefined): string {
+  if (!sessions || !totalDeviceSessions) return '—';
+  return `${((sessions / totalDeviceSessions) * 100).toFixed(1)}% share`;
+}
+
+// Donut chart
+const DEVICE_COLORS: Record<string, string> = {
+  mobile: '#2F6B3A',
+  desktop: '#6FA86B',
+  tablet: '#C9A271',
+};
+const donutLabels = devices.map((d) => d.device_category.charAt(0).toUpperCase() + d.device_category.slice(1));
+const donutData = devices.map((d) => d.sessions ?? 0);
+const donutColors = devices.map((d) => DEVICE_COLORS[d.device_category] ?? '#8E978D');
+
+// Top 15 target-market cities by sessions
+const targetCities = geos
+  .filter((g) => g.is_target_market === 1)
+  .slice(0, 15);
+
+const barLabels = targetCities.map((g) => g.city);
+const barData = targetCities.map((g) => g.sessions ?? 0);
+const barColors = targetCities.map(() => '#2F6B3A');
+
+// Full geo table
+const totalGeoSessions = geos.reduce((s, g) => s + (g.sessions ?? 0), 0);
+const geoRows = geos.map((g) => {
+  const pct = totalGeoSessions > 0 ? ((g.sessions ?? 0) / totalGeoSessions) * 100 : 0;
+  return [
+    {
+      html: g.is_target_market
+        ? `<span class="font-medium text-brand-green">${g.city}</span>`
+        : `<span class="font-medium text-ink">${g.city}</span>`,
+      sort: g.city,
+    },
+    {
+      html: g.is_target_market
+        ? `<span class="inline-flex items-center text-[10px] font-bold px-2 py-0.5 rounded-full bg-brand-green-soft text-brand-green">Target</span>`
+        : `<span class="text-ink-faint text-xs">—</span>`,
+      sort: g.is_target_market,
+    },
+    { html: `<span class="tabular-nums font-medium">${num(g.sessions)}</span>`, sort: g.sessions ?? 0 },
+    { html: `<span class="tabular-nums text-ink-muted">${num(g.users)}</span>`, sort: g.users ?? 0 },
+    { html: `<span class="tabular-nums text-ink-muted">${num(g.engaged_sessions)}</span>`, sort: g.engaged_sessions ?? 0 },
+    { html: `<span class="tabular-nums text-ink-faint text-xs">${pct.toFixed(1)}%</span>`, sort: pct },
+  ];
+});
+---
+
+<Layout title="Devices & Geo" active="devices-geo">
+  {latestWk && (
+    <p class="text-xs text-ink-faint mb-4">Week of <span class="font-medium text-ink-muted">{latestWk}</span> · {totalDeviceSessions.toLocaleString()} device sessions</p>
+  )}
+
+  <!-- Device KPI cards -->
+  <Section eyebrow="Devices" title="Sessions by device" subtitle="Mobile, desktop, and tablet breakdown." />
+  <div class="grid grid-cols-3 gap-3 mb-8">
+    <KpiCard
+      title="Mobile"
+      value={num(mobile?.sessions)}
+      sublabel={sharePct(mobile?.sessions)}
+    />
+    <KpiCard
+      title="Desktop"
+      value={num(desktop?.sessions)}
+      sublabel={sharePct(desktop?.sessions)}
+    />
+    <KpiCard
+      title="Tablet"
+      value={num(tablet?.sessions)}
+      sublabel={sharePct(tablet?.sessions)}
+    />
+  </div>
+
+  <!-- Donut + top cities bar chart -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    <!-- Device donut -->
+    <div class="card p-5">
+      <Section eyebrow="Device Share" title="Device breakdown" subtitle="Share of sessions by device category." />
+      {donutData.some((v) => v > 0) ? (
+        <DonutChart
+          id="device-donut"
+          labels={donutLabels}
+          data={donutData}
+          colors={donutColors}
+          height={240}
+        />
+      ) : (
+        <p class="text-sm text-ink-faint">No device data available.</p>
+      )}
+    </div>
+
+    <!-- Top target-market cities -->
+    <div class="card p-5">
+      <Section eyebrow="Geography" title="Top target-market cities" subtitle="Top 15 cities in Phoenix Metro and Utah service areas, by sessions." />
+      {barData.length > 0 ? (
+        <BarChart
+          id="geo-bar"
+          labels={barLabels}
+          data={barData}
+          colors={barColors}
+          label="Sessions"
+          height={280}
+          horizontal={true}
+        />
+      ) : (
+        <p class="text-sm text-ink-faint">No target-market city data available.</p>
+      )}
+    </div>
+  </div>
+
+  <!-- Full city table -->
+  <div class="mb-2">
+    <Section eyebrow="All Cities" title="Geography detail" subtitle={`${geos.length} cities · target-market cities highlighted in green`} />
+  </div>
+  {geoRows.length > 0 ? (
+    <DataTable
+      id="geo-table"
+      initialSort={2}
+      initialDir="desc"
+      columns={[
+        { key: 'city', label: 'City', align: 'left', sortType: 'text' },
+        { key: 'target', label: 'Target Market', align: 'left', sortType: 'number' },
+        { key: 'sessions', label: 'Sessions', align: 'right', sortType: 'number' },
+        { key: 'users', label: 'Users', align: 'right', sortType: 'number' },
+        { key: 'engaged', label: 'Engaged', align: 'right', sortType: 'number' },
+        { key: 'share', label: 'Share', align: 'right', sortType: 'number' },
+      ]}
+      rows={geoRows}
+    />
+  ) : (
+    <div class="card p-8 text-center text-ink-faint">
+      <p class="text-sm">No geography data. Run <code class="font-mono text-xs">npm run setup</code> to populate.</p>
+    </div>
+  )}
+</Layout>

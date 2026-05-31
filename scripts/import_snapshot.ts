@@ -47,6 +47,42 @@ const weekStart: string = snap.week_start;
 if (!weekStart) throw new Error("Snapshot missing required field: week_start");
 console.log(`Week start: ${weekStart}`);
 
+/* ---- v2 helpers ---- */
+// Matches host as full string OR ends-with a dot-delimited host (e.g. m.facebook.com matches facebook.com)
+function matchesHost(source: string, hosts: string[]): boolean {
+  const s = source.toLowerCase();
+  return hosts.some(h => s === h || s.endsWith('.' + h));
+}
+function bucketFor(source: string, medium: string): 'ai'|'reddit'|'social'|'search'|'direct'|'referral'|'other' {
+  const s = (source || '').toLowerCase();
+  const m = (medium || '').toLowerCase();
+  // Direct first — must precede any substring matching
+  if (s === '(direct)' || m === '(none)' || s === '(not set)') return 'direct';
+  // Reddit
+  if (s === 'reddit.com' || s.endsWith('.reddit.com') || s === 'reddit') return 'reddit';
+  // AI / LLM referrers
+  const AI_HOSTS = ['chatgpt.com','chat.openai.com','openai.com','perplexity.ai','claude.ai','gemini.google.com','bard.google.com','copilot.microsoft.com','meta.ai','you.com','phind.com','searchgpt.com','grok.com','poe.com','character.ai','x.ai'];
+  if (matchesHost(s, AI_HOSTS)) return 'ai';
+  // Search engines (Bing belongs here, not AI)
+  if (m === 'organic' || ['google','bing','yahoo','duckduckgo','baidu','ecosia','brave','startpage','qwant','ask','aol'].includes(s)) return 'search';
+  // Social — explicit hosts, no substring tricks
+  const SOCIAL_HOSTS = ['facebook.com','m.facebook.com','l.facebook.com','instagram.com','l.instagram.com','twitter.com','x.com','linkedin.com','lnkd.in','tiktok.com','pinterest.com','youtube.com','m.youtube.com','t.co','fb.me','snapchat.com','threads.net','bsky.app'];
+  if (m === 'social' || matchesHost(s, SOCIAL_HOSTS) || s === 'ig' || s === 'fb') return 'social';
+  // Referral catchall
+  if (m === 'referral') return 'referral';
+  return 'other';
+}
+
+const CONVERSION_EVENTS = new Set(['form_submit','form_start','phone_click','quote_request_click','calculator_start','calculator_complete','generate_lead','file_download']);
+const ENGAGEMENT_EVENTS = new Set(['video_start','video_progress','video_complete','scroll','user_engagement']);
+function categoryFor(eventName: string): string {
+  if (CONVERSION_EVENTS.has(eventName)) return 'conversion';
+  if (ENGAGEMENT_EVENTS.has(eventName)) return 'engagement';
+  return 'navigation';
+}
+
+const TARGET_CITIES = new Set(['Phoenix','Mesa','Gilbert','Chandler','Tempe','Glendale','Peoria','Scottsdale','Surprise','Buckeye','Avondale','Goodyear','San Tan Valley','Apache Junction','Queen Creek','Maricopa','Casa Grande','Fountain Hills','Flagstaff','Tucson','Marana','Provo','Orem','Lehi','Spanish Fork','Eagle Mountain','West Jordan','Pleasant View','Murray','Springville','Salt Lake City','Lindon','Ogden','Heber City','Draper','Cottonwood Heights','Pleasant Grove','Manti','Vernal','West Haven']);
+
 const tx = db.transaction(() => {
   // ---- GSC daily ----
   if (snap.gsc?.daily?.length) {
@@ -196,6 +232,163 @@ const tx = db.transaction(() => {
         headline=excluded.headline, summary_json=excluded.summary_json, generated_at=excluded.generated_at
     `).run(weekStart, snap.summary.headline || "", JSON.stringify(snap.summary));
     console.log(`  ✓ weekly_summary: 1 row`);
+  }
+
+  // ---- v2: Traffic sources ----
+  if (snap.traffic_sources?.length) {
+    const stmt = db.prepare(`
+      INSERT INTO traffic_source_weekly (week_start, source, medium, bucket, sessions, users, engaged_sessions, avg_session_duration)
+      VALUES (?, @source, @medium, @bucket, @sessions, @users, @engaged_sessions, @avg_session_duration)
+      ON CONFLICT(week_start, source, medium) DO UPDATE SET
+        bucket=excluded.bucket, sessions=excluded.sessions, users=excluded.users,
+        engaged_sessions=excluded.engaged_sessions, avg_session_duration=excluded.avg_session_duration
+    `);
+    for (const row of snap.traffic_sources) {
+      const bucket = bucketFor(row.source, row.medium);
+      stmt.run(weekStart, { ...row, bucket });
+    }
+    console.log(`  ✓ traffic_source_weekly: ${snap.traffic_sources.length} rows`);
+  }
+
+  // ---- v2: Traffic channels ----
+  if (snap.channels?.length) {
+    const stmt = db.prepare(`
+      INSERT INTO traffic_channel_weekly (week_start, channel, sessions, users, engaged_sessions, avg_session_duration)
+      VALUES (?, @channel, @sessions, @users, @engaged_sessions, @avg_session_duration)
+      ON CONFLICT(week_start, channel) DO UPDATE SET
+        sessions=excluded.sessions, users=excluded.users,
+        engaged_sessions=excluded.engaged_sessions, avg_session_duration=excluded.avg_session_duration
+    `);
+    for (const row of snap.channels) stmt.run(weekStart, row);
+    console.log(`  ✓ traffic_channel_weekly: ${snap.channels.length} rows`);
+  }
+
+  // ---- v2: Events daily ----
+  if (snap.events_daily?.length) {
+    const stmt = db.prepare(`
+      INSERT INTO event_daily (date, event_name, event_count, total_users)
+      VALUES (@date, @event_name, @event_count, @total_users)
+      ON CONFLICT(date, event_name) DO UPDATE SET
+        event_count=excluded.event_count, total_users=excluded.total_users
+    `);
+    for (const row of snap.events_daily) stmt.run(row);
+    console.log(`  ✓ event_daily: ${snap.events_daily.length} rows`);
+  }
+
+  // ---- v2: Events weekly ----
+  if (snap.events_weekly?.length) {
+    const stmt = db.prepare(`
+      INSERT INTO event_weekly (week_start, event_name, category, event_count, total_users)
+      VALUES (?, @event_name, @category, @event_count, @total_users)
+      ON CONFLICT(week_start, event_name) DO UPDATE SET
+        category=excluded.category, event_count=excluded.event_count, total_users=excluded.total_users
+    `);
+    for (const row of snap.events_weekly) {
+      const category = categoryFor(row.event_name);
+      stmt.run(weekStart, { ...row, category });
+    }
+    console.log(`  ✓ event_weekly: ${snap.events_weekly.length} rows`);
+  }
+
+  // ---- v2: Conversion attribution ----
+  if (snap.conversion_attribution?.length) {
+    const stmt = db.prepare(`
+      INSERT INTO conversion_attribution_weekly (week_start, source, bucket, event_name, event_count, total_users)
+      VALUES (?, @source, @bucket, @event_name, @event_count, @total_users)
+      ON CONFLICT(week_start, source, event_name) DO UPDATE SET
+        bucket=excluded.bucket, event_count=excluded.event_count, total_users=excluded.total_users
+    `);
+    for (const row of snap.conversion_attribution) {
+      const bucket = bucketFor(row.source, row.medium || '');
+      stmt.run(weekStart, { ...row, bucket });
+    }
+    console.log(`  ✓ conversion_attribution_weekly: ${snap.conversion_attribution.length} rows`);
+  }
+
+  // ---- v2: Devices ----
+  if (snap.devices?.length) {
+    const stmt = db.prepare(`
+      INSERT INTO device_weekly (week_start, device_category, sessions, users, engaged_sessions)
+      VALUES (?, @device_category, @sessions, @users, @engaged_sessions)
+      ON CONFLICT(week_start, device_category) DO UPDATE SET
+        sessions=excluded.sessions, users=excluded.users, engaged_sessions=excluded.engaged_sessions
+    `);
+    for (const row of snap.devices) stmt.run(weekStart, row);
+    console.log(`  ✓ device_weekly: ${snap.devices.length} rows`);
+  }
+
+  // ---- v2: Geography ----
+  if (snap.geography?.length) {
+    const stmt = db.prepare(`
+      INSERT INTO geo_weekly (week_start, city, region, is_target_market, sessions, users, engaged_sessions)
+      VALUES (?, @city, @region, @is_target_market, @sessions, @users, @engaged_sessions)
+      ON CONFLICT(week_start, city) DO UPDATE SET
+        region=excluded.region, is_target_market=excluded.is_target_market,
+        sessions=excluded.sessions, users=excluded.users, engaged_sessions=excluded.engaged_sessions
+    `);
+    for (const row of snap.geography) {
+      const isTarget = TARGET_CITIES.has(row.city) ? 1 : 0;
+      stmt.run(weekStart, { ...row, is_target_market: isTarget, region: row.region ?? null });
+    }
+    console.log(`  ✓ geo_weekly: ${snap.geography.length} rows`);
+  }
+
+  // ---- v2: GBP ----
+  if (snap.gbp) {
+    db.prepare(`
+      INSERT INTO gbp_weekly (week_start, rating, review_count, new_reviews, avg_new_rating,
+        recent_post_count, most_recent_post_date, search_views, maps_views,
+        direction_requests, phone_calls, website_clicks)
+      VALUES (?, @rating, @review_count, @new_reviews, @avg_new_rating,
+        @recent_post_count, @most_recent_post_date, @search_views, @maps_views,
+        @direction_requests, @phone_calls, @website_clicks)
+      ON CONFLICT(week_start) DO UPDATE SET
+        rating=excluded.rating, review_count=excluded.review_count, new_reviews=excluded.new_reviews,
+        avg_new_rating=excluded.avg_new_rating, recent_post_count=excluded.recent_post_count,
+        most_recent_post_date=excluded.most_recent_post_date, search_views=excluded.search_views,
+        maps_views=excluded.maps_views, direction_requests=excluded.direction_requests,
+        phone_calls=excluded.phone_calls, website_clicks=excluded.website_clicks
+    `).run(weekStart, {
+      rating: snap.gbp.rating ?? null,
+      review_count: snap.gbp.review_count ?? null,
+      new_reviews: snap.gbp.new_reviews ?? null,
+      avg_new_rating: snap.gbp.avg_new_rating ?? null,
+      recent_post_count: snap.gbp.recent_post_count ?? null,
+      most_recent_post_date: snap.gbp.most_recent_post_date ?? null,
+      search_views: snap.gbp.search_views ?? null,
+      maps_views: snap.gbp.maps_views ?? null,
+      direction_requests: snap.gbp.direction_requests ?? null,
+      phone_calls: snap.gbp.phone_calls ?? null,
+      website_clicks: snap.gbp.website_clicks ?? null,
+    });
+    console.log(`  ✓ gbp_weekly: 1 row`);
+  }
+
+  // ---- v2: AI evaluation ----
+  if (snap.ai_evaluation) {
+    const ai = snap.ai_evaluation;
+    db.prepare(`
+      INSERT INTO ai_evaluation_weekly
+        (week_start, generated_at, model, redesign_verdict, one_line_headline,
+         what_changed, biggest_risk, biggest_opportunity, recommended_actions)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+      ON CONFLICT(week_start) DO UPDATE SET
+        generated_at=excluded.generated_at, model=excluded.model,
+        redesign_verdict=excluded.redesign_verdict, one_line_headline=excluded.one_line_headline,
+        what_changed=excluded.what_changed, biggest_risk=excluded.biggest_risk,
+        biggest_opportunity=excluded.biggest_opportunity, recommended_actions=excluded.recommended_actions
+    `).run(
+      weekStart,
+      ai.generated_at || new Date().toISOString(),
+      ai.model || 'unknown',
+      ai.verdict ?? null,
+      ai.headline ?? null,
+      ai.what_changed ?? null,
+      ai.biggest_risk ?? null,
+      ai.biggest_opportunity ?? null,
+      ai.recommended_actions ? JSON.stringify(ai.recommended_actions) : null
+    );
+    console.log(`  ✓ ai_evaluation_weekly: 1 row`);
   }
 });
 

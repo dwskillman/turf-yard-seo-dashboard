@@ -129,3 +129,97 @@ CREATE TABLE IF NOT EXISTS weekly_summary (
   summary_json TEXT,   -- JSON blob
   generated_at TEXT
 );
+
+-- ===== v2 tables =====
+
+-- Traffic sources: one row per (week_start, source, medium)
+CREATE TABLE IF NOT EXISTS traffic_source_weekly (
+  week_start TEXT NOT NULL,
+  source TEXT NOT NULL,
+  medium TEXT NOT NULL,
+  bucket TEXT NOT NULL,  -- 'ai', 'reddit', 'social', 'search', 'direct', 'referral', 'other'
+  sessions INTEGER, users INTEGER, engaged_sessions INTEGER, avg_session_duration REAL,
+  PRIMARY KEY (week_start, source, medium)
+);
+
+-- Default channel group rollup (for the standard view)
+CREATE TABLE IF NOT EXISTS traffic_channel_weekly (
+  week_start TEXT NOT NULL,
+  channel TEXT NOT NULL,
+  sessions INTEGER, users INTEGER, engaged_sessions INTEGER, avg_session_duration REAL,
+  PRIMARY KEY (week_start, channel)
+);
+
+-- Events: daily totals per event
+CREATE TABLE IF NOT EXISTS event_daily (
+  date TEXT NOT NULL,
+  event_name TEXT NOT NULL,
+  event_count INTEGER, total_users INTEGER,
+  PRIMARY KEY (date, event_name)
+);
+
+-- Events: weekly totals per event (faster aggregates for the page)
+CREATE TABLE IF NOT EXISTS event_weekly (
+  week_start TEXT NOT NULL,
+  event_name TEXT NOT NULL,
+  category TEXT NOT NULL,  -- 'conversion' | 'engagement' | 'navigation'
+  event_count INTEGER, total_users INTEGER,
+  PRIMARY KEY (week_start, event_name)
+);
+
+-- Conversion attribution: events x source
+CREATE TABLE IF NOT EXISTS conversion_attribution_weekly (
+  week_start TEXT NOT NULL,
+  source TEXT NOT NULL,
+  bucket TEXT NOT NULL,
+  event_name TEXT NOT NULL,
+  event_count INTEGER, total_users INTEGER,
+  PRIMARY KEY (week_start, source, event_name)
+);
+
+-- Devices: weekly device-category sessions
+CREATE TABLE IF NOT EXISTS device_weekly (
+  week_start TEXT NOT NULL,
+  device_category TEXT NOT NULL,
+  sessions INTEGER, users INTEGER, engaged_sessions INTEGER,
+  PRIMARY KEY (week_start, device_category)
+);
+
+-- Geography: weekly city sessions
+CREATE TABLE IF NOT EXISTS geo_weekly (
+  week_start TEXT NOT NULL,
+  city TEXT NOT NULL,
+  region TEXT,  -- inferred or null
+  is_target_market INTEGER DEFAULT 0,
+  sessions INTEGER, users INTEGER, engaged_sessions INTEGER,
+  PRIMARY KEY (week_start, city)
+);
+
+-- Google Business Profile snapshot (one row per week)
+CREATE TABLE IF NOT EXISTS gbp_weekly (
+  week_start TEXT NOT NULL PRIMARY KEY,
+  rating REAL,
+  review_count INTEGER,
+  new_reviews INTEGER,
+  avg_new_rating REAL,
+  recent_post_count INTEGER,
+  most_recent_post_date TEXT,
+  search_views INTEGER,
+  maps_views INTEGER,
+  direction_requests INTEGER,
+  phone_calls INTEGER,
+  website_clicks INTEGER
+);
+
+-- AI weekly evaluation
+CREATE TABLE IF NOT EXISTS ai_evaluation_weekly (
+  week_start TEXT NOT NULL PRIMARY KEY,
+  generated_at TEXT NOT NULL,
+  model TEXT NOT NULL,
+  redesign_verdict TEXT,  -- 'working' | 'too-early' | 'concerning' | 'mixed'
+  one_line_headline TEXT,
+  what_changed TEXT,
+  biggest_risk TEXT,
+  biggest_opportunity TEXT,
+  recommended_actions TEXT  -- JSON array of {action, rationale, leverage}
+);

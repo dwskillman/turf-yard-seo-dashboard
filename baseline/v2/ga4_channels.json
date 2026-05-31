@@ -1,0 +1,159 @@
+{
+  "dimensionHeaders": [
+    {
+      "name": "sessionDefaultChannelGroup"
+    }
+  ],
+  "metricHeaders": [
+    {
+      "name": "sessions",
+      "type": "TYPE_INTEGER"
+    },
+    {
+      "name": "totalUsers",
+      "type": "TYPE_INTEGER"
+    },
+    {
+      "name": "engagedSessions",
+      "type": "TYPE_INTEGER"
+    },
+    {
+      "name": "averageSessionDuration",
+      "type": "TYPE_SECONDS"
+    }
+  ],
+  "rows": [
+    {
+      "dimensionValues": [
+        {
+          "value": "Organic Search"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "1172"
+        },
+        {
+          "value": "782"
+        },
+        {
+          "value": "734"
+        },
+        {
+          "value": "281.4131551211604"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "Direct"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "543"
+        },
+        {
+          "value": "437"
+        },
+        {
+          "value": "200"
+        },
+        {
+          "value": "161.45313883793739"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "Unassigned"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "148"
+        },
+        {
+          "value": "126"
+        },
+        {
+          "value": "83"
+        },
+        {
+          "value": "219.09703505405406"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "Organic Social"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "58"
+        },
+        {
+          "value": "19"
+        },
+        {
+          "value": "36"
+        },
+        {
+          "value": "342.55541770689655"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "Organic Video"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "47"
+        },
+        {
+          "value": "26"
+        },
+        {
+          "value": "26"
+        },
+        {
+          "value": "257.43233487234045"
+        }
+      ]
+    },
+    {
+      "dimensionValues": [
+        {
+          "value": "Referral"
+        }
+      ],
+      "metricValues": [
+        {
+          "value": "17"
+        },
+        {
+          "value": "11"
+        },
+        {
+          "value": "10"
+        },
+        {
+          "value": "165.94878447058824"
+        }
+      ]
+    }
+  ],
+  "rowCount": 6,
+  "metadata": {
+    "currencyCode": "USD",
+    "timeZone": "America/Phoenix"
+  },
+  "kind": "analyticsData#runReport"
+}

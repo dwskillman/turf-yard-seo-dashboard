@@ -343,6 +343,243 @@ insSummary.run(
   JSON.stringify(summary)
 );
 
+/* ===================== v2: Bucket + category helpers ===================== */
+function matchesHost(source: string, hosts: string[]): boolean {
+  const s = source.toLowerCase();
+  return hosts.some(h => s === h || s.endsWith('.' + h));
+}
+
+function bucketFor(source: string, medium: string): 'ai'|'reddit'|'social'|'search'|'direct'|'referral'|'other' {
+  const s = (source || '').toLowerCase();
+  const m = (medium || '').toLowerCase();
+  // Direct first — must precede any substring matching
+  if (s === '(direct)' || m === '(none)' || s === '(not set)') return 'direct';
+  if (s === 'reddit.com' || s.endsWith('.reddit.com') || s === 'reddit') return 'reddit';
+  const AI_HOSTS = ['chatgpt.com','chat.openai.com','openai.com','perplexity.ai','claude.ai','gemini.google.com','bard.google.com','copilot.microsoft.com','meta.ai','you.com','phind.com','searchgpt.com','grok.com','poe.com','character.ai','x.ai'];
+  if (matchesHost(s, AI_HOSTS)) return 'ai';
+  if (m === 'organic' || ['google','bing','yahoo','duckduckgo','baidu','ecosia','brave','startpage','qwant','ask','aol'].includes(s)) return 'search';
+  const SOCIAL_HOSTS = ['facebook.com','m.facebook.com','l.facebook.com','instagram.com','l.instagram.com','twitter.com','x.com','linkedin.com','lnkd.in','tiktok.com','pinterest.com','youtube.com','m.youtube.com','t.co','fb.me','snapchat.com','threads.net','bsky.app'];
+  if (m === 'social' || matchesHost(s, SOCIAL_HOSTS) || s === 'ig' || s === 'fb') return 'social';
+  if (m === 'referral') return 'referral';
+  return 'other';
+}
+
+const CONVERSION_EVENTS = new Set(['form_submit','form_start','phone_click','quote_request_click','calculator_start','calculator_complete','generate_lead','file_download']);
+const ENGAGEMENT_EVENTS = new Set(['video_start','video_progress','video_complete','scroll','user_engagement']);
+const NAVIGATION_EVENTS = new Set(['page_view','session_start','first_visit','click','location_page_view']);
+
+function categoryFor(eventName: string): string {
+  if (CONVERSION_EVENTS.has(eventName)) return 'conversion';
+  if (ENGAGEMENT_EVENTS.has(eventName)) return 'engagement';
+  if (NAVIGATION_EVENTS.has(eventName)) return 'navigation';
+  return 'other';
+}
+
+const TARGET_CITIES = new Set([
+  // Phoenix metro
+  'Phoenix','Mesa','Gilbert','Chandler','Tempe','Glendale','Peoria','Scottsdale','Surprise',
+  'Buckeye','Avondale','Goodyear','San Tan Valley','Apache Junction','Queen Creek','Maricopa',
+  'Casa Grande','Fountain Hills','Flagstaff','Tucson','Marana',
+  // Utah
+  'Provo','Orem','Lehi','Spanish Fork','Eagle Mountain','West Jordan','Pleasant View','Murray',
+  'Springville','Salt Lake City','Lindon','Ogden','Heber City','Draper','Cottonwood Heights',
+  'Pleasant Grove','Manti','Vernal','West Haven',
+]);
+
+/* ===================== v2 baseline files ===================== */
+const v2Dir = resolve(root, 'baseline', 'v2');
+const v2TrafficSources = JSON.parse(readFileSync(resolve(v2Dir, 'ga4_traffic_sources.json'), 'utf-8'));
+const v2Channels = JSON.parse(readFileSync(resolve(v2Dir, 'ga4_channels.json'), 'utf-8'));
+const v2EventsDaily = JSON.parse(readFileSync(resolve(v2Dir, 'ga4_events_daily.json'), 'utf-8'));
+const v2ConversionAttr = JSON.parse(readFileSync(resolve(v2Dir, 'ga4_conversion_attribution.json'), 'utf-8'));
+const v2DevicesGeo = JSON.parse(readFileSync(resolve(v2Dir, 'ga4_devices_geo.json'), 'utf-8'));
+
+// 4 synthetic weeks for the 28-day baseline window
+const V2_WEEKS = ['2026-05-03', '2026-05-10', '2026-05-17', '2026-05-24'];
+
+/* ===================== 12. traffic_source_weekly ===================== */
+const insTrafficSource = db.prepare(
+  `INSERT OR REPLACE INTO traffic_source_weekly
+     (week_start, source, medium, bucket, sessions, users, engaged_sessions, avg_session_duration)
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
+);
+const seedTrafficSources = db.transaction(() => {
+  for (const row of v2TrafficSources.rows) {
+    const source = row.dimensionValues[0].value;
+    const medium = row.dimensionValues[1].value;
+    const totalSessions = parseInt(row.metricValues[0].value, 10);
+    const totalUsers = parseInt(row.metricValues[1].value, 10);
+    const totalEngaged = parseInt(row.metricValues[2].value, 10);
+    const avgDur = parseFloat(row.metricValues[3].value);
+    const bucket = bucketFor(source, medium);
+    // Distribute evenly across 4 weeks
+    for (const week of V2_WEEKS) {
+      const s = Math.round(totalSessions / 4);
+      const u = Math.round(totalUsers / 4);
+      const e = Math.round(totalEngaged / 4);
+      insTrafficSource.run(week, source, medium, bucket, s, u, e, avgDur);
+    }
+  }
+});
+seedTrafficSources();
+
+/* ===================== 13. traffic_channel_weekly ===================== */
+const insTrafficChannel = db.prepare(
+  `INSERT OR REPLACE INTO traffic_channel_weekly
+     (week_start, channel, sessions, users, engaged_sessions, avg_session_duration)
+   VALUES (?, ?, ?, ?, ?, ?)`
+);
+const seedTrafficChannels = db.transaction(() => {
+  for (const row of v2Channels.rows) {
+    const channel = row.dimensionValues[0].value;
+    const totalSessions = parseInt(row.metricValues[0].value, 10);
+    const totalUsers = parseInt(row.metricValues[1].value, 10);
+    const totalEngaged = parseInt(row.metricValues[2].value, 10);
+    const avgDur = parseFloat(row.metricValues[3].value);
+    for (const week of V2_WEEKS) {
+      insTrafficChannel.run(week, channel, Math.round(totalSessions / 4), Math.round(totalUsers / 4), Math.round(totalEngaged / 4), avgDur);
+    }
+  }
+});
+seedTrafficChannels();
+
+/* ===================== 14. event_daily ===================== */
+const insEventDaily = db.prepare(
+  `INSERT OR REPLACE INTO event_daily (date, event_name, event_count, total_users)
+   VALUES (?, ?, ?, ?)`
+);
+const seedEventDaily = db.transaction(() => {
+  for (const row of v2EventsDaily.rows) {
+    const rawDate = row.dimensionValues[0].value; // YYYYMMDD
+    const isoDate = `${rawDate.slice(0,4)}-${rawDate.slice(4,6)}-${rawDate.slice(6,8)}`;
+    const eventName = row.dimensionValues[1].value;
+    const eventCount = parseInt(row.metricValues[0].value, 10);
+    const totalUsers = parseInt(row.metricValues[1].value, 10);
+    insEventDaily.run(isoDate, eventName, eventCount, totalUsers);
+  }
+});
+seedEventDaily();
+
+/* ===================== 15. event_weekly (aggregated from daily) ===================== */
+// Aggregate event_daily to weekly buckets
+const insEventWeekly = db.prepare(
+  `INSERT OR REPLACE INTO event_weekly (week_start, event_name, category, event_count, total_users)
+   VALUES (?, ?, ?, ?, ?)`
+);
+const seedEventWeekly = db.transaction(() => {
+  // Group all events by name, then split totals across 4 weeks
+  const totals = new Map<string, { count: number; users: number }>();
+  for (const row of v2EventsDaily.rows) {
+    const eventName = row.dimensionValues[1].value;
+    const eventCount = parseInt(row.metricValues[0].value, 10);
+    const totalUsers = parseInt(row.metricValues[1].value, 10);
+    const prev = totals.get(eventName) || { count: 0, users: 0 };
+    totals.set(eventName, { count: prev.count + eventCount, users: prev.users + totalUsers });
+  }
+  for (const [eventName, { count, users }] of totals) {
+    const category = categoryFor(eventName);
+    for (const week of V2_WEEKS) {
+      insEventWeekly.run(week, eventName, category, Math.round(count / 4), Math.round(users / 4));
+    }
+  }
+});
+seedEventWeekly();
+
+/* ===================== 16. conversion_attribution_weekly ===================== */
+const insConvAttr = db.prepare(
+  `INSERT OR REPLACE INTO conversion_attribution_weekly
+     (week_start, source, bucket, event_name, event_count, total_users)
+   VALUES (?, ?, ?, ?, ?, ?)`
+);
+const seedConvAttr = db.transaction(() => {
+  for (const row of v2ConversionAttr.rows) {
+    const source = row.dimensionValues[0].value;
+    const eventName = row.dimensionValues[1].value;
+    const eventCount = parseInt(row.metricValues[0].value, 10);
+    const totalUsers = parseInt(row.metricValues[1].value, 10);
+    const bucket = bucketFor(source, '');
+    for (const week of V2_WEEKS) {
+      insConvAttr.run(week, source, bucket, eventName, Math.round(eventCount / 4), Math.round(totalUsers / 4));
+    }
+  }
+});
+seedConvAttr();
+
+/* ===================== 17. device_weekly + geo_weekly ===================== */
+// Aggregate device + city totals from the cross-dimension data
+const deviceTotals = new Map<string, { sessions: number; users: number; engaged: number }>();
+const geoTotals = new Map<string, { sessions: number; users: number; engaged: number }>();
+
+for (const row of v2DevicesGeo.rows) {
+  const device = row.dimensionValues[0].value;
+  const city = row.dimensionValues[1].value;
+  const s = parseInt(row.metricValues[0].value, 10);
+  const u = parseInt(row.metricValues[1].value, 10);
+  const e = parseInt(row.metricValues[2].value, 10);
+
+  const dPrev = deviceTotals.get(device) || { sessions: 0, users: 0, engaged: 0 };
+  deviceTotals.set(device, { sessions: dPrev.sessions + s, users: dPrev.users + u, engaged: dPrev.engaged + e });
+
+  const cPrev = geoTotals.get(city) || { sessions: 0, users: 0, engaged: 0 };
+  geoTotals.set(city, { sessions: cPrev.sessions + s, users: cPrev.users + u, engaged: cPrev.engaged + e });
+}
+
+const insDevice = db.prepare(
+  `INSERT OR REPLACE INTO device_weekly (week_start, device_category, sessions, users, engaged_sessions)
+   VALUES (?, ?, ?, ?, ?)`
+);
+const insGeo = db.prepare(
+  `INSERT OR REPLACE INTO geo_weekly (week_start, city, region, is_target_market, sessions, users, engaged_sessions)
+   VALUES (?, ?, ?, ?, ?, ?, ?)`
+);
+const seedDevicesGeo = db.transaction(() => {
+  for (const [device, { sessions, users, engaged }] of deviceTotals) {
+    for (const week of V2_WEEKS) {
+      insDevice.run(week, device, Math.round(sessions / 4), Math.round(users / 4), Math.round(engaged / 4));
+    }
+  }
+  for (const [city, { sessions, users, engaged }] of geoTotals) {
+    const isTarget = TARGET_CITIES.has(city) ? 1 : 0;
+    for (const week of V2_WEEKS) {
+      insGeo.run(week, city, null, isTarget, Math.round(sessions / 4), Math.round(users / 4), Math.round(engaged / 4));
+    }
+  }
+});
+seedDevicesGeo();
+
+/* ===================== 18. gbp_weekly (placeholder) ===================== */
+// Seed a placeholder GBP row — real data populated by cron via import_snapshot
+const insGbp = db.prepare(
+  `INSERT OR REPLACE INTO gbp_weekly
+     (week_start, rating, review_count, new_reviews, avg_new_rating, recent_post_count, most_recent_post_date)
+   VALUES (?, ?, ?, ?, ?, ?, ?)`
+);
+insGbp.run('2026-05-24', null, null, null, null, null, null);
+
+/* ===================== 19. ai_evaluation_weekly ===================== */
+const insAiEval = db.prepare(
+  `INSERT OR REPLACE INTO ai_evaluation_weekly
+     (week_start, generated_at, model, redesign_verdict, one_line_headline, what_changed,
+      biggest_risk, biggest_opportunity, recommended_actions)
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`
+);
+insAiEval.run(
+  '2026-05-24',
+  '2026-05-30T00:00:00Z',
+  'baseline-seed',
+  'too-early',
+  'Baseline locked — measurement starts now.',
+  'This is the pre-redesign baseline snapshot. The site redesign launched 2026-05-31. All metrics here represent the 28-day pre-launch window (2026-05-03 to 2026-05-30) and will serve as the comparison baseline for all future AI evaluations.',
+  'Without post-redesign data we cannot yet confirm whether the redesign has maintained or improved organic visibility. The 4-week average position softened toward 21 in the final days of the baseline window.',
+  'Calculator pages (/artificial-turf-calculator/ and /sub-base-turf-calculator/) are the strongest non-brand performers and the best candidates to optimize for conversion after the redesign.',
+  JSON.stringify([
+    { action: 'Configure GA4 key events', rationale: 'No conversions are currently tracked — form_submit, phone_click, and calculator_complete need to be wired.', leverage: 'high' },
+    { action: 'Fix homepage H1 and meta description', rationale: 'Both are missing, suppressing click-through rate and local ranking signals.', leverage: 'high' },
+    { action: 'Add JSON-LD schema to calculator pages', rationale: 'FAQ and Product schema could unlock rich results for the strongest-performing pages.', leverage: 'med' },
+    { action: 'Monitor position trend weekly', rationale: 'Average position weakened from 14 to 21 over the baseline window — confirm whether this was pre-redesign technical debt or seasonal.', leverage: 'med' },
+  ])
+);
+
 /* ===================== Report ===================== */
 function count(table: string): number {
   return (db.prepare(`SELECT COUNT(*) AS c FROM ${table}`).get() as { c: number }).c;
@@ -360,8 +597,17 @@ for (const t of [
   'competitor_weekly',
   'audit_findings',
   'weekly_summary',
+  'traffic_source_weekly',
+  'traffic_channel_weekly',
+  'event_daily',
+  'event_weekly',
+  'conversion_attribution_weekly',
+  'device_weekly',
+  'geo_weekly',
+  'gbp_weekly',
+  'ai_evaluation_weekly',
 ]) {
-  console.log(`  ${t.padEnd(22)} ${count(t)}`);
+  console.log(`  ${t.padEnd(30)} ${count(t)}`);
 }
 console.log(`✓ Redesign date: ${REDESIGN_DATE}`);
 db.close();

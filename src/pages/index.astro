@@ -21,6 +21,8 @@ import {
 } from '../lib/db';
 import { daysSince, formatDateShort } from '../lib/dates';
 import { compact, num, decimal, delta } from '../lib/formatters';
+import { getAiEvaluationLatest } from '../lib/db';
+import type { AiEvaluation } from '../lib/db';
 
 const gsc = getDailyGsc(60);
 const ga4 = getDailyGa4(60);
@@ -49,6 +51,23 @@ const baselineWeeklySessions = sessionsKpi.baseline;
 const baselinePosition = positionKpi.baseline;
 
 const postReady = days >= 7;
+
+// AI Evaluation
+const aiEval = getAiEvaluationLatest();
+const verdictConfig: Record<string, { label: string; color: string; bg: string; border: string }> = {
+  'too-early': { label: 'Too early to call', color: 'text-brand-sand', bg: 'bg-brand-sand/10', border: 'border-brand-sand/30' },
+  'working':   { label: 'Working', color: 'text-brand-green', bg: 'bg-brand-green-soft', border: 'border-brand-green/30' },
+  'concerning':{ label: 'Concerning', color: 'text-brand-terra', bg: 'bg-brand-terra/10', border: 'border-brand-terra/30' },
+  'mixed':     { label: 'Mixed signals', color: 'text-brand-gold', bg: 'bg-brand-gold/10', border: 'border-brand-gold/30' },
+};
+const verdictStyle = aiEval?.redesign_verdict
+  ? (verdictConfig[aiEval.redesign_verdict] ?? verdictConfig['too-early'])
+  : verdictConfig['too-early'];
+let aiActions: { action: string; rationale: string; leverage: string }[] = [];
+if (aiEval?.recommended_actions) {
+  try { aiActions = JSON.parse(aiEval.recommended_actions); } catch {}
+}
+const leverageColor: Record<string, string> = { high: 'bg-brand-green-soft text-brand-green', med: 'bg-brand-sand/15 text-brand-sand', low: 'bg-border-soft text-ink-muted' };
 
 // Chart labels
 const gscLabels = gsc.map((r) => formatDateShort(r.date));
@@ -132,6 +151,97 @@ const pageRows = pages.map((p) => [
           <p class="font-heading font-semibold text-ink">Data accumulating</p>
           <p class="text-sm text-ink-muted">Only {days} day{days === 1 ? '' : 's'} of post-redesign data so far. Comparison unlocks at 7 days. Baseline 4-week averages are shown below for reference.</p>
         </div>
+      </div>
+    )}
+  </div>
+
+  <!-- AI Strategist card -->
+  <div class="card p-5 mb-6 border-l-4 border-brand-green">
+    <div class="flex items-start justify-between gap-4 mb-4">
+      <div>
+        <p class="eyebrow mb-1">AI Strategist</p>
+        {aiEval ? (
+          <p class="text-xs text-ink-faint">
+            Weekly synthesis &mdash; generated {aiEval.generated_at.slice(0, 10)} by <span class="font-medium">{aiEval.model}</span>
+          </p>
+        ) : (
+          <p class="text-xs text-ink-faint">No evaluation available yet.</p>
+        )}
+      </div>
+      {aiEval?.redesign_verdict && (
+        <span class={`shrink-0 inline-flex items-center text-[11px] font-bold px-3 py-1 rounded-full ${verdictStyle.bg} ${verdictStyle.color} border ${verdictStyle.border}`}>
+          {verdictStyle.label}
+        </span>
+      )}
+    </div>
+
+    {!aiEval ? (
+      <div class="rounded-lg bg-brand-green-soft/60 border border-brand-green-pale p-4 text-sm text-ink-muted">
+        AI evaluation will appear here once the weekly cron run generates and imports an <code class="font-mono text-xs">ai_evaluation</code> object in the snapshot JSON.
+      </div>
+    ) : (
+      <div class="space-y-4">
+        {/* One-line headline */}
+        {aiEval.one_line_headline && (
+          <p class="font-heading font-semibold text-xl text-ink leading-snug">{aiEval.one_line_headline}</p>
+        )}
+
+        {/* Accordion sections */}
+        <div class="space-y-2">
+          {aiEval.what_changed && (
+            <details class="group rounded-lg border border-border-faint overflow-hidden">
+              <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none bg-brand-green-soft/30 hover:bg-brand-green-soft/50 transition-colors">
+                <span class="font-heading font-semibold text-sm text-ink">What changed</span>
+                <span class="text-ink-faint text-xs group-open:hidden">&#9660;</span>
+                <span class="text-ink-faint text-xs hidden group-open:inline">&#9650;</span>
+              </summary>
+              <div class="px-4 py-3 text-sm text-ink-muted">{aiEval.what_changed}</div>
+            </details>
+          )}
+          {aiEval.biggest_risk && (
+            <details class="group rounded-lg border border-border-faint overflow-hidden">
+              <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none bg-brand-green-soft/30 hover:bg-brand-green-soft/50 transition-colors">
+                <span class="font-heading font-semibold text-sm text-ink">Biggest risk</span>
+                <span class="text-ink-faint text-xs group-open:hidden">&#9660;</span>
+                <span class="text-ink-faint text-xs hidden group-open:inline">&#9650;</span>
+              </summary>
+              <div class="px-4 py-3 text-sm text-ink-muted">{aiEval.biggest_risk}</div>
+            </details>
+          )}
+          {aiEval.biggest_opportunity && (
+            <details class="group rounded-lg border border-border-faint overflow-hidden">
+              <summary class="flex items-center justify-between px-4 py-3 cursor-pointer select-none bg-brand-green-soft/30 hover:bg-brand-green-soft/50 transition-colors">
+                <span class="font-heading font-semibold text-sm text-ink">Biggest opportunity</span>
+                <span class="text-ink-faint text-xs group-open:hidden">&#9660;</span>
+                <span class="text-ink-faint text-xs hidden group-open:inline">&#9650;</span>
+              </summary>
+              <div class="px-4 py-3 text-sm text-ink-muted">{aiEval.biggest_opportunity}</div>
+            </details>
+          )}
+        </div>
+
+        {/* Recommended actions */}
+        {aiActions.length > 0 && (
+          <div>
+            <p class="text-[11px] font-heading font-semibold uppercase tracking-wider text-ink-muted mb-2">Recommended Actions</p>
+            <ol class="space-y-2">
+              {aiActions.map((act, i) => (
+                <li class="flex items-start gap-3 rounded-lg border border-border-faint p-3">
+                  <span class="shrink-0 w-5 h-5 rounded-full bg-brand-green text-surface flex items-center justify-center text-[11px] font-bold font-heading">{i + 1}</span>
+                  <div class="flex-1 min-w-0">
+                    <p class="font-medium text-sm text-ink">{act.action}</p>
+                    {act.rationale && <p class="text-xs text-ink-muted mt-0.5">{act.rationale}</p>}
+                  </div>
+                  {act.leverage && (
+                    <span class={`shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full ${leverageColor[act.leverage] ?? 'bg-border-soft text-ink-muted'}`}>
+                      {act.leverage}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
       </div>
     )}
   </div>
