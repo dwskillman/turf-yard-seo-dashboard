@@ -1,0 +1,94 @@
+---
+/**
+ * audit.astro — on-page audit log grouped by severity.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import SeverityBadge from '../components/SeverityBadge.astro';
+import { getAuditFindings } from '../lib/db';
+import { formatDate } from '../lib/dates';
+
+const findings = getAuditFindings();
+const order = ['critical', 'warning', 'info'];
+const grouped = order.map((sev) => ({
+  severity: sev,
+  items: findings.filter((f) => f.severity === sev),
+}));
+
+const counts = {
+  critical: findings.filter((f) => f.severity === 'critical').length,
+  warning: findings.filter((f) => f.severity === 'warning').length,
+  info: findings.filter((f) => f.severity === 'info').length,
+};
+
+function statusBadge(status: string): string {
+  const map: Record<string, string> = {
+    open: 'bg-brand-terra/10 text-brand-terra',
+    fixed: 'bg-brand-green-pale text-brand-green',
+    wontfix: 'bg-border-faint text-ink-muted',
+  };
+  const cls = map[status] ?? 'bg-border-faint text-ink-muted';
+  return `<span class="inline-flex rounded px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${cls}">${status}</span>`;
+}
+---
+
+<Layout title="Audit" active="audit">
+  <Section
+    eyebrow="On-page audit"
+    title="Audit findings"
+    subtitle="Technical and on-page issues found in the pre-redesign crawl. Grouped by severity."
+  />
+
+  <!-- Summary counts -->
+  <div class="grid grid-cols-3 gap-3 mb-6">
+    <div class="card p-4 border-l-4 border-l-brand-terra">
+      <p class="text-xs text-ink-muted uppercase tracking-wider font-heading font-semibold">Critical</p>
+      <p class="font-heading font-bold text-3xl text-brand-terra mt-1">{counts.critical}</p>
+    </div>
+    <div class="card p-4 border-l-4 border-l-brand-gold">
+      <p class="text-xs text-ink-muted uppercase tracking-wider font-heading font-semibold">Warning</p>
+      <p class="font-heading font-bold text-3xl text-brand-gold mt-1">{counts.warning}</p>
+    </div>
+    <div class="card p-4 border-l-4 border-l-brand-sand">
+      <p class="text-xs text-ink-muted uppercase tracking-wider font-heading font-semibold">Info</p>
+      <p class="font-heading font-bold text-3xl text-brand-sand mt-1">{counts.info}</p>
+    </div>
+  </div>
+
+  {grouped.map((group) =>
+    group.items.length > 0 ? (
+      <div class="mb-6">
+        <div class="flex items-center gap-2 mb-3">
+          <SeverityBadge severity={group.severity} />
+          <span class="text-sm text-ink-muted">{group.items.length} finding{group.items.length === 1 ? '' : 's'}</span>
+        </div>
+        <div class="card overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-brand-green-soft/60 border-b border-border-faint text-left">
+                  <th class="table-cell font-heading font-semibold text-[11px] uppercase tracking-wider text-ink-muted">Page</th>
+                  <th class="table-cell font-heading font-semibold text-[11px] uppercase tracking-wider text-ink-muted">Finding</th>
+                  <th class="table-cell font-heading font-semibold text-[11px] uppercase tracking-wider text-ink-muted">Recommendation</th>
+                  <th class="table-cell font-heading font-semibold text-[11px] uppercase tracking-wider text-ink-muted whitespace-nowrap">First seen</th>
+                  <th class="table-cell font-heading font-semibold text-[11px] uppercase tracking-wider text-ink-muted">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                {group.items.map((f) => (
+                  <tr class="border-b border-border-faint/70 last:border-0 hover:bg-brand-green-soft/30 transition-colors align-top">
+                    <td class="table-cell"><span class="font-medium text-brand-green text-xs">{f.url}</span></td>
+                    <td class="table-cell text-ink">{f.finding}</td>
+                    <td class="table-cell text-ink-muted">{f.recommendation}</td>
+                    <td class="table-cell text-ink-faint whitespace-nowrap text-xs">{formatDate(f.audit_date)}</td>
+                    <td class="table-cell" set:html={statusBadge(f.status)} />
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    ) : null
+  )}
+</Layout>

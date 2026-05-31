@@ -1,0 +1,143 @@
+---
+/**
+ * keywords.astro — keyword rank tracking.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import DataTable from '../components/DataTable.astro';
+import DonutChart from '../components/DonutChart.astro';
+import { getTrackedKeywords, getKeywordGroups, getRankDistribution } from '../lib/db';
+import { groupLabel } from '../lib/constants';
+import { decimal } from '../lib/formatters';
+
+const keywords = getTrackedKeywords();
+const groups = getKeywordGroups();
+const dist = getRankDistribution();
+
+// Order groups for the filter chips.
+const groupOrder = [
+  'brand', 'calculator', 'product', 'phoenix_local', 'utah_local', 'high_intent',
+  'gap_install_howto', 'gap_infill', 'gap_pet_turf', 'gap_lifespan_roi',
+  'gap_putting_green', 'gap_playground', 'gap_commercial', 'gap_az_cities',
+];
+const orderedGroups = groupOrder.filter((g) => groups.includes(g));
+
+// Build table rows with change coloring.
+function changeCell(cur: number | null, prev: number | null): { html: string; sort: number } {
+  if (cur === null || prev === null) {
+    return { html: '<span class="text-ink-faint">—</span>', sort: 9999 };
+  }
+  // Position: lower is better, so improvement = prev - cur > 0.
+  const diff = prev - cur;
+  if (Math.abs(diff) < 0.05) return { html: '<span class="text-ink-faint">0</span>', sort: 0 };
+  const good = diff > 0;
+  const cls = good ? 'text-brand-green' : 'text-brand-terra';
+  const arrow = good ? '▲' : '▼';
+  return { html: `<span class="${cls} font-semibold">${arrow} ${Math.abs(diff).toFixed(1)}</span>`, sort: -diff };
+}
+
+const rows = keywords.map((k) => {
+  const posHtml = k.position === null ? '<span class="text-ink-faint">—</span>' : decimal(k.position);
+  const prevHtml = k.prev_position === null ? '<span class="text-ink-faint">—</span>' : decimal(k.prev_position);
+  const urlHtml = k.url
+    ? `<a href="${k.url}" class="text-brand-green hover:underline text-xs" target="_blank" rel="noopener">${k.url.replace('https://theturfyard.com', '')}</a>`
+    : '<span class="text-ink-faint">—</span>';
+  return {
+    group: k.group_name,
+    cells: [
+      { html: `<span class="font-medium">${k.keyword}</span>`, sort: k.keyword },
+      { html: `<span class="text-xs text-ink-muted">${groupLabel(k.group_name)}</span>`, sort: k.group_name },
+      { html: `<span class="inline-flex items-center justify-center h-5 w-5 rounded text-[11px] font-semibold ${k.priority === 1 ? 'bg-brand-green-pale text-brand-green' : 'bg-border-faint text-ink-muted'}">${k.priority}</span>`, sort: k.priority },
+      { html: posHtml, sort: k.position ?? 9999 },
+      { html: prevHtml, sort: k.prev_position ?? 9999 },
+      changeCell(k.position, k.prev_position),
+      { html: urlHtml, sort: k.url ?? '' },
+    ],
+  };
+});
+---
+
+<Layout title="Keywords" active="keywords">
+  <Section
+    eyebrow="Keyword tracking"
+    title="Tracked keywords"
+    subtitle={`${keywords.length} keywords tracked weekly via DataForSEO. Filter by group, click headers to sort.`}
+  />
+
+  <!-- Filter chips -->
+  <div class="flex flex-wrap gap-2 mb-5" id="filter-chips">
+    <button class="chip chip-active" data-group="all">All <span class="opacity-60">({keywords.length})</span></button>
+    {orderedGroups.map((g) => {
+      const count = keywords.filter((k) => k.group_name === g).length;
+      return (
+        <button class="chip" data-group={g}>{groupLabel(g)} <span class="opacity-60">({count})</span></button>
+      );
+    })}
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+    <div class="lg:col-span-2">
+      <DataTable
+        id="kw-table"
+        initialSort={3}
+        initialDir="asc"
+        columns={[
+          { key: 'kw', label: 'Keyword', align: 'left', sortType: 'text' },
+          { key: 'grp', label: 'Group', align: 'left', sortType: 'text' },
+          { key: 'pri', label: 'Pri', align: 'center', sortType: 'number' },
+          { key: 'cur', label: 'Pos', align: 'right', sortType: 'number' },
+          { key: 'prev', label: 'Last wk', align: 'right', sortType: 'number' },
+          { key: 'chg', label: 'Change', align: 'right', sortType: 'number' },
+          { key: 'url', label: 'URL', align: 'left', sortType: 'text' },
+        ]}
+        rows={rows.map((r) => r.cells)}
+      />
+    </div>
+    <div>
+      <div class="card p-5">
+        <Section eyebrow="Distribution" title="Rank buckets" />
+        <DonutChart
+          id="kw-donut"
+          labels={dist.map((b) => `Pos ${b.label}`)}
+          data={dist.map((b) => b.count)}
+          colors={['#2F6B3A', '#6FA86B', '#C9A271', '#D19900', '#A84B2F']}
+          height={260}
+        />
+        <p class="mt-3 text-xs text-ink-faint">
+          Keywords without a recorded baseline position are shown as “—” until the first DataForSEO pull.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .chip {
+    @apply px-3 py-1.5 rounded-full text-xs font-medium border border-border-soft bg-surface text-ink-muted transition-colors cursor-pointer;
+  }
+  .chip:hover { @apply border-brand-green-light text-ink; }
+  .chip-active { @apply bg-brand-green text-white border-brand-green; }
+</style>
+
+<script>
+  // Client-side filter chips: toggle row visibility by group.
+  const chips = document.querySelectorAll<HTMLButtonElement>('#filter-chips .chip');
+  const table = document.getElementById('kw-table') as HTMLTableElement;
+  const rows = Array.from(table.querySelectorAll('tbody tr'));
+
+  // The Group label lives in the 2nd column's data-sort (group_name).
+  function applyFilter(group: string) {
+    rows.forEach((row) => {
+      const grp = row.children[1]?.getAttribute('data-sort') ?? '';
+      (row as HTMLElement).style.display = group === 'all' || grp === group ? '' : 'none';
+    });
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      chips.forEach((c) => c.classList.remove('chip-active'));
+      chip.classList.add('chip-active');
+      applyFilter(chip.dataset.group ?? 'all');
+    });
+  });
+</script>

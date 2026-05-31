@@ -1,0 +1,25 @@
+---
+/**
+ * Logo.astro — The Turf Yard wordmark.
+ * Three green turf-blade rects + "THE TURF YARD" wordmark.
+ * "THE" in muted ink, "TURF" and "YARD" in brand-green bold.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className = '' } = Astro.props;
+---
+
+<div class={`flex items-center gap-2.5 ${className}`}>
+  <!-- Three turf blades of varying height -->
+  <svg width="26" height="28" viewBox="0 0 26 28" fill="none" aria-hidden="true">
+    <rect x="2" y="10" width="6" height="18" rx="2" fill="#6FA86B" />
+    <rect x="10" y="3" width="6" height="25" rx="2" fill="#2F6B3A" />
+    <rect x="18" y="13" width="6" height="15" rx="2" fill="#C9A271" />
+  </svg>
+  <span class="font-heading font-bold tracking-tight text-[15px] leading-none">
+    <span class="text-ink-muted">THE</span>
+    <span class="text-brand-green">TURF</span>
+    <span class="text-brand-green">YARD</span>
+  </span>
+</div>

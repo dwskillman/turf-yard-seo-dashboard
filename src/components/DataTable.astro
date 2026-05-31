@@ -1,0 +1,134 @@
+---
+/**
+ * DataTable.astro — sortable, brand-styled table.
+ *
+ * Columns define key, label, alignment and an optional `sortType`
+ * ('number' | 'text'). Rows are arrays of cell descriptors where each cell
+ * has `html` (rendered markup) and `sort` (the raw sortable value).
+ *
+ * Sorting is handled client-side by a small script keyed on data attributes.
+ */
+export interface Column {
+  key: string;
+  label: string;
+  align?: 'left' | 'right' | 'center';
+  sortType?: 'number' | 'text';
+}
+export interface Cell {
+  html: string;
+  sort?: string | number;
+}
+interface Props {
+  id: string;
+  columns: Column[];
+  rows: Cell[][];
+  initialSort?: number; // column index
+  initialDir?: 'asc' | 'desc';
+}
+const { id, columns, rows, initialSort, initialDir = 'asc' } = Astro.props;
+---
+
+<div class="card overflow-hidden">
+  <div class="overflow-x-auto">
+    <table id={id} class="w-full border-collapse" data-init-sort={initialSort ?? ''} data-init-dir={initialDir}>
+      <thead>
+        <tr class="bg-brand-green-soft/60 border-b border-border-faint">
+          {columns.map((c, i) => (
+            <th
+              class={`table-cell font-heading font-semibold text-[11px] uppercase tracking-wider text-ink-muted select-none cursor-pointer whitespace-nowrap ${
+                c.align === 'right' ? 'text-right' : c.align === 'center' ? 'text-center' : 'text-left'
+              }`}
+              data-col={i}
+              data-sort-type={c.sortType ?? 'text'}
+            >
+              <span class="inline-flex items-center gap-1">
+                {c.label}
+                <span class="sort-arrow text-ink-faint opacity-0">↕</span>
+              </span>
+            </th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr class="border-b border-border-faint/70 last:border-0 hover:bg-brand-green-soft/30 transition-colors">
+            {row.map((cell, i) => (
+              <td
+                class={`table-cell text-ink ${columns[i]?.align === 'right' ? 'text-right tabular-nums' : columns[i]?.align === 'center' ? 'text-center' : 'text-left'}`}
+                data-sort={String(cell.sort ?? '')}
+                set:html={cell.html}
+              />
+            ))}
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+  function initTable(table: HTMLTableElement) {
+    const tbody = table.querySelector('tbody')!;
+    const headers = Array.from(table.querySelectorAll<HTMLTableCellElement>('th[data-col]'));
+
+    let sortCol = -1;
+    let sortDir: 'asc' | 'desc' = 'asc';
+
+    function sortBy(col: number, type: string, dir: 'asc' | 'desc') {
+      const rows = Array.from(tbody.querySelectorAll('tr'));
+      rows.sort((a, b) => {
+        const av = a.children[col]?.getAttribute('data-sort') ?? '';
+        const bv = b.children[col]?.getAttribute('data-sort') ?? '';
+        let cmp: number;
+        if (type === 'number') {
+          const an = parseFloat(av);
+          const bn = parseFloat(bv);
+          const aa = Number.isNaN(an) ? Infinity : an;
+          const bb = Number.isNaN(bn) ? Infinity : bn;
+          cmp = aa - bb;
+        } else {
+          cmp = av.localeCompare(bv);
+        }
+        return dir === 'asc' ? cmp : -cmp;
+      });
+      rows.forEach((r) => tbody.appendChild(r));
+
+      headers.forEach((h) => {
+        const arrow = h.querySelector('.sort-arrow')!;
+        if (Number(h.dataset.col) === col) {
+          arrow.textContent = dir === 'asc' ? '▲' : '▼';
+          arrow.classList.remove('opacity-0');
+        } else {
+          arrow.textContent = '↕';
+          arrow.classList.add('opacity-0');
+        }
+      });
+    }
+
+    headers.forEach((h) => {
+      h.addEventListener('click', () => {
+        const col = Number(h.dataset.col);
+        const type = h.dataset.sortType ?? 'text';
+        if (sortCol === col) {
+          sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          sortCol = col;
+          sortDir = type === 'number' ? 'desc' : 'asc';
+        }
+        sortBy(col, type, sortDir);
+      });
+    });
+
+    // Apply initial sort if specified.
+    const initCol = table.dataset.initSort;
+    if (initCol !== '' && initCol !== undefined) {
+      const col = Number(initCol);
+      const type = headers[col]?.dataset.sortType ?? 'text';
+      sortCol = col;
+      sortDir = (table.dataset.initDir as 'asc' | 'desc') || 'asc';
+      sortBy(col, type, sortDir);
+    }
+  }
+
+  document.querySelectorAll<HTMLTableElement>('table[data-init-dir]').forEach(initTable);
+</script>

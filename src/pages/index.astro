@@ -1,0 +1,209 @@
+---
+/**
+ * index.astro — main overview dashboard.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import KpiCard from '../components/KpiCard.astro';
+import LineChart from '../components/LineChart.astro';
+import BarChart from '../components/BarChart.astro';
+import DataTable from '../components/DataTable.astro';
+import RedesignBanner from '../components/RedesignBanner.astro';
+import { REDESIGN_DATE } from '../lib/constants';
+import {
+  getDailyGsc,
+  getDailyGa4,
+  getWeeklyQueries,
+  getWeeklyPages,
+  getRankDistribution,
+  getRedesignImpact,
+  latestWeek,
+} from '../lib/db';
+import { daysSince, formatDateShort } from '../lib/dates';
+import { compact, num, decimal, delta } from '../lib/formatters';
+
+const gsc = getDailyGsc(60);
+const ga4 = getDailyGa4(60);
+const queries = getWeeklyQueries(undefined, 10);
+const pages = getWeeklyPages(undefined, 10);
+const dist = getRankDistribution();
+const impact = getRedesignImpact(REDESIGN_DATE);
+const days = daysSince(REDESIGN_DATE);
+
+// Baseline per-day averages (pre-redesign) for the hero comparison.
+const clicksKpi = impact.kpis.find((k) => k.key === 'organic_clicks')!;
+const sessionsKpi = impact.kpis.find((k) => k.key === 'organic_sessions')!;
+const positionKpi = impact.kpis.find((k) => k.key === 'avg_position')!;
+
+// "This week" estimates: last 7 days of seeded daily data (baseline tail),
+// since no post-redesign data exists yet. We surface the baseline weekly avg.
+const last7Gsc = gsc.slice(-7);
+const last7Ga4 = ga4.slice(-7);
+const clicksThisWeek = last7Gsc.reduce((s, r) => s + r.clicks, 0);
+const sessionsThisWeek = last7Ga4.reduce((s, r) => s + r.sessions, 0);
+const avgPosThisWeek =
+  last7Gsc.length > 0 ? last7Gsc.reduce((s, r) => s + r.position, 0) / last7Gsc.length : 0;
+
+const baselineWeeklyClicks = clicksKpi.baseline;
+const baselineWeeklySessions = sessionsKpi.baseline;
+const baselinePosition = positionKpi.baseline;
+
+const postReady = days >= 7;
+
+// Chart labels
+const gscLabels = gsc.map((r) => formatDateShort(r.date));
+const ga4Labels = ga4.map((r) => formatDateShort(r.date));
+
+// Table rows
+const queryRows = queries.map((q) => [
+  { html: `<span class="font-medium">${q.query}</span>`, sort: q.query },
+  { html: num(q.clicks), sort: q.clicks },
+  { html: num(q.impressions), sort: q.impressions },
+  { html: decimal(q.position), sort: q.position },
+]);
+const pageRows = pages.map((p) => [
+  { html: `<span class="font-medium text-brand-green">${p.page}</span>`, sort: p.page },
+  { html: num(p.clicks), sort: p.clicks },
+  { html: num(p.impressions), sort: p.impressions },
+  { html: decimal(p.position), sort: p.position },
+]);
+---
+
+<Layout title="Overview" active="overview">
+  <!-- Hero KPI strip -->
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+    <KpiCard
+      title="Days since redesign"
+      value={String(days)}
+      sublabel={`Launched ${REDESIGN_DATE}`}
+      accent={true}
+    />
+    <KpiCard
+      title="Clicks this week"
+      value={num(clicksThisWeek)}
+      delta={postReady ? delta(((clicksThisWeek - baselineWeeklyClicks) / baselineWeeklyClicks) * 100) : null}
+      sublabel={`Baseline avg ${num(baselineWeeklyClicks)}/wk`}
+    />
+    <KpiCard
+      title="Sessions this week"
+      value={num(sessionsThisWeek)}
+      delta={postReady ? delta(((sessionsThisWeek - baselineWeeklySessions) / baselineWeeklySessions) * 100) : null}
+      sublabel={`Baseline avg ${num(baselineWeeklySessions)}/wk`}
+    />
+    <KpiCard
+      title="Avg position"
+      value={decimal(avgPosThisWeek)}
+      delta={postReady ? delta(((avgPosThisWeek - baselinePosition) / baselinePosition) * 100, true) : null}
+      sublabel={`Baseline ${decimal(baselinePosition)}`}
+    />
+  </div>
+
+  <!-- Redesign banner -->
+  <div class="mb-6">
+    <RedesignBanner redesignDate={REDESIGN_DATE} />
+  </div>
+
+  <!-- Redesign impact card -->
+  <div class="card p-5 mb-6">
+    <Section
+      eyebrow="Redesign tracker"
+      title="Pre vs Post redesign"
+      subtitle="4-week pre-redesign average compared with the rolling post-redesign window."
+    />
+    {postReady ? (
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {[clicksKpi, sessionsKpi, positionKpi].map((k) => (
+          <div class="rounded-lg border border-border-faint p-4">
+            <p class="text-[11px] uppercase tracking-wider text-ink-muted font-heading font-semibold">{k.label}</p>
+            <div class="flex items-baseline gap-3 mt-2">
+              <span class="text-ink-faint text-sm">{k.unit === 'position' ? decimal(k.baseline) : num(k.baseline)}</span>
+              <span class="text-ink-faint">→</span>
+              <span class="font-heading font-bold text-xl text-ink">
+                {k.current === null ? '—' : k.unit === 'position' ? decimal(k.current) : num(k.current)}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="rounded-lg bg-brand-green-soft/60 border border-brand-green-pale p-5 flex items-center gap-3">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F6B3A" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
+        <div>
+          <p class="font-heading font-semibold text-ink">Data accumulating</p>
+          <p class="text-sm text-ink-muted">Only {days} day{days === 1 ? '' : 's'} of post-redesign data so far. Comparison unlocks at 7 days. Baseline 4-week averages are shown below for reference.</p>
+        </div>
+      </div>
+    )}
+  </div>
+
+  <!-- Trend charts -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <div class="card p-5">
+      <Section eyebrow="Search Console" title="GSC performance" subtitle="Clicks and impressions, last 60 days" />
+      <LineChart
+        id="gsc-trend"
+        labels={gscLabels}
+        dualAxis={true}
+        datasets={[
+          { label: 'Clicks', data: gsc.map((r) => r.clicks), color: '#2F6B3A', fill: true },
+          { label: 'Impressions', data: gsc.map((r) => r.impressions), color: '#C9A271', yAxisID: 'y1' },
+        ]}
+      />
+    </div>
+    <div class="card p-5">
+      <Section eyebrow="Analytics" title="GA4 sessions" subtitle="Sessions, last 60 days" />
+      <LineChart
+        id="ga4-trend"
+        labels={ga4Labels}
+        datasets={[{ label: 'Sessions', data: ga4.map((r) => r.sessions), color: '#6FA86B', fill: true }]}
+      />
+    </div>
+  </div>
+
+  <!-- Rank distribution -->
+  <div class="card p-5 mb-6">
+    <Section eyebrow="Keyword tracking" title="Tracked keyword rank distribution" subtitle={`${dist.reduce((s, b) => s + b.count, 0)} keywords with a recorded position`} />
+    <BarChart
+      id="rank-dist"
+      labels={dist.map((b) => `Pos ${b.label}`)}
+      data={dist.map((b) => b.count)}
+      colors={['#2F6B3A', '#6FA86B', '#C9A271', '#D19900', '#A84B2F']}
+      label="Keywords"
+      height={220}
+    />
+  </div>
+
+  <!-- Tables -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div>
+      <Section eyebrow="This week" title="Top 10 keywords" subtitle="By clicks (baseline 28-day window)" />
+      <DataTable
+        id="top-keywords"
+        initialSort={1}
+        initialDir="desc"
+        columns={[
+          { key: 'q', label: 'Query', align: 'left', sortType: 'text' },
+          { key: 'c', label: 'Clicks', align: 'right', sortType: 'number' },
+          { key: 'i', label: 'Impr.', align: 'right', sortType: 'number' },
+          { key: 'p', label: 'Pos.', align: 'right', sortType: 'number' },
+        ]}
+        rows={queryRows}
+      />
+    </div>
+    <div>
+      <Section eyebrow="This week" title="Top 10 pages" subtitle="By clicks (baseline 28-day window)" />
+      <DataTable
+        id="top-pages"
+        initialSort={1}
+        initialDir="desc"
+        columns={[
+          { key: 'pg', label: 'Page', align: 'left', sortType: 'text' },
+          { key: 'c', label: 'Clicks', align: 'right', sortType: 'number' },
+          { key: 'i', label: 'Impr.', align: 'right', sortType: 'number' },
+          { key: 'p', label: 'Pos.', align: 'right', sortType: 'number' },
+        ]}
+        rows={pageRows}
+      />
+    </div>
+  </div>
+</Layout>

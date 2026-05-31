@@ -1,0 +1,36 @@
+---
+/**
+ * KpiCard.astro — headline metric card with value + delta + sub-label.
+ */
+import type { Delta } from '../lib/formatters';
+
+interface Props {
+  title: string;
+  value: string;
+  delta?: Delta | null;
+  sublabel?: string;
+  accent?: boolean;
+}
+const { title, value, delta = null, sublabel, accent = false } = Astro.props;
+
+const deltaColor = delta
+  ? delta.positive
+    ? 'text-brand-green'
+    : delta.direction === 'flat'
+      ? 'text-ink-faint'
+      : 'text-brand-terra'
+  : 'text-ink-faint';
+---
+
+<div class={`card p-4 flex flex-col gap-2 ${accent ? 'ring-1 ring-brand-green/15 bg-brand-green-soft/40' : ''}`}>
+  <p class="text-[11px] font-heading font-semibold uppercase tracking-[0.1em] text-ink-muted">{title}</p>
+  <div class="flex items-end justify-between gap-2">
+    <span class="font-heading font-bold text-[26px] leading-none text-ink tabular-nums">{value}</span>
+    {delta && (
+      <span class={`inline-flex items-center gap-1 text-xs font-semibold tabular-nums ${deltaColor}`}>
+        <span aria-hidden="true">{delta.arrow}</span>{delta.text}
+      </span>
+    )}
+  </div>
+  {sublabel && <p class="text-xs text-ink-faint">{sublabel}</p>}
+</div>

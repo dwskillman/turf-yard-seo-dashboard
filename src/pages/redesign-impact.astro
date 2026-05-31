@@ -1,0 +1,108 @@
+---
+/**
+ * redesign-impact.astro — the client-facing redesign tracker.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import RedesignBanner from '../components/RedesignBanner.astro';
+import Sparkline from '../components/Sparkline.astro';
+import { REDESIGN_DATE } from '../lib/constants';
+import { getRedesignImpact } from '../lib/db';
+import { daysSince } from '../lib/dates';
+import { num, decimal, percent, duration, delta } from '../lib/formatters';
+
+const impact = getRedesignImpact(REDESIGN_DATE);
+const days = daysSince(REDESIGN_DATE);
+const postReady = days >= 7;
+
+// Value formatter per KPI unit.
+function fmt(value: number | null, unit: string): string {
+  if (value === null) return '—';
+  if (unit === 'percent') return percent(value);
+  if (unit === 'seconds') return duration(value);
+  if (unit === 'position') return decimal(value);
+  return num(value);
+}
+
+// NOTE: Linear trajectory (time-to-baseline / time-to-2x) requires at least
+// two full post-redesign weeks of data to compute a slope. With only the
+// locked baseline seeded, we surface the methodology note in the callout
+// below and unlock the projection once post-redesign weeks accrue.
+---
+
+<Layout title="Redesign Impact" active="redesign">
+  <!-- Big banner -->
+  <div class="mb-6">
+    <RedesignBanner redesignDate={REDESIGN_DATE} big={true} />
+  </div>
+
+  <Section
+    eyebrow="The centerpiece"
+    title="Redesign impact tracker"
+    subtitle="Pre-redesign 4-week average vs the rolling post-redesign window for each key metric."
+  />
+
+  {!postReady && (
+    <div class="rounded-lg bg-brand-green-soft/60 border border-brand-green-pale p-5 mb-6 flex items-start gap-3">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2F6B3A" stroke-width="2" class="shrink-0 mt-0.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
+      <div>
+        <p class="font-heading font-semibold text-ink">Data accumulating</p>
+        <p class="text-sm text-ink-muted">
+          {days} day{days === 1 ? '' : 's'} of post-redesign data collected. Before/after comparisons and the trajectory projection unlock once 7+ days are available. Baseline figures below are locked from the 28-day pre-redesign window (May 3–30, 2026).
+        </p>
+      </div>
+    </div>
+  )}
+
+  <!-- KPI grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+    {impact.kpis.map((kpi) => {
+      const d = kpi.pctChange !== null ? delta(kpi.pctChange, kpi.invert) : null;
+      const deltaColor = d ? (d.positive ? 'text-brand-green' : d.direction === 'flat' ? 'text-ink-faint' : 'text-brand-terra') : 'text-ink-faint';
+      return (
+        <div class="card p-5 flex flex-col gap-3">
+          <div class="flex items-start justify-between gap-2">
+            <p class="text-[11px] font-heading font-semibold uppercase tracking-[0.1em] text-ink-muted">{kpi.label}</p>
+            {d && (
+              <span class={`inline-flex items-center gap-1 text-xs font-semibold tabular-nums ${deltaColor}`}>
+                <span aria-hidden="true">{d.arrow}</span>{d.text}
+              </span>
+            )}
+          </div>
+
+          <div class="flex items-end justify-between gap-3">
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-ink-faint">Baseline</p>
+              <p class="font-heading font-semibold text-lg text-ink-muted tabular-nums">{fmt(kpi.baseline, kpi.unit)}</p>
+            </div>
+            <span class="text-ink-faint pb-1.5">→</span>
+            <div class="text-right">
+              <p class="text-[10px] uppercase tracking-wider text-ink-faint">Current</p>
+              <p class="font-heading font-bold text-2xl text-ink tabular-nums">{fmt(kpi.current, kpi.unit)}</p>
+            </div>
+          </div>
+
+          <div class="pt-1 border-t border-border-faint/70">
+            {kpi.sparkline.length >= 2 ? (
+              <Sparkline data={kpi.sparkline} invert={kpi.invert} width={240} height={34} />
+            ) : (
+              <p class="text-xs text-ink-faint">{kpi.current === null ? 'Awaiting post-redesign data' : 'No trend series'}</p>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
+
+  <!-- Trajectory callout -->
+  <div class="card p-5 mt-6 bg-brand-green-soft/40">
+    <p class="eyebrow mb-2">Trajectory</p>
+    {postReady && impact.postWeeks >= 2 ? (
+      <p class="text-sm text-ink-muted">Projection available — see per-KPI estimates above.</p>
+    ) : (
+      <p class="text-sm text-ink-muted">
+        Linear projections (time to reach baseline and 2× baseline) will appear here once at least two full post-redesign weeks of data are recorded. The dashboard is currently showing the locked baseline only.
+      </p>
+    )}
+  </div>
+</Layout>

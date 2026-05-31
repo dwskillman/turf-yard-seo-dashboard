@@ -1,0 +1,18 @@
+---
+/**
+ * Section.astro — section header: eyebrow + title + optional sub-title.
+ */
+interface Props {
+  eyebrow?: string;
+  title: string;
+  subtitle?: string;
+  class?: string;
+}
+const { eyebrow, title, subtitle, class: className = '' } = Astro.props;
+---
+
+<div class={`mb-4 ${className}`}>
+  {eyebrow && <p class="eyebrow mb-1">{eyebrow}</p>}
+  <h2 class="font-heading font-semibold text-xl text-ink leading-tight">{title}</h2>
+  {subtitle && <p class="mt-1 text-sm text-ink-muted">{subtitle}</p>}
+</div>

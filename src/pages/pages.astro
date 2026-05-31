@@ -1,0 +1,107 @@
+---
+/**
+ * pages.astro — combined per-page GSC + GA4 performance.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import DataTable from '../components/DataTable.astro';
+import { getDb, getWeeklyPages, latestWeek, type Ga4Landing } from '../lib/db';
+import { num, decimal, percent } from '../lib/formatters';
+
+const week = latestWeek('gsc_page_weekly');
+const gscPages = getWeeklyPages(week, 50);
+
+// Pull GA4 landing rows for the same week and index by normalized path.
+const db = getDb();
+const ga4Week = latestWeek('ga4_landing_weekly');
+const landings = db
+  .prepare('SELECT * FROM ga4_landing_weekly WHERE week_start = ?')
+  .all(ga4Week) as Ga4Landing[];
+
+// Normalize path: strip trailing slash for matching.
+const norm = (p: string) => (p !== '/' ? p.replace(/\/$/, '') : '/');
+const ga4Map = new Map<string, Ga4Landing>();
+for (const l of landings) ga4Map.set(norm(l.landing_page), l);
+
+// Build combined rows.
+const combined = gscPages.map((g) => {
+  const ga = ga4Map.get(norm(g.page));
+  const engagementRate = ga && ga.sessions > 0 ? ga.engaged_sessions / ga.sessions : null;
+  return {
+    page: g.page,
+    clicks: g.clicks,
+    impressions: g.impressions,
+    position: g.position,
+    sessions: ga?.sessions ?? null,
+    engagementRate,
+  };
+});
+
+// Top movers — by clicks (proxy for "gain") and lowest performers (loss watch).
+const sortedByClicks = [...combined].sort((a, b) => b.clicks - a.clicks);
+const topGainers = sortedByClicks.slice(0, 3);
+// "Loss watch" = pages with weakest average position among the tracked set.
+const lossWatch = [...combined]
+  .filter((c) => c.position > 0)
+  .sort((a, b) => b.position - a.position)
+  .slice(0, 3);
+
+const rows = combined.map((c) => [
+  { html: `<span class="font-medium text-brand-green text-xs">${c.page}</span>`, sort: c.page },
+  { html: num(c.clicks), sort: c.clicks },
+  { html: num(c.impressions), sort: c.impressions },
+  { html: c.sessions === null ? '<span class="text-ink-faint">—</span>' : num(c.sessions), sort: c.sessions ?? -1 },
+  { html: c.engagementRate === null ? '<span class="text-ink-faint">—</span>' : percent(c.engagementRate), sort: c.engagementRate ?? -1 },
+  { html: decimal(c.position), sort: c.position },
+]);
+---
+
+<Layout title="Pages" active="pages">
+  <Section
+    eyebrow="Page performance"
+    title="GSC + GA4 by page"
+    subtitle="Search Console clicks/impressions/position joined with GA4 sessions and engagement (baseline 28-day window). Week-over-week deltas populate once post-redesign weeks accrue."
+  />
+
+  <!-- Top movers cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div class="card p-5">
+      <p class="eyebrow mb-3">Top performers · clicks</p>
+      <ul class="space-y-2.5">
+        {topGainers.map((c) => (
+          <li class="flex items-center justify-between gap-3">
+            <span class="text-sm text-ink truncate">{c.page}</span>
+            <span class="text-sm font-semibold text-brand-green tabular-nums shrink-0">{num(c.clicks)} clicks</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class="card p-5">
+      <p class="eyebrow mb-3" style="color:#A84B2F">Loss watch · weakest position</p>
+      <ul class="space-y-2.5">
+        {lossWatch.map((c) => (
+          <li class="flex items-center justify-between gap-3">
+            <span class="text-sm text-ink truncate">{c.page}</span>
+            <span class="text-sm font-semibold text-brand-terra tabular-nums shrink-0">pos {decimal(c.position)}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <Section title="All pages" />
+  <DataTable
+    id="pages-table"
+    initialSort={1}
+    initialDir="desc"
+    columns={[
+      { key: 'pg', label: 'Page', align: 'left', sortType: 'text' },
+      { key: 'c', label: 'Clicks', align: 'right', sortType: 'number' },
+      { key: 'i', label: 'Impressions', align: 'right', sortType: 'number' },
+      { key: 's', label: 'Sessions', align: 'right', sortType: 'number' },
+      { key: 'er', label: 'Engagement', align: 'right', sortType: 'number' },
+      { key: 'p', label: 'Avg pos', align: 'right', sortType: 'number' },
+    ]}
+    rows={rows}
+  />
+</Layout>

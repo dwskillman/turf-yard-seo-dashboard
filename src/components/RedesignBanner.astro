@@ -1,0 +1,38 @@
+---
+/**
+ * RedesignBanner.astro — banner showing the redesign launch date + days elapsed.
+ */
+import { daysSince, formatDate } from '../lib/dates';
+
+interface Props {
+  redesignDate: string;
+  big?: boolean;
+}
+const { redesignDate, big = false } = Astro.props;
+const days = daysSince(redesignDate);
+const launched = days >= 0;
+const label = launched ? 'Days since redesign launch' : 'Days until redesign launch';
+const value = Math.abs(days);
+---
+
+<div class="card bg-brand-green text-white overflow-hidden relative">
+  <!-- decorative turf blades -->
+  <svg class="absolute right-4 bottom-0 opacity-15" width="160" height="90" viewBox="0 0 160 90" fill="none" aria-hidden="true">
+    <rect x="10" y="40" width="14" height="50" rx="4" fill="#FFFFFF" />
+    <rect x="34" y="20" width="14" height="70" rx="4" fill="#FFFFFF" />
+    <rect x="58" y="50" width="14" height="40" rx="4" fill="#FFFFFF" />
+    <rect x="82" y="10" width="14" height="80" rx="4" fill="#FFFFFF" />
+    <rect x="106" y="35" width="14" height="55" rx="4" fill="#FFFFFF" />
+    <rect x="130" y="22" width="14" height="68" rx="4" fill="#FFFFFF" />
+  </svg>
+  <div class="relative px-5 md:px-7 py-5 md:py-6">
+    <p class="text-[11px] font-heading font-semibold uppercase tracking-[0.16em] text-brand-green-pale">{label}</p>
+    <div class="flex items-end gap-3 mt-1">
+      <span class={`font-heading font-bold leading-none tabular-nums ${big ? 'text-6xl md:text-7xl' : 'text-5xl'}`}>{value}</span>
+      <span class="text-brand-green-pale text-sm mb-1.5">{value === 1 ? 'day' : 'days'}</span>
+    </div>
+    <p class="mt-2 text-sm text-brand-green-pale">
+      Redesign launched <span class="font-semibold text-white">{formatDate(redesignDate)}</span> · baseline locked the day before
+    </p>
+  </div>
+</div>

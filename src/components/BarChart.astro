@@ -1,0 +1,86 @@
+---
+/**
+ * BarChart.astro — Chart.js bar chart island (vertical or horizontal).
+ */
+interface Props {
+  id: string;
+  labels: string[];
+  data: number[];
+  colors?: string[];
+  color?: string;
+  height?: number;
+  horizontal?: boolean;
+  label?: string;
+}
+const {
+  id,
+  labels,
+  data,
+  colors,
+  color = '#2F6B3A',
+  height = 260,
+  horizontal = false,
+  label = '',
+} = Astro.props;
+const payload = JSON.stringify({ labels, data, colors, color, horizontal, label });
+---
+
+<div class="relative w-full" style={`height:${height}px`}>
+  <canvas id={id} data-barchart={payload}></canvas>
+</div>
+
+<script>
+  import Chart from 'chart.js/auto';
+
+  document.querySelectorAll<HTMLCanvasElement>('canvas[data-barchart]').forEach((canvas) => {
+    if (canvas.dataset.rendered) return;
+    canvas.dataset.rendered = '1';
+    const cfg = JSON.parse(canvas.dataset.barchart!);
+    const ctx = canvas.getContext('2d')!;
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: cfg.labels,
+        datasets: [
+          {
+            label: cfg.label || 'Value',
+            data: cfg.data,
+            backgroundColor: cfg.colors ?? cfg.color,
+            borderRadius: 6,
+            borderSkipped: false,
+            maxBarThickness: 56,
+          },
+        ],
+      },
+      options: {
+        indexAxis: cfg.horizontal ? 'y' : 'x',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#1E2A1F',
+            titleColor: '#FBFAF5',
+            bodyColor: '#D8E6CF',
+            padding: 10,
+            cornerRadius: 8,
+          },
+        },
+        scales: {
+          x: {
+            grid: { display: cfg.horizontal, color: '#E8E5DD' },
+            ticks: { color: '#8E978D', font: { size: 10 } },
+            border: { color: '#E8E5DD' },
+          },
+          y: {
+            grid: { display: !cfg.horizontal, color: '#E8E5DD' },
+            ticks: { color: '#5F6B5F', font: { size: 11 } },
+            border: { display: false },
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  });
+</script>

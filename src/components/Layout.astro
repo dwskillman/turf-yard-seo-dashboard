@@ -1,0 +1,91 @@
+---
+/**
+ * Layout.astro — page shell with sidebar nav, header, and footer.
+ */
+import '../styles/global.css';
+import Logo from './Logo.astro';
+
+interface Props {
+  title: string;
+  active?: string;
+}
+const { title, active = '' } = Astro.props;
+
+const nav = [
+  { href: '/', label: 'Overview', key: 'overview', icon: 'M3 12l9-9 9 9M5 10v10h14V10' },
+  { href: '/redesign-impact', label: 'Redesign Impact', key: 'redesign', icon: 'M13 2L3 14h7v8l10-12h-7z' },
+  { href: '/keywords', label: 'Keywords', key: 'keywords', icon: 'M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' },
+  { href: '/pages', label: 'Pages', key: 'pages', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z' },
+  { href: '/competitors', label: 'Competitors', key: 'competitors', icon: 'M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 100-8 4 4 0 000 8z' },
+  { href: '/audit', label: 'Audit', key: 'audit', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} · The Turf Yard SEO</title>
+    <meta name="description" content="SEO performance dashboard for theturfyard.com" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 28'%3E%3Crect x='2' y='10' width='6' height='18' rx='2' fill='%236FA86B'/%3E%3Crect x='10' y='3' width='6' height='25' rx='2' fill='%232F6B3A'/%3E%3Crect x='18' y='13' width='6' height='15' rx='2' fill='%23C9A271'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="hidden md:flex w-60 shrink-0 flex-col border-r border-border-faint bg-surface">
+        <div class="px-5 py-5 border-b border-border-faint">
+          <Logo />
+          <p class="mt-1.5 text-[11px] text-ink-faint font-heading tracking-wide uppercase whitespace-nowrap">SEO&nbsp;Dashboard</p>
+        </div>
+        <nav class="flex-1 px-3 py-4 space-y-1">
+          {nav.map((item) => {
+            const isActive = item.key === active;
+            return (
+              <a
+                href={item.href}
+                class={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'bg-brand-green-soft text-brand-green'
+                    : 'text-ink-muted hover:bg-brand-green-soft/60 hover:text-ink'
+                }`}
+              >
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d={item.icon} />
+                </svg>
+                {item.label}
+              </a>
+            );
+          })}
+        </nav>
+        <div class="px-5 py-4 border-t border-border-faint">
+          <p class="text-[11px] text-ink-faint">theturfyard.com</p>
+          <p class="text-[11px] text-ink-faint">Property · GA4 407057852</p>
+        </div>
+      </aside>
+
+      <!-- Main -->
+      <div class="flex-1 min-w-0 flex flex-col">
+        <header class="sticky top-0 z-10 flex items-center justify-between border-b border-border-faint bg-bg-cream/85 backdrop-blur px-5 md:px-8 py-3.5">
+          <div class="flex items-center gap-3">
+            <div class="md:hidden"><Logo /></div>
+            <h1 class="font-heading font-semibold text-lg text-ink hidden md:block">{title}</h1>
+          </div>
+          <div class="flex items-center gap-2 text-xs text-ink-muted">
+            <span class="inline-flex h-2 w-2 rounded-full bg-brand-green-light"></span>
+            Static build · data/seo.db
+          </div>
+        </header>
+
+        <main class="flex-1 px-5 md:px-8 py-6 max-w-[1280px] w-full mx-auto">
+          <slot />
+        </main>
+
+        <footer class="border-t border-border-faint px-5 md:px-8 py-4 text-xs text-ink-faint flex flex-wrap items-center justify-between gap-2">
+          <span>The Turf Yard · SEO performance dashboard</span>
+          <span>Built with Astro + Tailwind · Charts via Chart.js</span>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

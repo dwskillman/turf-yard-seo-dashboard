@@ -1,0 +1,99 @@
+---
+/**
+ * competitors.astro — competitor tracking (Ahrefs snapshot).
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import BarChart from '../components/BarChart.astro';
+import DataTable from '../components/DataTable.astro';
+import { getCompetitors } from '../lib/db';
+import { num } from '../lib/formatters';
+
+const comps = getCompetitors();
+const self = comps.find((c) => c.domain === 'theturfyard.com');
+const others = comps.filter((c) => c.domain !== 'theturfyard.com');
+
+// Order all domains (self first) for charts.
+const chartDomains = [self, ...others].filter(Boolean) as typeof comps;
+const drData = chartDomains.map((c) => c.dr ?? 0);
+const trafficData = chartDomains.map((c) => c.organic_traffic ?? 0);
+const colors = chartDomains.map((c) => (c.domain === 'theturfyard.com' ? '#2F6B3A' : '#C9A271'));
+const shortName = (d: string) => d.replace('.com', '');
+
+// Overlap table.
+const overlapRows = others.map((c) => [
+  { html: `<span class="font-medium">${c.domain}</span>`, sort: c.domain },
+  { html: String(c.dr ?? '—'), sort: c.dr ?? 0 },
+  { html: num(c.organic_traffic), sort: c.organic_traffic ?? 0 },
+  { html: String(c.common_keywords ?? '—'), sort: c.common_keywords ?? 0 },
+]);
+---
+
+<Layout title="Competitors" active="competitors">
+  <div class="flex items-start justify-between flex-wrap gap-3 mb-4">
+    <Section
+      eyebrow="Competitive landscape"
+      title="Competitor tracking"
+      subtitle="Domain Rating, organic traffic and keyword overlap vs The Turf Yard."
+      class="mb-0"
+    />
+    <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-sand/15 border border-brand-sand/40 px-3 py-1.5 text-xs font-medium text-brand-sand">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round"/></svg>
+      Ahrefs data refreshes monthly on the 15th
+    </span>
+  </div>
+
+  <!-- Self summary -->
+  {self && (
+    <div class="card p-5 mb-6 bg-brand-green-soft/40 ring-1 ring-brand-green/10">
+      <p class="eyebrow mb-2">The Turf Yard · current</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div><p class="text-xs text-ink-muted">Domain Rating</p><p class="font-heading font-bold text-2xl text-brand-green">{self.dr}</p></div>
+        <div><p class="text-xs text-ink-muted">Organic keywords</p><p class="font-heading font-bold text-2xl text-ink">{num(self.organic_keywords)}</p></div>
+        <div><p class="text-xs text-ink-muted">Organic traffic / mo</p><p class="font-heading font-bold text-2xl text-ink">{num(self.organic_traffic)}</p></div>
+        <div><p class="text-xs text-ink-muted">Competitors tracked</p><p class="font-heading font-bold text-2xl text-ink">{others.length}</p></div>
+      </div>
+    </div>
+  )}
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+    <div class="card p-5">
+      <Section eyebrow="Authority" title="Domain Rating comparison" />
+      <BarChart
+        id="dr-chart"
+        labels={chartDomains.map((c) => shortName(c.domain))}
+        data={drData}
+        colors={colors}
+        label="DR"
+        height={280}
+        horizontal={true}
+      />
+    </div>
+    <div class="card p-5">
+      <Section eyebrow="Reach" title="Organic traffic / month" />
+      <BarChart
+        id="traffic-chart"
+        labels={chartDomains.map((c) => shortName(c.domain))}
+        data={trafficData}
+        colors={colors}
+        label="Organic traffic"
+        height={280}
+        horizontal={true}
+      />
+    </div>
+  </div>
+
+  <Section eyebrow="Overlap" title="Keyword overlap" subtitle="Keywords each competitor shares with The Turf Yard." />
+  <DataTable
+    id="overlap-table"
+    initialSort={3}
+    initialDir="desc"
+    columns={[
+      { key: 'd', label: 'Domain', align: 'left', sortType: 'text' },
+      { key: 'dr', label: 'DR', align: 'right', sortType: 'number' },
+      { key: 't', label: 'Organic traffic/mo', align: 'right', sortType: 'number' },
+      { key: 'ck', label: 'Common keywords', align: 'right', sortType: 'number' },
+    ]}
+    rows={overlapRows}
+  />
+</Layout>

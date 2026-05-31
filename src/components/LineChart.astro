@@ -1,0 +1,108 @@
+---
+/**
+ * LineChart.astro — Chart.js line chart island.
+ * Pass labels + one or more datasets. Config is JSON-serialized into a
+ * data attribute and hydrated client-side with chart.js/auto.
+ */
+interface Dataset {
+  label: string;
+  data: (number | null)[];
+  color: string;
+  yAxisID?: string;
+  fill?: boolean;
+}
+interface Props {
+  id: string;
+  labels: string[];
+  datasets: Dataset[];
+  height?: number;
+  dualAxis?: boolean;
+}
+const { id, labels, datasets, height = 260, dualAxis = false } = Astro.props;
+const payload = JSON.stringify({ labels, datasets, dualAxis });
+---
+
+<div class="relative w-full" style={`height:${height}px`}>
+  <canvas id={id} data-chart={payload}></canvas>
+</div>
+
+<script>
+  import Chart from 'chart.js/auto';
+
+  function hexToRgba(hex: string, a: number): string {
+    const h = hex.replace('#', '');
+    const r = parseInt(h.slice(0, 2), 16);
+    const g = parseInt(h.slice(2, 4), 16);
+    const b = parseInt(h.slice(4, 6), 16);
+    return `rgba(${r},${g},${b},${a})`;
+  }
+
+  document.querySelectorAll<HTMLCanvasElement>('canvas[data-chart]').forEach((canvas) => {
+    if (canvas.dataset.rendered) return;
+    canvas.dataset.rendered = '1';
+    const cfg = JSON.parse(canvas.dataset.chart!);
+    const ctx = canvas.getContext('2d')!;
+
+    const datasets = cfg.datasets.map((d: any) => ({
+      label: d.label,
+      data: d.data,
+      borderColor: d.color,
+      backgroundColor: d.fill ? hexToRgba(d.color, 0.12) : 'transparent',
+      fill: !!d.fill,
+      tension: 0.34,
+      borderWidth: 2,
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      pointHoverBackgroundColor: d.color,
+      yAxisID: d.yAxisID ?? 'y',
+    }));
+
+    const scales: any = {
+      x: {
+        grid: { display: false },
+        ticks: { color: '#8E978D', font: { size: 10 }, maxTicksLimit: 8, autoSkip: true },
+        border: { color: '#E8E5DD' },
+      },
+      y: {
+        grid: { color: '#E8E5DD' },
+        ticks: { color: '#8E978D', font: { size: 10 } },
+        border: { display: false },
+      },
+    };
+    if (cfg.dualAxis) {
+      scales.y1 = {
+        position: 'right',
+        grid: { drawOnChartArea: false },
+        ticks: { color: '#8E978D', font: { size: 10 } },
+        border: { display: false },
+      };
+    }
+
+    new Chart(ctx, {
+      type: 'line',
+      data: { labels: cfg.labels, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: {
+          legend: {
+            display: datasets.length > 1,
+            position: 'top',
+            align: 'end',
+            labels: { boxWidth: 10, boxHeight: 10, color: '#5F6B5F', font: { size: 11 }, usePointStyle: true },
+          },
+          tooltip: {
+            backgroundColor: '#1E2A1F',
+            titleColor: '#FBFAF5',
+            bodyColor: '#D8E6CF',
+            padding: 10,
+            cornerRadius: 8,
+            displayColors: true,
+          },
+        },
+        scales,
+      },
+    });
+  });
+</script>

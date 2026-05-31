@@ -1,0 +1,32 @@
+{
+  "name": "turf-yard-seo-dashboard",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static SEO dashboard for theturfyard.com — tracks GSC, GA4, keyword ranks, competitors, audits and the post-redesign impact.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "db:init": "tsx db/init.ts",
+    "db:seed": "tsx scripts/seed_from_baseline.ts",
+    "setup": "npm run db:init && npm run db:seed",
+    "import:latest": "tsx scripts/import_snapshot.ts",
+    "import:snapshot": "tsx scripts/import_snapshot.ts",
+    "weekly": "npm run import:latest && npm run build"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.2",
+    "@fontsource/dm-sans": "^5.1.0",
+    "@fontsource/inter": "^5.1.0",
+    "astro": "^4.16.0",
+    "better-sqlite3": "^11.5.0",
+    "chart.js": "^4.4.6",
+    "tailwindcss": "^3.4.14"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

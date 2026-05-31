@@ -1,0 +1,21 @@
+---
+/**
+ * SeverityBadge.astro — CRITICAL / WARNING / INFO badges.
+ */
+interface Props {
+  severity: string;
+}
+const { severity } = Astro.props;
+const s = severity.toLowerCase();
+
+const styles: Record<string, string> = {
+  critical: 'bg-brand-terra/12 text-brand-terra border-brand-terra/30',
+  warning: 'bg-brand-gold/12 text-brand-gold border-brand-gold/30',
+  info: 'bg-brand-sand/15 text-brand-sand border-brand-sand/40',
+};
+const cls = styles[s] ?? 'bg-border-faint text-ink-muted border-border-soft';
+---
+
+<span class={`inline-flex items-center rounded-md border px-2 py-0.5 text-[10px] font-heading font-bold uppercase tracking-wider ${cls}`}>
+  {severity}
+</span>

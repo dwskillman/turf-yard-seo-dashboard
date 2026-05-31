@@ -1,0 +1,124 @@
+{
+  "_meta": {
+    "description": "Pre-redesign baseline for The Turf Yard. Locked on 2026-05-31 (redesign launched morning of 2026-05-31). Baseline window: 2026-05-03 to 2026-05-30 (28 days = 4 weeks).",
+    "baseline_window_start": "2026-05-03",
+    "baseline_window_end": "2026-05-30",
+    "baseline_days": 28,
+    "redesign_launch_date": "2026-05-31",
+    "locked_at": "2026-05-31T18:55:00-07:00",
+    "site": "theturfyard.com",
+    "ga4_property_id": "407057852",
+    "gsc_property": "sc-domain:theturfyard.com"
+  },
+  "gsc": {
+    "totals_28d": {
+      "clicks": 817,
+      "impressions": 95266,
+      "ctr": 0.00858,
+      "avg_position": 17.21
+    },
+    "daily_averages": {
+      "clicks_per_day": 29.2,
+      "impressions_per_day": 3402,
+      "position": 17.21
+    },
+    "weekly_averages": {
+      "clicks_per_week": 204,
+      "impressions_per_week": 23816
+    },
+    "top_queries_28d": [
+      {"query": "the turf yard", "clicks": 56, "impressions": 157, "position": 1.30},
+      {"query": "turf yard", "clicks": 48, "impressions": 404, "position": 4.52},
+      {"query": "turf yard calculator", "clicks": 38, "impressions": 48, "position": 1.10},
+      {"query": "turf calculator", "clicks": 20, "impressions": 283, "position": 20.26},
+      {"query": "the turf yard calculator", "clicks": 14, "impressions": 15, "position": 1.00},
+      {"query": "turf yard base layer calculator", "clicks": 14, "impressions": 17, "position": 1.12},
+      {"query": "lush 80 turf", "clicks": 13, "impressions": 42, "position": 7.81},
+      {"query": "turfyard", "clicks": 13, "impressions": 22, "position": 3.23},
+      {"query": "turf calculator cost", "clicks": 8, "impressions": 60, "position": 3.65},
+      {"query": "turf cost estimator", "clicks": 8, "impressions": 235, "position": 4.97},
+      {"query": "artificial turf cost calculator", "clicks": 6, "impressions": 605, "position": 6.25},
+      {"query": "turf base calculator", "clicks": 6, "impressions": 20, "position": 4.50},
+      {"query": "artificial turf calculator", "clicks": 5, "impressions": 147, "position": 10.52},
+      {"query": "turf installation cost calculator", "clicks": 5, "impressions": 218, "position": 7.89},
+      {"query": "artificial turf estimate calculator", "clicks": 4, "impressions": 87, "position": 20.93},
+      {"query": "artificial turf near me", "clicks": 4, "impressions": 244, "position": 13.60},
+      {"query": "turf cost calculator", "clicks": 4, "impressions": 108, "position": 6.82},
+      {"query": "artificial grass calculator", "clicks": 3, "impressions": 245, "position": 23.47},
+      {"query": "artificial grass sub base calculator", "clicks": 3, "impressions": 44, "position": 10.43},
+      {"query": "turf calculator square feet", "clicks": 3, "impressions": 57, "position": 5.75},
+      {"query": "turf near me", "clicks": 2, "impressions": 238, "position": 48.66},
+      {"query": "artificial grass phoenix", "clicks": 0, "impressions": 47, "position": 45.8},
+      {"query": "artificial turf", "clicks": 1, "impressions": 496, "position": 12.96},
+      {"query": "artificial grass", "clicks": 1, "impressions": 391, "position": 2.61},
+      {"query": "turf", "clicks": 1, "impressions": 412, "position": 30.94}
+    ],
+    "top_pages_28d": [
+      {"page": "/", "clicks": 211, "impressions": 32688, "position": 17.46},
+      {"page": "/artificial-turf-calculator/", "clicks": 186, "impressions": 8637, "position": 18.06},
+      {"page": "/sub-base-turf-calculator/", "clicks": 144, "impressions": 3166, "position": 10.77},
+      {"page": "/service-areas/utah/provo/", "clicks": 63, "impressions": 7197, "position": 14.72},
+      {"page": "/lush-80-artificial-turf/", "clicks": 40, "impressions": 507, "position": 8.22},
+      {"page": "/the-ultimate-guide-to-choosing-artificial-turf-for-sports-fields/", "clicks": 28, "impressions": 8720, "position": 12.16},
+      {"page": "/understanding-artificial-turf-cooling-technology-and-its-benefits/", "clicks": 25, "impressions": 3033, "position": 11.43},
+      {"page": "/lush-primo-artificial-turf/", "clicks": 14, "impressions": 86, "position": 12.23},
+      {"page": "/service-areas/arizona/gilbert/", "clicks": 13, "impressions": 3015, "position": 15.23},
+      {"page": "/lucky-77-artificial-turf/", "clicks": 10, "impressions": 135, "position": 8.89}
+    ]
+  },
+  "ga4": {
+    "totals_28d": {
+      "sessions": 1985,
+      "totalUsers": 1633,
+      "newUsers": 1289,
+      "engagedSessions": 1108,
+      "screenPageViews": 3958,
+      "conversions": 0,
+      "engagementRate_avg": 0.558,
+      "averageSessionDuration_seconds_avg": 240.5,
+      "bounceRate_avg": 0.442
+    },
+    "daily_averages": {
+      "sessions_per_day": 70.9,
+      "users_per_day": 58.3,
+      "engagement_rate": 0.558
+    },
+    "traffic_sources_28d": [
+      {"channel": "Organic Search", "sessions": 1172, "engagedSessions": 734, "conversions": 0},
+      {"channel": "Direct", "sessions": 543, "engagedSessions": 200, "conversions": 0},
+      {"channel": "Unassigned", "sessions": 148, "engagedSessions": 83, "conversions": 0},
+      {"channel": "Organic Social", "sessions": 58, "engagedSessions": 36, "conversions": 0},
+      {"channel": "Organic Video", "sessions": 47, "engagedSessions": 26, "conversions": 0},
+      {"channel": "Referral", "sessions": 17, "engagedSessions": 10, "conversions": 0}
+    ],
+    "top_landing_pages_28d": [
+      {"landingPage": "/", "sessions": 741, "engagedSessions": 454, "avgDuration": 248.4},
+      {"landingPage": "/artificial-turf-calculator", "sessions": 342, "engagedSessions": 179, "avgDuration": 188.5},
+      {"landingPage": "/sub-base-turf-calculator", "sessions": 163, "engagedSessions": 116, "avgDuration": 190.5},
+      {"landingPage": "/service-areas/utah/provo", "sessions": 82, "engagedSessions": 61, "avgDuration": 193.9},
+      {"landingPage": "/lush-80-artificial-turf", "sessions": 70, "engagedSessions": 45, "avgDuration": 422.1},
+      {"landingPage": "/understanding-artificial-turf-cooling-technology-and-its-benefits", "sessions": 46, "engagedSessions": 16, "avgDuration": 94.7},
+      {"landingPage": "/the-ultimate-guide-to-choosing-artificial-turf-for-sports-fields", "sessions": 40, "engagedSessions": 18, "avgDuration": 64.5},
+      {"landingPage": "/lush-70-artificial-turf", "sessions": 33, "engagedSessions": 11, "avgDuration": 271.9},
+      {"landingPage": "/contact-us", "sessions": 32, "engagedSessions": 12, "avgDuration": 53.2},
+      {"landingPage": "/lush-primo-artificial-turf", "sessions": 26, "engagedSessions": 18, "avgDuration": 206.6}
+    ],
+    "_note": "No GA4 conversions configured. Recommend setting up key events for: form_submit, phone_click, quote_request, calculator_complete."
+  },
+  "ahrefs_snapshot_may_25_2026": {
+    "_note": "Last fetched 2026-05-26. Ahrefs budget exhausted (218 of 100k units until 2026-06-15 reset). Will refresh after reset.",
+    "domain_rating": 9,
+    "organic_keywords": 168,
+    "keywords_top_3": 21,
+    "traffic_value_monthly_usd": 110117,
+    "organic_traffic_monthly": 591,
+    "top_competitors": [
+      {"domain": "nexgenlawns.com", "dr": 34, "traffic": 14044, "common_kw": 30},
+      {"domain": "paradisegreens.com", "dr": 7, "traffic": 1561, "common_kw": 50},
+      {"domain": "azturfmasters.com", "dr": 15, "traffic": 1467, "common_kw": 22},
+      {"domain": "apexturfaz.com", "dr": 9, "traffic": 1083, "common_kw": 40},
+      {"domain": "nolimitturf.com", "dr": 13, "traffic": 684, "common_kw": 60},
+      {"domain": "alwaysgreenturfaz.com", "dr": 34, "traffic": 351, "common_kw": 21}
+    ]
+  }
+}

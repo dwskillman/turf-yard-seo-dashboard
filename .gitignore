@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Astro build artifacts
+.astro/
+dist/
+
+# Generated SQLite database (regenerate with `npm run setup`)
+data/seo.db
+data/seo.db-shm
+data/seo.db-wal
+
+# Keep a snapshot template if present (commit this one)
+!data/seo.db.example
+
+# Editor / OS
+.DS_Store
+*.log
+.env
+.env.*
