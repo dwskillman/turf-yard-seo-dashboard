@@ -715,3 +715,106 @@ export function getRankDistribution(weekStart?: string): { label: string; count:
   }
   return buckets;
 }
+
+/* ============================ v2.1: CWV + Local Pack ============================ */
+
+export interface CwvRow {
+  week_start: string;
+  url: string;
+  strategy: 'mobile' | 'desktop';
+  performance_score: number | null;
+  lcp_ms: number | null;
+  inp_ms: number | null;
+  cls: number | null;
+  fcp_ms: number | null;
+  ttfb_ms: number | null;
+  speed_index_ms: number | null;
+  tbt_ms: number | null;
+  cwv_status: 'good' | 'needs-improvement' | 'poor' | null;
+  fetch_status: string;
+  fetch_error: string | null;
+}
+
+export function cwvLatest(): CwvRow[] {
+  const db = getDb();
+  const ws = latestWeek('cwv_weekly');
+  if (!ws) return [];
+  return db.prepare(`
+    SELECT week_start, url, strategy, performance_score,
+           lcp_ms, inp_ms, cls, fcp_ms, ttfb_ms, speed_index_ms, tbt_ms,
+           cwv_status, fetch_status, fetch_error
+    FROM cwv_weekly
+    WHERE week_start = ?
+    ORDER BY url, strategy
+  `).all(ws) as CwvRow[];
+}
+
+export function cwvSummary(): {
+  mobile_avg_score: number | null;
+  desktop_avg_score: number | null;
+  pages_audited: number;
+  pages_passing: number;
+  pages_failing: number;
+} {
+  const rows = cwvLatest();
+  if (rows.length === 0) {
+    return { mobile_avg_score: null, desktop_avg_score: null, pages_audited: 0, pages_passing: 0, pages_failing: 0 };
+  }
+  const mobile = rows.filter(r => r.strategy === 'mobile' && r.performance_score != null);
+  const desktop = rows.filter(r => r.strategy === 'desktop' && r.performance_score != null);
+  const uniqueUrls = new Set(rows.map(r => r.url)).size;
+  const passing = rows.filter(r => r.strategy === 'mobile' && r.cwv_status === 'good').length;
+  const failing = rows.filter(r => r.strategy === 'mobile' && r.cwv_status === 'poor').length;
+  return {
+    mobile_avg_score: mobile.length ? mobile.reduce((s, r) => s + (r.performance_score ?? 0), 0) / mobile.length : null,
+    desktop_avg_score: desktop.length ? desktop.reduce((s, r) => s + (r.performance_score ?? 0), 0) / desktop.length : null,
+    pages_audited: uniqueUrls,
+    pages_passing: passing,
+    pages_failing: failing,
+  };
+}
+
+export interface LocalPackRow {
+  week_start: string;
+  keyword: string;
+  location: string;
+  in_local_pack: number;
+  local_pack_position: number | null;
+  business_name: string | null;
+  rating: number | null;
+  reviews_count: number | null;
+  pack_size: number | null;
+  competitors_above: string | null;
+}
+
+export function localPackLatest(): LocalPackRow[] {
+  const db = getDb();
+  const ws = latestWeek('local_pack_weekly');
+  if (!ws) return [];
+  return db.prepare(`
+    SELECT week_start, keyword, location, in_local_pack, local_pack_position,
+           business_name, rating, reviews_count, pack_size, competitors_above
+    FROM local_pack_weekly
+    WHERE week_start = ?
+    ORDER BY in_local_pack DESC, local_pack_position ASC, keyword
+  `).all(ws) as LocalPackRow[];
+}
+
+export function localPackSummary(): {
+  total_tracked: number;
+  in_pack: number;
+  pos_1: number;
+  pos_2: number;
+  pos_3: number;
+  not_in_pack: number;
+} {
+  const rows = localPackLatest();
+  return {
+    total_tracked: rows.length,
+    in_pack: rows.filter(r => r.in_local_pack === 1).length,
+    pos_1: rows.filter(r => r.local_pack_position === 1).length,
+    pos_2: rows.filter(r => r.local_pack_position === 2).length,
+    pos_3: rows.filter(r => r.local_pack_position === 3).length,
+    not_in_pack: rows.filter(r => r.in_local_pack === 0).length,
+  };
+}

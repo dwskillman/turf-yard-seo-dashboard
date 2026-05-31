@@ -1,0 +1,200 @@
+---
+/**
+ * core-web-vitals.astro — PageSpeed Insights metrics per URL/strategy.
+ * LCP, INP, CLS, plus performance score for mobile + desktop.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import KpiCard from '../components/KpiCard.astro';
+import { cwvLatest, cwvSummary } from '../lib/db';
+
+const rows = cwvLatest();
+const summary = cwvSummary();
+
+const mobileRows = rows.filter((r) => r.strategy === 'mobile');
+const desktopRows = rows.filter((r) => r.strategy === 'desktop');
+
+function pct(v: number | null): string {
+  if (v == null) return '—';
+  return Math.round(v * 100) + '';
+}
+function ms(v: number | null): string {
+  if (v == null) return '—';
+  if (v >= 1000) return (v / 1000).toFixed(1) + 's';
+  return Math.round(v) + 'ms';
+}
+function clsv(v: number | null): string {
+  return v == null ? '—' : v.toFixed(2);
+}
+
+// Bucket thresholds (web.dev "good" thresholds for Core Web Vitals)
+function lcpClass(v: number | null): string {
+  if (v == null) return 'text-ink-faint';
+  if (v <= 2500) return 'text-brand-green';
+  if (v <= 4000) return 'text-brand-gold';
+  return 'text-brand-terra';
+}
+function inpClass(v: number | null): string {
+  if (v == null) return 'text-ink-faint';
+  if (v <= 200) return 'text-brand-green';
+  if (v <= 500) return 'text-brand-gold';
+  return 'text-brand-terra';
+}
+function clsClass(v: number | null): string {
+  if (v == null) return 'text-ink-faint';
+  if (v <= 0.1) return 'text-brand-green';
+  if (v <= 0.25) return 'text-brand-gold';
+  return 'text-brand-terra';
+}
+function scoreClass(v: number | null): string {
+  if (v == null) return 'text-ink-faint';
+  if (v >= 0.9) return 'text-brand-green';
+  if (v >= 0.5) return 'text-brand-gold';
+  return 'text-brand-terra';
+}
+function statusBadge(status: string | null): { label: string; cls: string } {
+  switch (status) {
+    case 'good':
+      return { label: 'Good', cls: 'bg-brand-green-pale text-brand-green' };
+    case 'needs-improvement':
+      return { label: 'Needs work', cls: 'bg-brand-gold/15 text-brand-gold-dark' };
+    case 'poor':
+      return { label: 'Poor', cls: 'bg-brand-terra/10 text-brand-terra' };
+    default:
+      return { label: '—', cls: 'bg-border-faint text-ink-faint' };
+  }
+}
+
+function trimUrl(u: string): string {
+  return u.replace(/^https?:\/\/[^/]+/, '').replace(/\/$/, '') || '/';
+}
+---
+
+<Layout title="Core Web Vitals" active="cwv">
+  <Section
+    eyebrow="Page Speed & UX"
+    title="Core Web Vitals"
+    subtitle="Lighthouse/CrUX metrics from PageSpeed Insights. Refreshes weekly with the cron snapshot."
+  />
+
+  {rows.length === 0 ? (
+    <div class="card p-8 flex flex-col items-center text-center gap-3 mb-6">
+      <p class="font-heading font-semibold text-ink text-lg">No CWV data yet</p>
+      <p class="text-sm text-ink-muted">Run the weekly cron to populate Core Web Vitals.</p>
+    </div>
+  ) : (
+    <>
+      <!-- KPI row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <KpiCard
+          title="Mobile score"
+          value={pct(summary.mobile_avg_score) + '/100'}
+          sublabel={`Avg across ${summary.pages_audited} pages`}
+        />
+        <KpiCard
+          title="Desktop score"
+          value={pct(summary.desktop_avg_score) + '/100'}
+          sublabel={`Avg across ${summary.pages_audited} pages`}
+        />
+        <KpiCard
+          title="Pages passing"
+          value={String(summary.pages_passing)}
+          sublabel="CWV 'good' on mobile"
+        />
+        <KpiCard
+          title="Pages failing"
+          value={String(summary.pages_failing)}
+          sublabel="CWV 'poor' on mobile"
+        />
+      </div>
+
+      <!-- Mobile table -->
+      <Section title="Mobile" subtitle="Mobile is the primary ranking strategy. Aim for LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.10." />
+      <div class="card overflow-hidden mb-8">
+        <table class="w-full text-sm">
+          <thead class="bg-surface border-b border-border-faint">
+            <tr class="text-[11px] uppercase tracking-wider font-heading font-semibold text-ink-muted">
+              <th class="text-left px-4 py-3">URL</th>
+              <th class="text-right px-4 py-3">Score</th>
+              <th class="text-right px-4 py-3">LCP</th>
+              <th class="text-right px-4 py-3">INP</th>
+              <th class="text-right px-4 py-3">CLS</th>
+              <th class="text-right px-4 py-3">FCP</th>
+              <th class="text-right px-4 py-3">TTFB</th>
+              <th class="text-center px-4 py-3">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {mobileRows.map((r) => {
+              const s = statusBadge(r.cwv_status);
+              return (
+                <tr class="border-t border-border-faint">
+                  <td class="px-4 py-3 font-mono text-xs text-ink">{trimUrl(r.url)}</td>
+                  <td class={`px-4 py-3 text-right tabular-nums font-semibold ${scoreClass(r.performance_score)}`}>
+                    {pct(r.performance_score)}
+                  </td>
+                  <td class={`px-4 py-3 text-right tabular-nums ${lcpClass(r.lcp_ms)}`}>{ms(r.lcp_ms)}</td>
+                  <td class={`px-4 py-3 text-right tabular-nums ${inpClass(r.inp_ms)}`}>{ms(r.inp_ms)}</td>
+                  <td class={`px-4 py-3 text-right tabular-nums ${clsClass(r.cls)}`}>{clsv(r.cls)}</td>
+                  <td class="px-4 py-3 text-right tabular-nums text-ink-muted">{ms(r.fcp_ms)}</td>
+                  <td class="px-4 py-3 text-right tabular-nums text-ink-muted">{ms(r.ttfb_ms)}</td>
+                  <td class="px-4 py-3 text-center">
+                    <span class={`inline-block px-2 py-0.5 rounded-full text-[11px] font-medium ${s.cls}`}>
+                      {s.label}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Desktop table -->
+      <Section title="Desktop" subtitle="Desktop performance for the same pages." />
+      <div class="card overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-surface border-b border-border-faint">
+            <tr class="text-[11px] uppercase tracking-wider font-heading font-semibold text-ink-muted">
+              <th class="text-left px-4 py-3">URL</th>
+              <th class="text-right px-4 py-3">Score</th>
+              <th class="text-right px-4 py-3">LCP</th>
+              <th class="text-right px-4 py-3">INP</th>
+              <th class="text-right px-4 py-3">CLS</th>
+              <th class="text-right px-4 py-3">FCP</th>
+              <th class="text-right px-4 py-3">TTFB</th>
+              <th class="text-center px-4 py-3">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {desktopRows.map((r) => {
+              const s = statusBadge(r.cwv_status);
+              return (
+                <tr class="border-t border-border-faint">
+                  <td class="px-4 py-3 font-mono text-xs text-ink">{trimUrl(r.url)}</td>
+                  <td class={`px-4 py-3 text-right tabular-nums font-semibold ${scoreClass(r.performance_score)}`}>
+                    {pct(r.performance_score)}
+                  </td>
+                  <td class={`px-4 py-3 text-right tabular-nums ${lcpClass(r.lcp_ms)}`}>{ms(r.lcp_ms)}</td>
+                  <td class={`px-4 py-3 text-right tabular-nums ${inpClass(r.inp_ms)}`}>{ms(r.inp_ms)}</td>
+                  <td class={`px-4 py-3 text-right tabular-nums ${clsClass(r.cls)}`}>{clsv(r.cls)}</td>
+                  <td class="px-4 py-3 text-right tabular-nums text-ink-muted">{ms(r.fcp_ms)}</td>
+                  <td class="px-4 py-3 text-right tabular-nums text-ink-muted">{ms(r.ttfb_ms)}</td>
+                  <td class="px-4 py-3 text-center">
+                    <span class={`inline-block px-2 py-0.5 rounded-full text-[11px] font-medium ${s.cls}`}>
+                      {s.label}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs text-ink-faint mt-4">
+        Data source: PageSpeed Insights API · Refreshed weekly by Monday cron · Thresholds from web.dev/vitals
+      </p>
+    </>
+  )}
+</Layout>

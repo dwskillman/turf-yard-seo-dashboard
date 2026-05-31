@@ -1,0 +1,149 @@
+---
+/**
+ * local-pack.astro — Google 3-pack tracking for Phoenix-area queries.
+ * Shows whether Turf Yard appears in the Local Pack and at which position.
+ */
+import Layout from '../components/Layout.astro';
+import Section from '../components/Section.astro';
+import KpiCard from '../components/KpiCard.astro';
+import { localPackLatest, localPackSummary } from '../lib/db';
+
+const rows = localPackLatest();
+const summary = localPackSummary();
+
+const inPack = rows.filter((r) => r.in_local_pack === 1);
+const notInPack = rows.filter((r) => r.in_local_pack === 0);
+
+function posBadge(pos: number | null): { label: string; cls: string } {
+  if (pos === null) return { label: 'Not in pack', cls: 'bg-border-faint text-ink-muted' };
+  if (pos === 1) return { label: '#1', cls: 'bg-brand-green-pale text-brand-green' };
+  if (pos === 2) return { label: '#2', cls: 'bg-brand-green-soft text-brand-green' };
+  return { label: '#3', cls: 'bg-brand-gold/20 text-brand-gold-dark' };
+}
+
+function parseCompetitors(json: string | null): string[] {
+  if (!json) return [];
+  try {
+    return JSON.parse(json);
+  } catch {
+    return [];
+  }
+}
+---
+
+<Layout title="Local Pack" active="local-pack">
+  <Section
+    eyebrow="Google 3-Pack"
+    title="Local Pack Tracking"
+    subtitle="Where Turf Yard ranks in the Google map pack for Phoenix-area searches. Tracks Phoenix-localized SERPs weekly via DataForSEO."
+  />
+
+  {rows.length === 0 ? (
+    <div class="card p-8 flex flex-col items-center text-center gap-3 mb-6">
+      <p class="font-heading font-semibold text-ink text-lg">No local pack data yet</p>
+      <p class="text-sm text-ink-muted">First weekly cron will populate Phoenix-localized SERP results.</p>
+    </div>
+  ) : (
+    <>
+      <!-- KPI row -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <KpiCard
+          title="Keywords tracked"
+          value={String(summary.total_tracked)}
+          sublabel="Phoenix-localized"
+        />
+        <KpiCard
+          title="In the pack"
+          value={String(summary.in_pack)}
+          sublabel={`${summary.total_tracked > 0 ? Math.round((summary.in_pack / summary.total_tracked) * 100) : 0}% visibility`}
+          accent
+        />
+        <KpiCard
+          title="#1 positions"
+          value={String(summary.pos_1)}
+          sublabel="Top of the 3-pack"
+        />
+        <KpiCard
+          title="Missing"
+          value={String(summary.not_in_pack)}
+          sublabel="Not appearing"
+        />
+      </div>
+
+      <!-- In-pack keywords -->
+      <Section title="Visible in local pack" subtitle="Keywords where Turf Yard shows in the 3-pack." />
+      <div class="card overflow-hidden mb-8">
+        <table class="w-full text-sm">
+          <thead class="bg-surface border-b border-border-faint">
+            <tr class="text-[11px] uppercase tracking-wider font-heading font-semibold text-ink-muted">
+              <th class="text-left px-4 py-3">Keyword</th>
+              <th class="text-center px-4 py-3">Position</th>
+              <th class="text-left px-4 py-3">Listed as</th>
+              <th class="text-right px-4 py-3">Rating</th>
+              <th class="text-right px-4 py-3">Reviews</th>
+              <th class="text-left px-4 py-3">Competitors above</th>
+            </tr>
+          </thead>
+          <tbody>
+            {inPack.map((r) => {
+              const p = posBadge(r.local_pack_position);
+              const competitors = parseCompetitors(r.competitors_above);
+              return (
+                <tr class="border-t border-border-faint">
+                  <td class="px-4 py-3 text-ink font-medium">{r.keyword}</td>
+                  <td class="px-4 py-3 text-center">
+                    <span class={`inline-block px-2.5 py-0.5 rounded-full text-xs font-bold ${p.cls}`}>{p.label}</span>
+                  </td>
+                  <td class="px-4 py-3 text-ink-muted text-xs">{r.business_name ?? '—'}</td>
+                  <td class="px-4 py-3 text-right tabular-nums">
+                    <span class="text-brand-gold">★</span> {r.rating?.toFixed(1) ?? '—'}
+                  </td>
+                  <td class="px-4 py-3 text-right tabular-nums text-ink-muted">{r.reviews_count ?? '—'}</td>
+                  <td class="px-4 py-3 text-xs text-ink-faint">
+                    {competitors.length ? competitors.join(' · ') : 'None'}
+                  </td>
+                </tr>
+              );
+            })}
+            {inPack.length === 0 && (
+              <tr><td colspan="6" class="px-4 py-6 text-center text-ink-faint text-sm">No keywords currently visible in the local pack.</td></tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Not in pack -->
+      <Section title="Not appearing in pack" subtitle="Opportunities — these queries return a 3-pack but Turf Yard is not in it." />
+      <div class="card overflow-hidden">
+        <table class="w-full text-sm">
+          <thead class="bg-surface border-b border-border-faint">
+            <tr class="text-[11px] uppercase tracking-wider font-heading font-semibold text-ink-muted">
+              <th class="text-left px-4 py-3">Keyword</th>
+              <th class="text-left px-4 py-3">Top 3 competitors</th>
+            </tr>
+          </thead>
+          <tbody>
+            {notInPack.map((r) => {
+              const competitors = parseCompetitors(r.competitors_above);
+              return (
+                <tr class="border-t border-border-faint">
+                  <td class="px-4 py-3 text-ink font-medium">{r.keyword}</td>
+                  <td class="px-4 py-3 text-xs text-ink-muted">
+                    {competitors.length ? competitors.join(' · ') : 'Unknown'}
+                  </td>
+                </tr>
+              );
+            })}
+            {notInPack.length === 0 && (
+              <tr><td colspan="2" class="px-4 py-6 text-center text-ink-faint text-sm">Appearing in every tracked local pack.</td></tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-xs text-ink-faint mt-4">
+        Data source: DataForSEO Phoenix-localized SERP · Refreshed weekly · Pack data extracted from organic SERP response
+      </p>
+    </>
+  )}
+</Layout>

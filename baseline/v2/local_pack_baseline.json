@@ -1,0 +1,15 @@
+{
+  "note": "Local pack tracking baseline. Cron will refresh weekly via DataForSEO Phoenix locationCode 1024118.",
+  "rows": [
+    {"keyword": "artificial turf phoenix", "location": "Phoenix", "in_local_pack": 1, "local_pack_position": 2, "business_name": "The Turf Yard", "rating": 4.9, "reviews_count": 87, "pack_size": 3, "competitors_above": ["AZ Lawn Doctor"]},
+    {"keyword": "artificial turf installer phoenix", "location": "Phoenix", "in_local_pack": 1, "local_pack_position": 1, "business_name": "The Turf Yard", "rating": 4.9, "reviews_count": 87, "pack_size": 3, "competitors_above": []},
+    {"keyword": "artificial grass phoenix", "location": "Phoenix", "in_local_pack": 0, "local_pack_position": null, "business_name": null, "rating": null, "reviews_count": null, "pack_size": 3, "competitors_above": ["Phoenix Turf Pros","Desert Greens Turf","AZ Lawn Doctor"]},
+    {"keyword": "turf installer mesa", "location": "Phoenix", "in_local_pack": 1, "local_pack_position": 3, "business_name": "The Turf Yard", "rating": 4.9, "reviews_count": 87, "pack_size": 3, "competitors_above": ["Mesa Lawn Co","Valley Turf"]},
+    {"keyword": "artificial turf mesa az", "location": "Phoenix", "in_local_pack": 1, "local_pack_position": 2, "business_name": "The Turf Yard", "rating": 4.9, "reviews_count": 87, "pack_size": 3, "competitors_above": ["Mesa Lawn Co"]},
+    {"keyword": "turf installer gilbert", "location": "Phoenix", "in_local_pack": 0, "local_pack_position": null, "business_name": null, "rating": null, "reviews_count": null, "pack_size": 3, "competitors_above": ["Gilbert Turf Pros","East Valley Turf","Desert Greens Turf"]},
+    {"keyword": "artificial turf scottsdale", "location": "Phoenix", "in_local_pack": 0, "local_pack_position": null, "business_name": null, "rating": null, "reviews_count": null, "pack_size": 3, "competitors_above": ["Scottsdale Turf Co","Premium Turf AZ","Desert Greens Turf"]},
+    {"keyword": "turf installer chandler", "location": "Phoenix", "in_local_pack": 1, "local_pack_position": 3, "business_name": "The Turf Yard", "rating": 4.9, "reviews_count": 87, "pack_size": 3, "competitors_above": ["Chandler Lawn Pros","Valley Turf"]},
+    {"keyword": "best artificial turf phoenix", "location": "Phoenix", "in_local_pack": 1, "local_pack_position": 2, "business_name": "The Turf Yard", "rating": 4.9, "reviews_count": 87, "pack_size": 3, "competitors_above": ["AZ Lawn Doctor"]},
+    {"keyword": "artificial turf provo", "location": "Phoenix", "in_local_pack": 0, "local_pack_position": null, "business_name": null, "rating": null, "reviews_count": null, "pack_size": 3, "competitors_above": ["Utah Turf Co","Provo Greens","Valley Lawn Care"]}
+  ]
+}

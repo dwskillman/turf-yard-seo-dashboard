@@ -390,6 +390,52 @@ const tx = db.transaction(() => {
     );
     console.log(`  ✓ ai_evaluation_weekly: 1 row`);
   }
+
+  // ---- v2.1: Core Web Vitals ----
+  if (Array.isArray(snap.cwv) && snap.cwv.length) {
+    const ins = db.prepare(`
+      INSERT OR REPLACE INTO cwv_weekly
+        (week_start, url, strategy, performance_score, lcp_ms, inp_ms, cls, fcp_ms, ttfb_ms, speed_index_ms, tbt_ms, cwv_status, fetch_status, fetch_error)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+    `);
+    let n = 0;
+    for (const r of snap.cwv) {
+      ins.run(
+        weekStart, r.url, r.strategy,
+        r.performance_score ?? null,
+        r.lcp_ms ?? null, r.inp_ms ?? null, r.cls ?? null,
+        r.fcp_ms ?? null, r.ttfb_ms ?? null,
+        r.speed_index_ms ?? null, r.tbt_ms ?? null,
+        r.cwv_status ?? null,
+        r.fetch_status ?? 'ok', r.fetch_error ?? null
+      );
+      n++;
+    }
+    console.log(`  ✓ cwv_weekly: ${n} rows`);
+  }
+
+  // ---- v2.1: Local Pack ----
+  if (Array.isArray(snap.local_pack) && snap.local_pack.length) {
+    const ins = db.prepare(`
+      INSERT OR REPLACE INTO local_pack_weekly
+        (week_start, keyword, location, in_local_pack, local_pack_position, business_name, rating, reviews_count, pack_size, competitors_above)
+      VALUES (?,?,?,?,?,?,?,?,?,?)
+    `);
+    let n = 0;
+    for (const r of snap.local_pack) {
+      ins.run(
+        weekStart, r.keyword, r.location || 'Phoenix',
+        r.in_local_pack ? 1 : 0,
+        r.local_pack_position ?? null,
+        r.business_name ?? null,
+        r.rating ?? null, r.reviews_count ?? null,
+        r.pack_size ?? null,
+        Array.isArray(r.competitors_above) ? JSON.stringify(r.competitors_above) : (r.competitors_above ?? null)
+      );
+      n++;
+    }
+    console.log(`  ✓ local_pack_weekly: ${n} rows`);
+  }
 });
 
 tx();

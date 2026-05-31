@@ -223,3 +223,37 @@ CREATE TABLE IF NOT EXISTS ai_evaluation_weekly (
   biggest_opportunity TEXT,
   recommended_actions TEXT  -- JSON array of {action, rationale, leverage}
 );
+
+-- Core Web Vitals (PageSpeed Insights) — one row per URL+strategy per week
+CREATE TABLE IF NOT EXISTS cwv_weekly (
+  week_start TEXT NOT NULL,
+  url        TEXT NOT NULL,
+  strategy   TEXT NOT NULL CHECK (strategy IN ('mobile','desktop')),
+  performance_score REAL,     -- 0..1 (Lighthouse)
+  lcp_ms       REAL,           -- Largest Contentful Paint
+  inp_ms       REAL,           -- Interaction to Next Paint
+  cls          REAL,           -- Cumulative Layout Shift
+  fcp_ms       REAL,           -- First Contentful Paint
+  ttfb_ms      REAL,           -- Time to First Byte
+  speed_index_ms REAL,
+  tbt_ms       REAL,           -- Total Blocking Time
+  cwv_status   TEXT,           -- 'good' | 'needs-improvement' | 'poor' | null
+  fetch_status TEXT,           -- 'ok' | 'error'
+  fetch_error  TEXT,
+  PRIMARY KEY (week_start, url, strategy)
+);
+
+-- Local Pack tracking — Google 3-pack presence for Phoenix-area queries
+CREATE TABLE IF NOT EXISTS local_pack_weekly (
+  week_start TEXT NOT NULL,
+  keyword TEXT NOT NULL,
+  location TEXT NOT NULL,        -- 'Phoenix' | 'Mesa' | 'US' etc.
+  in_local_pack INTEGER NOT NULL,-- 0 | 1
+  local_pack_position INTEGER,   -- 1..3 (null if not in pack)
+  business_name TEXT,            -- name found in local pack (e.g. 'The Turf Yard')
+  rating REAL,
+  reviews_count INTEGER,
+  pack_size INTEGER,             -- typically 3 (sometimes 1-3)
+  competitors_above TEXT,        -- JSON array of competitor names ranked above
+  PRIMARY KEY (week_start, keyword, location)
+);

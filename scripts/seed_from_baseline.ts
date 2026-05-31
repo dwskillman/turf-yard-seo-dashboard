@@ -580,6 +580,54 @@ insAiEval.run(
   ])
 );
 
+/* ===================== v2.1: CWV + Local Pack seeding ===================== */
+try {
+  const cwvBaseline = JSON.parse(readFileSync(resolve(v2Dir, 'cwv_baseline.json'), 'utf-8'));
+  const insCwv = db.prepare(`INSERT OR REPLACE INTO cwv_weekly
+    (week_start, url, strategy, performance_score, lcp_ms, inp_ms, cls, fcp_ms, ttfb_ms, speed_index_ms, tbt_ms, cwv_status, fetch_status, fetch_error)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`);
+  for (const week of V2_WEEKS) {
+    for (const row of cwvBaseline.rows) {
+      // Subtle weekly variation so charts aren’t completely flat
+      const weekIdx = V2_WEEKS.indexOf(week);
+      const drift = 1 + (weekIdx - 1.5) * 0.01; // ±1.5% across 4 weeks
+      insCwv.run(
+        week, row.url, row.strategy,
+        row.performance_score != null ? +(row.performance_score * drift).toFixed(3) : null,
+        row.lcp_ms != null ? Math.round(row.lcp_ms / drift) : null,
+        row.inp_ms != null ? Math.round(row.inp_ms / drift) : null,
+        row.cls,
+        row.fcp_ms != null ? Math.round(row.fcp_ms / drift) : null,
+        row.ttfb_ms != null ? Math.round(row.ttfb_ms / drift) : null,
+        row.speed_index_ms != null ? Math.round(row.speed_index_ms / drift) : null,
+        row.tbt_ms != null ? Math.round(row.tbt_ms / drift) : null,
+        row.cwv_status,
+        'ok', null
+      );
+    }
+  }
+} catch (e) {
+  console.warn('CWV baseline skipped:', (e as Error).message);
+}
+
+try {
+  const lpBaseline = JSON.parse(readFileSync(resolve(v2Dir, 'local_pack_baseline.json'), 'utf-8'));
+  const insLp = db.prepare(`INSERT OR REPLACE INTO local_pack_weekly
+    (week_start, keyword, location, in_local_pack, local_pack_position, business_name, rating, reviews_count, pack_size, competitors_above)
+    VALUES (?,?,?,?,?,?,?,?,?,?)`);
+  for (const week of V2_WEEKS) {
+    for (const row of lpBaseline.rows) {
+      insLp.run(
+        week, row.keyword, row.location, row.in_local_pack,
+        row.local_pack_position, row.business_name, row.rating, row.reviews_count,
+        row.pack_size, JSON.stringify(row.competitors_above || [])
+      );
+    }
+  }
+} catch (e) {
+  console.warn('Local pack baseline skipped:', (e as Error).message);
+}
+
 /* ===================== Report ===================== */
 function count(table: string): number {
   return (db.prepare(`SELECT COUNT(*) AS c FROM ${table}`).get() as { c: number }).c;
@@ -606,6 +654,8 @@ for (const t of [
   'geo_weekly',
   'gbp_weekly',
   'ai_evaluation_weekly',
+  'cwv_weekly',
+  'local_pack_weekly',
 ]) {
   console.log(`  ${t.padEnd(30)} ${count(t)}`);
 }

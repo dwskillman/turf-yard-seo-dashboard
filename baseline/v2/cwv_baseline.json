@@ -1,0 +1,15 @@
+{
+  "note": "Realistic placeholder CWV baseline for theturfyard.com top pages (May 2026). Cron will overwrite with live PSI data on first run.",
+  "rows": [
+    {"url": "https://theturfyard.com/", "strategy": "mobile", "performance_score": 0.62, "lcp_ms": 3100, "inp_ms": 230, "cls": 0.08, "fcp_ms": 2400, "ttfb_ms": 820, "speed_index_ms": 4200, "tbt_ms": 410, "cwv_status": "needs-improvement"},
+    {"url": "https://theturfyard.com/", "strategy": "desktop", "performance_score": 0.84, "lcp_ms": 1900, "inp_ms": 95, "cls": 0.04, "fcp_ms": 1300, "ttfb_ms": 480, "speed_index_ms": 2100, "tbt_ms": 80, "cwv_status": "good"},
+    {"url": "https://theturfyard.com/artificial-turf-calculator/", "strategy": "mobile", "performance_score": 0.55, "lcp_ms": 3600, "inp_ms": 280, "cls": 0.12, "fcp_ms": 2700, "ttfb_ms": 880, "speed_index_ms": 4800, "tbt_ms": 530, "cwv_status": "poor"},
+    {"url": "https://theturfyard.com/artificial-turf-calculator/", "strategy": "desktop", "performance_score": 0.78, "lcp_ms": 2200, "inp_ms": 120, "cls": 0.06, "fcp_ms": 1500, "ttfb_ms": 540, "speed_index_ms": 2400, "tbt_ms": 140, "cwv_status": "needs-improvement"},
+    {"url": "https://theturfyard.com/sub-base-turf-calculator/", "strategy": "mobile", "performance_score": 0.58, "lcp_ms": 3400, "inp_ms": 260, "cls": 0.10, "fcp_ms": 2600, "ttfb_ms": 850, "speed_index_ms": 4600, "tbt_ms": 490, "cwv_status": "needs-improvement"},
+    {"url": "https://theturfyard.com/sub-base-turf-calculator/", "strategy": "desktop", "performance_score": 0.80, "lcp_ms": 2100, "inp_ms": 110, "cls": 0.05, "fcp_ms": 1450, "ttfb_ms": 520, "speed_index_ms": 2300, "tbt_ms": 120, "cwv_status": "good"},
+    {"url": "https://theturfyard.com/service-areas/utah/provo/", "strategy": "mobile", "performance_score": 0.66, "lcp_ms": 2900, "inp_ms": 210, "cls": 0.07, "fcp_ms": 2300, "ttfb_ms": 790, "speed_index_ms": 3900, "tbt_ms": 380, "cwv_status": "needs-improvement"},
+    {"url": "https://theturfyard.com/service-areas/utah/provo/", "strategy": "desktop", "performance_score": 0.86, "lcp_ms": 1800, "inp_ms": 90, "cls": 0.03, "fcp_ms": 1250, "ttfb_ms": 460, "speed_index_ms": 2000, "tbt_ms": 70, "cwv_status": "good"},
+    {"url": "https://theturfyard.com/lush-80-artificial-turf/", "strategy": "mobile", "performance_score": 0.60, "lcp_ms": 3200, "inp_ms": 240, "cls": 0.09, "fcp_ms": 2500, "ttfb_ms": 830, "speed_index_ms": 4300, "tbt_ms": 430, "cwv_status": "needs-improvement"},
+    {"url": "https://theturfyard.com/lush-80-artificial-turf/", "strategy": "desktop", "performance_score": 0.82, "lcp_ms": 2000, "inp_ms": 100, "cls": 0.04, "fcp_ms": 1350, "ttfb_ms": 490, "speed_index_ms": 2150, "tbt_ms": 90, "cwv_status": "good"}
+  ]
+}
