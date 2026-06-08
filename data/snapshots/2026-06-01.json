@@ -1,0 +1,2205 @@
+{
+  "week_start": "2026-06-01",
+  "week_end": "2026-06-07",
+  "generated_at": "2026-06-08T14:45:36Z",
+  "redesign_launch_date": "2026-05-31",
+  "days_since_redesign": 7,
+  "site": "theturfyard.com",
+  "gsc": {
+    "totals": {
+      "clicks": 134,
+      "impressions": 17372,
+      "ctr": 0.00771,
+      "avg_position": 17.81
+    },
+    "daily": [
+      {
+        "date": "2026-06-01",
+        "clicks": 25,
+        "impressions": 4144,
+        "ctr": 0.00603,
+        "position": 16.1
+      },
+      {
+        "date": "2026-06-02",
+        "clicks": 21,
+        "impressions": 1993,
+        "ctr": 0.01054,
+        "position": 16.11
+      },
+      {
+        "date": "2026-06-03",
+        "clicks": 27,
+        "impressions": 2935,
+        "ctr": 0.0092,
+        "position": 12.25
+      },
+      {
+        "date": "2026-06-04",
+        "clicks": 25,
+        "impressions": 2822,
+        "ctr": 0.00886,
+        "position": 17.08
+      },
+      {
+        "date": "2026-06-05",
+        "clicks": 18,
+        "impressions": 2411,
+        "ctr": 0.00747,
+        "position": 20.47
+      },
+      {
+        "date": "2026-06-06",
+        "clicks": 18,
+        "impressions": 3067,
+        "ctr": 0.00587,
+        "position": 25.14
+      }
+    ],
+    "queries": [
+      {
+        "query": "the turf yard",
+        "clicks": 13,
+        "impressions": 37,
+        "ctr": 0.35135,
+        "position": 1.43
+      },
+      {
+        "query": "turf calculator",
+        "clicks": 9,
+        "impressions": 46,
+        "ctr": 0.19565,
+        "position": 11.3
+      },
+      {
+        "query": "turf yard calculator",
+        "clicks": 7,
+        "impressions": 12,
+        "ctr": 0.58333,
+        "position": 1
+      },
+      {
+        "query": "turf yard",
+        "clicks": 6,
+        "impressions": 39,
+        "ctr": 0.15385,
+        "position": 4.95
+      },
+      {
+        "query": "turf yard base layer calculator",
+        "clicks": 5,
+        "impressions": 7,
+        "ctr": 0.71429,
+        "position": 1
+      },
+      {
+        "query": "artificial turf calculator",
+        "clicks": 3,
+        "impressions": 35,
+        "ctr": 0.08571,
+        "position": 5.31
+      },
+      {
+        "query": "lush 80 turf",
+        "clicks": 3,
+        "impressions": 8,
+        "ctr": 0.375,
+        "position": 1
+      },
+      {
+        "query": "turf base calculator",
+        "clicks": 2,
+        "impressions": 7,
+        "ctr": 0.28571,
+        "position": 7.29
+      },
+      {
+        "query": "500 sq ft artificial grass cost",
+        "clicks": 1,
+        "impressions": 11,
+        "ctr": 0.09091,
+        "position": 9.45
+      },
+      {
+        "query": "artificial grass mesa az",
+        "clicks": 1,
+        "impressions": 9,
+        "ctr": 0.11111,
+        "position": 2.89
+      },
+      {
+        "query": "artificial turf installation near me",
+        "clicks": 1,
+        "impressions": 19,
+        "ctr": 0.05263,
+        "position": 20.53
+      },
+      {
+        "query": "artificial turf provo utah",
+        "clicks": 1,
+        "impressions": 94,
+        "ctr": 0.01064,
+        "position": 1
+      },
+      {
+        "query": "base turf",
+        "clicks": 1,
+        "impressions": 8,
+        "ctr": 0.125,
+        "position": 7.38
+      },
+      {
+        "query": "bulk artificial turf",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 1
+      },
+      {
+        "query": "free estimates",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 3
+      },
+      {
+        "query": "putting green cost calculator",
+        "clicks": 1,
+        "impressions": 18,
+        "ctr": 0.05556,
+        "position": 7.83
+      },
+      {
+        "query": "reviews for.the turf yard mesa",
+        "clicks": 1,
+        "impressions": 15,
+        "ctr": 0.06667,
+        "position": 4.27
+      },
+      {
+        "query": "sod installation near me",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 1
+      },
+      {
+        "query": "the turf store",
+        "clicks": 1,
+        "impressions": 4,
+        "ctr": 0.25,
+        "position": 4.75
+      },
+      {
+        "query": "turf calculator square feet",
+        "clicks": 1,
+        "impressions": 16,
+        "ctr": 0.0625,
+        "position": 10.88
+      },
+      {
+        "query": "turf cooling system",
+        "clicks": 1,
+        "impressions": 3,
+        "ctr": 0.33333,
+        "position": 5.33
+      },
+      {
+        "query": "turf cost calculator",
+        "clicks": 1,
+        "impressions": 12,
+        "ctr": 0.08333,
+        "position": 3.58
+      },
+      {
+        "query": "turf estimate calculator",
+        "clicks": 1,
+        "impressions": 7,
+        "ctr": 0.14286,
+        "position": 5.43
+      },
+      {
+        "query": "turf for backyard",
+        "clicks": 1,
+        "impressions": 17,
+        "ctr": 0.05882,
+        "position": 20.71
+      },
+      {
+        "query": "turf installation near me",
+        "clicks": 1,
+        "impressions": 20,
+        "ctr": 0.05,
+        "position": 16.1
+      },
+      {
+        "query": "turf installation utah",
+        "clicks": 1,
+        "impressions": 18,
+        "ctr": 0.05556,
+        "position": 24.72
+      },
+      {
+        "query": "what about heat",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 1,
+        "position": 1
+      },
+      {
+        "query": "\"the turf yard\" \"85203\"",
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 37.82
+      },
+      {
+        "query": "1,000 sq ft artificial grass cost",
+        "clicks": 0,
+        "impressions": 17,
+        "ctr": 0,
+        "position": 9.06
+      },
+      {
+        "query": "100 sq ft artificial grass cost",
+        "clicks": 0,
+        "impressions": 7,
+        "ctr": 0,
+        "position": 7.57
+      }
+    ],
+    "pages": [
+      {
+        "page": "https://theturfyard.com/artificial-turf-calculator/",
+        "clicks": 38,
+        "impressions": 2374,
+        "ctr": 0.01601,
+        "position": 16.99
+      },
+      {
+        "page": "https://theturfyard.com/",
+        "clicks": 36,
+        "impressions": 5453,
+        "ctr": 0.0066,
+        "position": 15.03
+      },
+      {
+        "page": "https://theturfyard.com/sub-base-turf-calculator/",
+        "clicks": 20,
+        "impressions": 464,
+        "ctr": 0.0431,
+        "position": 9.44
+      },
+      {
+        "page": "https://theturfyard.com/service-areas/utah/provo/",
+        "clicks": 13,
+        "impressions": 2250,
+        "ctr": 0.00578,
+        "position": 9.87
+      },
+      {
+        "page": "https://theturfyard.com/lush-80-artificial-turf/",
+        "clicks": 8,
+        "impressions": 132,
+        "ctr": 0.06061,
+        "position": 12.22
+      },
+      {
+        "page": "https://theturfyard.com/the-ultimate-guide-to-choosing-artificial-turf-for-sports-fields/",
+        "clicks": 5,
+        "impressions": 1073,
+        "ctr": 0.00466,
+        "position": 11.71
+      },
+      {
+        "page": "https://theturfyard.com/lucky-77-artificial-turf/",
+        "clicks": 3,
+        "impressions": 62,
+        "ctr": 0.04839,
+        "position": 9.98
+      },
+      {
+        "page": "https://theturfyard.com/understanding-artificial-turf-cooling-technology-and-its-benefits/",
+        "clicks": 3,
+        "impressions": 488,
+        "ctr": 0.00615,
+        "position": 12.26
+      },
+      {
+        "page": "https://theturfyard.com/lush-70-artificial-turf/",
+        "clicks": 2,
+        "impressions": 51,
+        "ctr": 0.03922,
+        "position": 20.31
+      },
+      {
+        "page": "https://theturfyard.com/top-5-reasons-to-invest-in-lush-80-synthetic-grass/",
+        "clicks": 2,
+        "impressions": 12,
+        "ctr": 0.16667,
+        "position": 12.25
+      },
+      {
+        "page": "https://theturfyard.com/artificial-turf-calculator-copy/",
+        "clicks": 1,
+        "impressions": 166,
+        "ctr": 0.00602,
+        "position": 19.31
+      },
+      {
+        "page": "https://theturfyard.com/contact-us/",
+        "clicks": 1,
+        "impressions": 22,
+        "ctr": 0.04545,
+        "position": 23
+      },
+      {
+        "page": "https://theturfyard.com/revolutionizing-urban-landscapes-with-synthetic-grass-solutions/",
+        "clicks": 1,
+        "impressions": 34,
+        "ctr": 0.02941,
+        "position": 10.79
+      },
+      {
+        "page": "https://theturfyard.com/service-areas/utah/american-fork/",
+        "clicks": 1,
+        "impressions": 35,
+        "ctr": 0.02857,
+        "position": 12.86
+      },
+      {
+        "page": "https://theturfyard.com/service-areas/utah/eagle-mountain/",
+        "clicks": 1,
+        "impressions": 33,
+        "ctr": 0.0303,
+        "position": 51.45
+      }
+    ]
+  },
+  "ga4": {
+    "totals": {
+      "sessions": 465,
+      "totalUsers": 384,
+      "newUsers": 308,
+      "engagedSessions": 233,
+      "screenPageViews": 907,
+      "conversions": 0,
+      "engagementRate": 0.5011,
+      "bounceRate": 0.4989,
+      "averageSessionDuration": 160.6
+    },
+    "daily": [
+      {
+        "date": "2026-06-01",
+        "sessions": 81,
+        "users": 62,
+        "newUsers": 50,
+        "engagedSessions": 33,
+        "engagementRate": 0.4074,
+        "avgSessDur": 115.6,
+        "bounceRate": 0.5926,
+        "pageViews": 146,
+        "conversions": 0
+      },
+      {
+        "date": "2026-06-02",
+        "sessions": 71,
+        "users": 60,
+        "newUsers": 50,
+        "engagedSessions": 43,
+        "engagementRate": 0.6056,
+        "avgSessDur": 173.7,
+        "bounceRate": 0.3944,
+        "pageViews": 153,
+        "conversions": 0
+      },
+      {
+        "date": "2026-06-03",
+        "sessions": 78,
+        "users": 66,
+        "newUsers": 54,
+        "engagedSessions": 37,
+        "engagementRate": 0.4744,
+        "avgSessDur": 178.0,
+        "bounceRate": 0.5256,
+        "pageViews": 141,
+        "conversions": 0
+      },
+      {
+        "date": "2026-06-04",
+        "sessions": 68,
+        "users": 62,
+        "newUsers": 49,
+        "engagedSessions": 35,
+        "engagementRate": 0.5147,
+        "avgSessDur": 93.9,
+        "bounceRate": 0.4853,
+        "pageViews": 97,
+        "conversions": 0
+      },
+      {
+        "date": "2026-06-05",
+        "sessions": 64,
+        "users": 45,
+        "newUsers": 33,
+        "engagedSessions": 32,
+        "engagementRate": 0.5,
+        "avgSessDur": 278.3,
+        "bounceRate": 0.5,
+        "pageViews": 236,
+        "conversions": 0
+      },
+      {
+        "date": "2026-06-06",
+        "sessions": 55,
+        "users": 44,
+        "newUsers": 34,
+        "engagedSessions": 25,
+        "engagementRate": 0.4545,
+        "avgSessDur": 131.3,
+        "bounceRate": 0.5455,
+        "pageViews": 61,
+        "conversions": 0
+      },
+      {
+        "date": "2026-06-07",
+        "sessions": 48,
+        "users": 45,
+        "newUsers": 38,
+        "engagedSessions": 28,
+        "engagementRate": 0.5833,
+        "avgSessDur": 160.4,
+        "bounceRate": 0.4167,
+        "pageViews": 73,
+        "conversions": 0
+      }
+    ],
+    "channels": [
+      {
+        "channel": "Organic Search",
+        "sessions": 249,
+        "totalUsers": 169,
+        "newUsers": 149,
+        "engagedSessions": 155,
+        "engagementRate": 0.6225,
+        "averageSessionDuration": 176.1,
+        "bounceRate": 0.3775,
+        "screenPageViews": 414,
+        "conversions": 0
+      },
+      {
+        "channel": "Direct",
+        "sessions": 165,
+        "totalUsers": 149,
+        "newUsers": 145,
+        "engagedSessions": 46,
+        "engagementRate": 0.2788,
+        "averageSessionDuration": 97.2,
+        "bounceRate": 0.7212,
+        "screenPageViews": 286,
+        "conversions": 0
+      },
+      {
+        "channel": "Organic Video",
+        "sessions": 22,
+        "totalUsers": 11,
+        "newUsers": 10,
+        "engagedSessions": 13,
+        "engagementRate": 0.5909,
+        "averageSessionDuration": 172.3,
+        "bounceRate": 0.4091,
+        "screenPageViews": 76,
+        "conversions": 0
+      },
+      {
+        "channel": "Organic Social",
+        "sessions": 14,
+        "totalUsers": 4,
+        "newUsers": 3,
+        "engagedSessions": 12,
+        "engagementRate": 0.8571,
+        "averageSessionDuration": 636.9,
+        "bounceRate": 0.1429,
+        "screenPageViews": 96,
+        "conversions": 0
+      },
+      {
+        "channel": "Referral",
+        "sessions": 11,
+        "totalUsers": 2,
+        "newUsers": 0,
+        "engagedSessions": 7,
+        "engagementRate": 0.6364,
+        "averageSessionDuration": 192.4,
+        "bounceRate": 0.3636,
+        "screenPageViews": 34,
+        "conversions": 0
+      },
+      {
+        "channel": "Unassigned",
+        "sessions": 1,
+        "totalUsers": 1,
+        "newUsers": 0,
+        "engagedSessions": 0,
+        "engagementRate": 0,
+        "averageSessionDuration": 1.9,
+        "bounceRate": 1,
+        "screenPageViews": 1,
+        "conversions": 0
+      }
+    ],
+    "landing_pages": [
+      {
+        "landingPage": "/",
+        "sessions": 166,
+        "engagedSessions": 95,
+        "averageSessionDuration": 159.3,
+        "engagementRate": 0.5723,
+        "bounceRate": 0.4277,
+        "screenPageViews": 425,
+        "conversions": 0
+      },
+      {
+        "landingPage": "/artificial-turf-calculator",
+        "sessions": 61,
+        "engagedSessions": 43,
+        "averageSessionDuration": 176.4,
+        "engagementRate": 0.7049,
+        "bounceRate": 0.2951,
+        "screenPageViews": 75,
+        "conversions": 0
+      },
+      {
+        "landingPage": "(not set)",
+        "sessions": 53,
+        "engagedSessions": 0,
+        "averageSessionDuration": 0.1,
+        "engagementRate": 0,
+        "bounceRate": 1,
+        "screenPageViews": 0,
+        "conversions": 0
+      },
+      {
+        "landingPage": "/sub-base-turf-calculator",
+        "sessions": 35,
+        "engagedSessions": 24,
+        "averageSessionDuration": 341.6,
+        "engagementRate": 0.6857,
+        "bounceRate": 0.3143,
+        "screenPageViews": 56,
+        "conversions": 0
+      },
+      {
+        "landingPage": "/lush-80-artificial-turf",
+        "sessions": 22,
+        "engagedSessions": 13,
+        "averageSessionDuration": 104.3,
+        "engagementRate": 0.5909,
+        "bounceRate": 0.4091,
+        "screenPageViews": 45,
+        "conversions": 0
+      },
+      {
+        "landingPage": "/service-areas/utah/provo",
+        "sessions": 22,
+        "engagedSessions": 12,
+        "averageSessionDuration": 134.0,
+        "engagementRate": 0.5455,
+        "bounceRate": 0.4545,
+        "screenPageViews": 35,
+        "conversions": 0
+      },
+      {
+        "landingPage": "/contact-us",
+        "sessions": 11,
+        "engagedSessions": 4,
+        "averageSessionDuration": 88.0,
+        "engagementRate": 0.3636,
+        "bounceRate": 0.6364,
+        "screenPageViews": 17,
+        "conversions": 0
+      },
+      {
+        "landingPage": "/turf-tips/does-artificial-turf-get-hot",
+        "sessions": 10,
+        "engagedSessions": 3,
+        "averageSessionDuration": 224.8,
+        "engagementRate": 0.3,
+        "bounceRate": 0.7,
+        "screenPageViews": 11,
+        "conversions": 0
+      },
+      {
+        "landingPage": "",
+        "sessions": 9,
+        "engagedSessions": 1,
+        "averageSessionDuration": 2.0,
+        "engagementRate": 0.1111,
+        "bounceRate": 0.8889,
+        "screenPageViews": 0,
+        "conversions": 0
+      },
+      {
+        "landingPage": "/turf-tips/artificial-turf-for-sports-fields",
+        "sessions": 9,
+        "engagedSessions": 5,
+        "averageSessionDuration": 93.2,
+        "engagementRate": 0.5556,
+        "bounceRate": 0.4444,
+        "screenPageViews": 10,
+        "conversions": 0
+      }
+    ]
+  },
+  "keyword_rankings": [
+    {
+      "keyword": "turf yard calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "brand",
+      "category": "brand_and_calculator",
+      "intent": "navigational",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "turf yard",
+      "location": "US",
+      "location_code": 2840,
+      "position": 3,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "brand",
+      "category": "brand_and_calculator",
+      "intent": "navigational",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "the turf yard",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "brand",
+      "category": "brand_and_calculator",
+      "intent": "navigational",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "turfyard",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "brand",
+      "category": "brand_and_calculator",
+      "intent": "navigational",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "turf cost estimator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 3,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "turf yard base layer calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "title": "Sub-Base Turf Calculator",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "turf calculator cost",
+      "location": "US",
+      "location_code": 2840,
+      "position": 4,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "the turf yard calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "brand",
+      "category": "brand_and_calculator",
+      "intent": "navigational",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "turf calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 2,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:18:03+00:00"
+    },
+    {
+      "keyword": "turf cost calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 4,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "artificial turf cost calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 4,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "artificial turf calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 3,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "artificial turf estimate calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "artificial turf price calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 5,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "turf price calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 3,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "turf installation cost calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 8,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "artificial grass calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 8,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "title": "Sub-Base Turf Calculator",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "artificial grass cost calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 8,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "sub base calculator for artificial grass",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "title": "Sub-Base Turf Calculator",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:19:00+00:00"
+    },
+    {
+      "keyword": "artificial grass sub base calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "title": "Sub-Base Turf Calculator",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "turf base calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "title": "Sub-Base Turf Calculator",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "turf infill calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 8,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "artificial turf infill calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 8,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "turf calculator square feet",
+      "location": "US",
+      "location_code": 2840,
+      "position": 2,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "putting green cost calculator",
+      "location": "US",
+      "location_code": 2840,
+      "position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "title": "Artificial Turf Cost Calculator | Materials & Infill",
+      "group": "calculator",
+      "category": "brand_and_calculator",
+      "intent": "transactional",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "lush 80 turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/lush-80-artificial-turf/",
+      "title": "Lush 80 Artificial Turf, Heat-Smart Premium Lawn",
+      "group": "product",
+      "category": "products",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "lush 70 turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/lush-70-artificial-turf/",
+      "title": "Lush 70 Artificial Turf, Budget-Friendly Lawn",
+      "group": "product",
+      "category": "products",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "lush primo turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/lush-primo-artificial-turf/",
+      "title": "Lush Primo Artificial Turf",
+      "group": "product",
+      "category": "products",
+      "intent": "transactional",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "lucky 77 turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": 1,
+      "url": "https://theturfyard.com/lucky-77-artificial-turf/",
+      "title": "Lucky 77 Artificial Turf, Durable Dark Green Lawn",
+      "group": "product",
+      "category": "products",
+      "intent": "transactional",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:21:00+00:00"
+    },
+    {
+      "keyword": "artificial grass phoenix",
+      "location": "US",
+      "location_code": 2840,
+      "position": 33,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:37+00:00"
+    },
+    {
+      "keyword": "artificial grass phoenix",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 46,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:28+00:00"
+    },
+    {
+      "keyword": "artificial turf phoenix",
+      "location": "US",
+      "location_code": 2840,
+      "position": 30,
+      "url": "https://theturfyard.com/service-areas/arizona/phoenix/",
+      "title": "Artificial Turf Supplier in Phoenix, AZ | Heat-Ready Products",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:48+00:00"
+    },
+    {
+      "keyword": "artificial turf phoenix",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 39,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:40+00:00"
+    },
+    {
+      "keyword": "artificial turf mesa az",
+      "location": "US",
+      "location_code": 2840,
+      "position": 4,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:25+00:00"
+    },
+    {
+      "keyword": "artificial turf mesa az",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 5,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:46+00:00"
+    },
+    {
+      "keyword": "artificial grass mesa",
+      "location": "US",
+      "location_code": 2840,
+      "position": 11,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:56+00:00"
+    },
+    {
+      "keyword": "artificial grass mesa",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 15,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:56+00:00"
+    },
+    {
+      "keyword": "artificial turf installation mesa az",
+      "location": "US",
+      "location_code": 2840,
+      "position": 5,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:25:08+00:00"
+    },
+    {
+      "keyword": "artificial turf installation mesa az",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 4,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:24:55+00:00"
+    },
+    {
+      "keyword": "turf companies mesa az",
+      "location": "US",
+      "location_code": 2840,
+      "position": 6,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "turf companies mesa az",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 5,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "mesa turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": 8,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "mesa turf",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 18,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "turf mesa az",
+      "location": "US",
+      "location_code": 2840,
+      "position": 14,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "turf mesa az",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 16,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "turf installation mesa az",
+      "location": "US",
+      "location_code": 2840,
+      "position": 4,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "turf installation mesa az",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 4,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "turf arizona",
+      "location": "US",
+      "location_code": 2840,
+      "position": 22,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "turf arizona",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 23,
+      "url": "https://theturfyard.com/",
+      "title": null,
+      "group": "phoenix_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:26:11+00:00"
+    },
+    {
+      "keyword": "artificial turf utah",
+      "location": "US",
+      "location_code": 2840,
+      "position": 18,
+      "url": "https://theturfyard.com/service-areas/utah/provo/",
+      "title": "Artificial Turf Supplier In Provo, Utah - The Turf Yard",
+      "group": "utah_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "artificial turf utah",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 25,
+      "url": "https://theturfyard.com/service-areas/utah/provo/",
+      "title": "Artificial Turf Supplier In Provo, Utah",
+      "group": "utah_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "utah artificial grass",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "utah_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "utah artificial grass",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 44,
+      "url": "https://theturfyard.com/service-areas/utah/provo/",
+      "title": "Artificial Turf Supplier In Provo, Utah",
+      "group": "utah_local",
+      "category": "phoenix_az_local",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "artificial turf near me",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "turf near me",
+      "location": "US",
+      "location_code": 2840,
+      "position": 36,
+      "url": "https://theturfyard.com/service-areas/utah/provo/",
+      "title": "Artificial Turf Supplier In Provo, Utah",
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "turf installation",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "turf installation near me",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "artificial grass installation",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "fake grass near me",
+      "location": "US",
+      "location_code": 2840,
+      "position": 54,
+      "url": "https://theturfyard.com/service-areas/arizona/gilbert/",
+      "title": "Artificial Turf in Gilbert, AZ | Homes, Pets & Wholesale ...",
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:29:30+00:00"
+    },
+    {
+      "keyword": "turf supplier near me",
+      "location": "US",
+      "location_code": 2840,
+      "position": 53,
+      "url": "https://theturfyard.com/service-areas/utah/provo/",
+      "title": null,
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "artificial turf suppliers near me",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "where can i buy artificial turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "high_intent",
+      "category": "high_intent_generic",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "how to install artificial turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_install_howto",
+      "category": "competitor_gap_commercial",
+      "intent": "informational_to_commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "how to install artificial turf",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_install_howto",
+      "category": "competitor_gap_commercial",
+      "intent": "informational_to_commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "how to install artificial grass",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_install_howto",
+      "category": "competitor_gap_commercial",
+      "intent": "informational_to_commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "how to install artificial grass",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_install_howto",
+      "category": "competitor_gap_commercial",
+      "intent": "informational_to_commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "how to install turf with pavers",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_install_howto",
+      "category": "competitor_gap_commercial",
+      "intent": "informational_to_commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "how to install turf with pavers",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_install_howto",
+      "category": "competitor_gap_commercial",
+      "intent": "informational_to_commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "how to seam artificial turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": 54,
+      "url": "https://theturfyard.com/turf-seam-tape/",
+      "title": null,
+      "group": "gap_install_howto",
+      "category": "competitor_gap_commercial",
+      "intent": "informational_to_commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:31:13+00:00"
+    },
+    {
+      "keyword": "how to seam artificial turf",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_install_howto",
+      "category": "competitor_gap_commercial",
+      "intent": "informational_to_commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:34:35+00:00"
+    },
+    {
+      "keyword": "best infill for artificial turf",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_infill",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:34:34+00:00"
+    },
+    {
+      "keyword": "best infill for artificial turf",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_infill",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:34:28+00:00"
+    },
+    {
+      "keyword": "silica vs rubber infill",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_infill",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:34:32+00:00"
+    },
+    {
+      "keyword": "silica vs rubber infill",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_infill",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:34:27+00:00"
+    },
+    {
+      "keyword": "zeolite infill",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_infill",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:34:42+00:00"
+    },
+    {
+      "keyword": "zeolite infill",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_infill",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:34:50+00:00"
+    },
+    {
+      "keyword": "pet turf phoenix",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_pet_turf",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:34:56+00:00"
+    },
+    {
+      "keyword": "pet turf phoenix",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_pet_turf",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:34:52+00:00"
+    },
+    {
+      "keyword": "dog run artificial grass",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_pet_turf",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:34:56+00:00"
+    },
+    {
+      "keyword": "dog run artificial grass",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_pet_turf",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:36:05+00:00"
+    },
+    {
+      "keyword": "pet turf installation",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_pet_turf",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:35:44+00:00"
+    },
+    {
+      "keyword": "pet turf installation",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_pet_turf",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:36:00+00:00"
+    },
+    {
+      "keyword": "artificial grass for dogs",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_pet_turf",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:35:57+00:00"
+    },
+    {
+      "keyword": "artificial grass for dogs",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_pet_turf",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:35:55+00:00"
+    },
+    {
+      "keyword": "how long does artificial grass last",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_lifespan_roi",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:36:07+00:00"
+    },
+    {
+      "keyword": "how long does artificial grass last",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_lifespan_roi",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:36:29+00:00"
+    },
+    {
+      "keyword": "artificial turf lifespan",
+      "location": "US",
+      "location_code": 2840,
+      "position": 36,
+      "url": "https://theturfyard.com/what-is-the-life-expectancy-of-artificial-turf/",
+      "title": null,
+      "group": "gap_lifespan_roi",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:36:18+00:00"
+    },
+    {
+      "keyword": "artificial turf lifespan",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 44,
+      "url": "https://theturfyard.com/what-is-the-life-expectancy-of-artificial-turf/",
+      "title": null,
+      "group": "gap_lifespan_roi",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:36:14+00:00"
+    },
+    {
+      "keyword": "artificial turf vs natural grass cost",
+      "location": "US",
+      "location_code": 2840,
+      "position": 53,
+      "url": "https://theturfyard.com/turf-tips/artificial-turf-vs-natural-grass/",
+      "title": null,
+      "group": "gap_lifespan_roi",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:36:21+00:00"
+    },
+    {
+      "keyword": "artificial turf vs natural grass cost",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 49,
+      "url": "https://theturfyard.com/turf-tips/artificial-turf-vs-natural-grass/",
+      "title": "Artificial Turf vs. Natural Grass",
+      "group": "gap_lifespan_roi",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:39:30+00:00"
+    },
+    {
+      "keyword": "artificial grass cost vs natural grass",
+      "location": "US",
+      "location_code": 2840,
+      "position": 69,
+      "url": "https://theturfyard.com/turf-tips/artificial-turf-vs-natural-grass/",
+      "title": "Artificial Turf vs. Natural Grass",
+      "group": "gap_lifespan_roi",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:39:31+00:00"
+    },
+    {
+      "keyword": "artificial grass cost vs natural grass",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 53,
+      "url": "https://theturfyard.com/artificial-turf-vs-natural-grass-which-is-more-cost-effective/",
+      "title": "Artificial Turf vs. Natural Grass: Which is More Cost-Effective?",
+      "group": "gap_lifespan_roi",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial_research",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:39:28+00:00"
+    },
+    {
+      "keyword": "putting green turf phoenix",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_putting_green",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:39:30+00:00"
+    },
+    {
+      "keyword": "putting green turf phoenix",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_putting_green",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:39:33+00:00"
+    },
+    {
+      "keyword": "backyard putting green",
+      "location": "US",
+      "location_code": 2840,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_putting_green",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:39:37+00:00"
+    },
+    {
+      "keyword": "backyard putting green",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": null,
+      "url": null,
+      "title": null,
+      "group": "gap_putting_green",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:40:02+00:00"
+    },
+    {
+      "keyword": "playground turf phoenix",
+      "location": "US",
+      "location_code": 2840,
+      "position": 35,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "gap_playground",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:39:56+00:00"
+    },
+    {
+      "keyword": "playground turf phoenix",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 37,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "gap_playground",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:39:45+00:00"
+    },
+    {
+      "keyword": "commercial artificial turf phoenix",
+      "location": "US",
+      "location_code": 2840,
+      "position": 13,
+      "url": "https://theturfyard.com/",
+      "title": "The Turf Yard: Artificial Turf Supplier in Arizona & Utah",
+      "group": "gap_commercial",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:39:51+00:00"
+    },
+    {
+      "keyword": "commercial artificial turf phoenix",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 68,
+      "url": "https://theturfyard.com/service-areas/arizona/phoenix/",
+      "title": "Artificial Turf Supplier in Phoenix, AZ | Heat-Ready Products",
+      "group": "gap_commercial",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 2,
+      "fetched_at": "2026-06-08T14:39:49+00:00"
+    },
+    {
+      "keyword": "artificial grass scottsdale",
+      "location": "US",
+      "location_code": 2840,
+      "position": 61,
+      "url": "https://theturfyard.com/service-areas/arizona/scottsdale/",
+      "title": "Premium Artificial Turf In Scottsdale, Arizona",
+      "group": "gap_az_cities",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:40:07+00:00"
+    },
+    {
+      "keyword": "artificial grass scottsdale",
+      "location": "Phoenix",
+      "location_code": 1024118,
+      "position": 68,
+      "url": "https://theturfyard.com/service-areas/arizona/scottsdale/",
+      "title": "Premium Artificial Turf In Scottsdale, Arizona",
+      "group": "gap_az_cities",
+      "category": "competitor_gap_commercial",
+      "intent": "commercial",
+      "priority": 1,
+      "fetched_at": "2026-06-08T14:40:05+00:00"
+    }
+  ],
+  "keyword_rankings_summary": {
+    "total_tracked": 102,
+    "unique_keywords": 70,
+    "top_3": 18,
+    "top_10": 38,
+    "top_20": 45,
+    "top_100": 68,
+    "not_ranking": 34,
+    "us_top_10": 34,
+    "phoenix_top_10": 4,
+    "phoenix_top_20": 7,
+    "us_ranked": 50,
+    "phoenix_ranked": 18
+  },
+  "competitors": [],
+  "audit_findings": [
+    {
+      "page": "https://theturfyard.com/artificial-turf-calculator/",
+      "issue": "empty_image_alt",
+      "severity": "low",
+      "fix": "1 image(s) have empty alt attribute (alt=\"\"). Decorative images can keep empty alt; verify these are intentional. If hero/content images, add descriptive alt text including keyword variants."
+    },
+    {
+      "page": "https://theturfyard.com/",
+      "issue": "empty_image_alt",
+      "severity": "low",
+      "fix": "2 image(s) have empty alt attribute (alt=\"\"). Decorative images can keep empty alt; verify these are intentional. If hero/content images, add descriptive alt text including keyword variants."
+    },
+    {
+      "page": "https://theturfyard.com/lush-80-artificial-turf/",
+      "issue": "empty_image_alt",
+      "severity": "low",
+      "fix": "1 image(s) have empty alt attribute (alt=\"\"). Decorative images can keep empty alt; verify these are intentional. If hero/content images, add descriptive alt text including keyword variants."
+    },
+    {
+      "page": "https://theturfyard.com/service-areas/utah/provo/",
+      "issue": "title_truncated",
+      "severity": "minor",
+      "fix": "Title is 68 characters and will truncate in SERPs at ~65 chars. Current: 'Artificial Turf in Provo, UT | Local Yard &amp; Utah County Supplier...'. Shorten while keeping primary keyword + location."
+    },
+    {
+      "page": "https://theturfyard.com/service-areas/utah/provo/",
+      "issue": "empty_image_alt",
+      "severity": "low",
+      "fix": "1 image(s) have empty alt attribute (alt=\"\"). Decorative images can keep empty alt; verify these are intentional. If hero/content images, add descriptive alt text including keyword variants."
+    },
+    {
+      "page": "https://theturfyard.com/sub-base-turf-calculator/",
+      "issue": "empty_image_alt",
+      "severity": "low",
+      "fix": "1 image(s) have empty alt attribute (alt=\"\"). Decorative images can keep empty alt; verify these are intentional. If hero/content images, add descriptive alt text including keyword variants."
+    },
+    {
+      "page": "sitewide",
+      "issue": "schema_complete",
+      "severity": "info",
+      "fix": "All 5 audited pages have comprehensive JSON-LD schema: Organization, LocalBusiness, WebSite, WebPage, BreadcrumbList, FAQPage. Product schema on /lush-80-artificial-turf/. WebApplication on both calculators. Service schema on /service-areas/utah/provo/. Last week's snapshot was wrong on this \u2014 the DataForSEO parser doesn't return JSON-LD, so the prior 'missing_schema' findings were false negatives. This is a positive \u2014 schema is one of the redesign's strongest legacy assets."
+    }
+  ],
+  "cwv": [],
+  "local_pack": [],
+  "backlinks": {
+    "total_backlinks": 416,
+    "referring_domains": 172,
+    "referring_main_domains": 170,
+    "broken_backlinks": 0,
+    "rank": 183,
+    "spam_score": 22,
+    "new_referring": 1,
+    "lost_referring": 0,
+    "_note": "+1 referring domain WoW (172 vs 171). Healthy net-positive movement."
+  },
+  "baseline": {
+    "clicks_per_week": 204,
+    "impressions_per_week": 23816,
+    "avg_position": 17.21,
+    "sessions_per_week": 496,
+    "engagement_rate": 0.558,
+    "ctr": 0.00858
+  },
+  "redesign_impact": {
+    "clicks": {
+      "baseline": 204,
+      "current": 134,
+      "delta_abs": -70,
+      "delta_pct": -34.3
+    },
+    "impressions": {
+      "baseline": 23816,
+      "current": 17372,
+      "delta_abs": -6444,
+      "delta_pct": -27.1
+    },
+    "ctr": {
+      "baseline": 0.00858,
+      "current": 0.00771,
+      "delta_abs": -0.00087,
+      "delta_pct": -10.1
+    },
+    "avg_position": {
+      "baseline": 17.21,
+      "current": 17.81,
+      "delta_abs": 0.6,
+      "delta_pct_worse": true
+    },
+    "sessions": {
+      "baseline": 496,
+      "current": 465,
+      "delta_abs": -31,
+      "delta_pct": -6.2
+    },
+    "engagement_rate": {
+      "baseline": 0.558,
+      "current": 0.5011,
+      "delta_abs": -0.057,
+      "delta_pp": -5.7
+    }
+  },
+  "summary": {
+    "headline": "Week 1 post-redesign read: position recovering. GSC weighted position improved from 20.36 last week to 17.81 this week \u2014 closing the gap to the 17.21 baseline (now within 0.60 positions). June 3 hit position 12.25 \u2014 best single day in the post-launch window. GA4 sessions +3.6% WoW (465 vs 449). Clicks held flat (134 vs 138) on slightly lower impressions (17372 vs 17589) \u2014 meaning we're earning the same clicks from fewer impressions, which is a CTR efficiency win (0.77% vs 0.78%). Redesign verdict at Day 8: no harm done, position metric trending in the right direction. Still below baseline volumes but the trajectory is constructive.",
+    "winners": [
+      {
+        "query": "turf calculator",
+        "clicks_now": 9,
+        "clicks_prior": 4,
+        "delta": 5,
+        "position_now": 11.3,
+        "position_prior": 15.26
+      },
+      {
+        "query": "artificial turf calculator",
+        "clicks_now": 3,
+        "clicks_prior": 0,
+        "delta": 3,
+        "position_now": 5.31,
+        "position_prior": null
+      },
+      {
+        "query": "turf yard base layer calculator",
+        "clicks_now": 5,
+        "clicks_prior": 3,
+        "delta": 2,
+        "position_now": 1,
+        "position_prior": 1.0
+      },
+      {
+        "query": "turf base calculator",
+        "clicks_now": 2,
+        "clicks_prior": 0,
+        "delta": 2,
+        "position_now": 7.29,
+        "position_prior": null
+      },
+      {
+        "query": "500 sq ft artificial grass cost",
+        "clicks_now": 1,
+        "clicks_prior": 0,
+        "delta": 1,
+        "position_now": 9.45,
+        "position_prior": null
+      }
+    ],
+    "losers": [
+      {
+        "query": "lush 80 turf",
+        "clicks_now": 3,
+        "clicks_prior": 4,
+        "delta": -1,
+        "position_now": 1,
+        "position_prior": 1.0
+      }
+    ],
+    "opportunities": [
+      {
+        "query": "artificial turf cost calculator",
+        "impressions": null,
+        "position": null,
+        "ctr": null,
+        "opportunity": "Calculator pages own #1-3 rankings for brand variants and dominate the SERP for calculator queries. Now the lift is title/meta CTR optimization \u2014 push 'Free' and a price-range preview ($X-Y/sq ft) into the meta description to convert page-1 impressions into clicks."
+      },
+      {
+        "query": "artificial grass",
+        "impressions": 95,
+        "position": 4.31,
+        "ctr": 0,
+        "opportunity": "Position improved meaningfully but CTR is still suppressed \u2014 classic AI Overview cannibalization. Rebuild the homepage above-the-fold answer block into a question-answer pattern Google can cite. Add a FAQ-style introductory section before the hero CTA."
+      },
+      {
+        "query": "artificial turf installation",
+        "impressions": null,
+        "position": null,
+        "ctr": null,
+        "opportunity": "Still page 3 \u2014 but installation is your highest-margin service. Stand up a dedicated 'How We Install' page with process photos, install timelines for Phoenix/Mesa/Provo, and HowTo schema. Currently zero install how-to content."
+      },
+      {
+        "query": "artificial grass phoenix (local)",
+        "impressions": null,
+        "position": 38,
+        "ctr": null,
+        "opportunity": "Phoenix-local pos 38 vs US pos ~24 \u2014 the GBP profile is underperforming the website. Audit GBP: primary category, NAP consistency, service-area definitions, recent reviews. The site schema is doing its job; the GBP isn't."
+      }
+    ],
+    "content_strategy": [
+      "Build the pet turf cluster \u2014 0/8 keywords ranking in this group. 'artificial grass for dogs', 'dog run artificial grass', 'pet turf phoenix' are all unranked. Create a /pet-turf/ pillar page with sub-pages for dog runs, drainage specs, antimicrobial infill (Zeolite). High commercial intent + low competition.",
+      "Build the install-how-to cluster \u2014 1/8 keywords ranking. 'how to install artificial turf', 'how to install turf with pavers' are search-volume winners with zero coverage. Each piece should funnel to /service-areas/ + the calculator. Use HowTo schema for rich-result eligibility.",
+      "Build the infill comparison content \u2014 0/6 keywords ranking. 'best infill for artificial turf', 'silica vs rubber infill', 'zeolite infill' are mid-volume, commercial-intent queries. Single comparison page with table + decision tree converts to product pages.",
+      "Rewrite homepage above-the-fold answer block for 'artificial grass' \u2014 pos 2.7 with suppressed CTR signals AI Overview cannibalization. Restructure into a Question\u2192Answer pattern Google can cite. Add a 50-word FAQ-style answer block before the hero CTA.",
+      "GBP optimization sprint \u2014 Phoenix-local rankings (avg pos 31.3) materially lag US rankings (avg pos 14.4) for the same keywords. The site is fine; the GBP isn't. Audit primary category, NAP across local directories, service-area definitions, and review velocity."
+    ],
+    "next_steps": [
+      "Ship the pet turf cluster + install how-to pillar pages. These are the two biggest unaddressed content gaps and target highest commercial intent. Start with /pet-turf/ landing page \u2014 single biggest unranked-keyword cluster (8 keywords, 0 ranked).",
+      "GBP audit and optimization sprint. The 12-17 position gap between US and Phoenix-local rankings is almost entirely a GBP problem, not an on-site problem. Primary category, NAP consistency, service areas, review velocity \u2014 full audit, prioritized fixes.",
+      "Shorten /service-areas/utah/provo/ title from 68\u219264 characters to prevent SERP truncation. Currently 'Artificial Turf in Provo, UT | Local Yard & Utah County Supplier' \u2014 trim 'Utah County' or '& Utah County'. Single-line fix."
+    ],
+    "notes": [
+      "Ahrefs refresh skipped again \u2014 workspace budget at 99,832/100,000 (168 remaining, below 300 threshold). Resets 2026-06-15, will refresh on next Monday's run.",
+      "Core Web Vitals (PSI) returned 429 quota exceeded on all 10 calls \u2014 same shared-IP throttling pattern as previous 2 runs. Strongly recommend provisioning a dedicated PSI API key before next week's run; this is the only persistent data gap.",
+      "Audit step now uses rendered HTML directly (not DataForSEO parser). Last week's 'missing_schema' findings were false negatives \u2014 schema is in fact comprehensive across all 5 audited pages. Cron task description updated to match.",
+      "Tracked keywords: 18 in top 3, 38 in top 10, 45 in top 20, 68 in top 100, 34 not ranking. Calculator pages dominate (8 of top 10 rankings are calculator variants). Content gaps in pet turf, install how-to, and infill comparisons remain unaddressed.",
+      "Phoenix-local rankings: 20/20 phoenix_local keywords rank, but avg position 15.6 (vs US avg 14.4 on same terms). Local-pack: 0 detected appearances of The Turf Yard in 32 Phoenix SERPs scanned. GBP optimization is the biggest local lever.",
+      "GSC daily data covers June 1-6 (6 days) \u2014 June 7 hasn't surfaced yet due to GSC's 24-48hr reporting lag. GA4 7-day totals are complete."
+    ]
+  }
+}
