@@ -1,0 +1,728 @@
+{
+  "week_start": "2026-06-14",
+  "week_end": "2026-06-14",
+  "audit_date": "2026-06-14",
+  "generated_at": "2026-06-14T18:44:08Z",
+  "redesign_launch_date": "2026-05-31",
+  "days_since_redesign": 14,
+  "site": "theturfyard.com",
+  "audit_findings": [
+    {
+      "url": "https://theturfyard.com/downloads/product-spec-sheets/lush-primo-turf-spec.pdf",
+      "severity": "critical",
+      "category": "on-page",
+      "finding": "Broken resource: lush-primo-turf-spec.pdf returns status 0 (unreachable)",
+      "recommendation": "Remove or replace the broken PDF link (lush-primo-turf-spec.pdf). Either upload the PDF to Vercel public assets or update the link to the correct URL."
+    },
+    {
+      "url": "https://theturfyard.com/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Page titles too long (>60 characters) \u2014 Google truncates in SERPs",
+      "recommendation": "Shorten title tags to 50\u201360 characters for optimal SERP display."
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-cost/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Page titles too long (>60 characters) \u2014 Google truncates in SERPs",
+      "recommendation": "Shorten title tags to 50\u201360 characters for optimal SERP display."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/does-artificial-turf-get-hot/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Page titles too long (>60 characters) \u2014 Google truncates in SERPs",
+      "recommendation": "Shorten title tags to 50\u201360 characters for optimal SERP display."
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/lush-primo-artificial-turf/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-artificial-turf-for-dogs-phoenix/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-turf-for-dogs/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-much-infill-for-synthetic-grass/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-clean-artificial-turf/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-install-artificial-turf/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-cost/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/does-artificial-turf-get-hot/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Low content-to-HTML ratio on 69 pages",
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/lush-primo-artificial-turf/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-artificial-turf-for-dogs-phoenix/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-turf-for-dogs/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-much-infill-for-synthetic-grass/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-clean-artificial-turf/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-install-artificial-turf/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-cost/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/does-artificial-turf-get-hot/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Images missing alt text on 65 pages",
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Pages contain broken outbound links (linking to the broken PDF or other 4xx/broken URLs)",
+      "recommendation": "Fix or remove all broken links on these pages; the lush-primo-turf-spec.pdf is the primary culprit."
+    },
+    {
+      "url": "https://theturfyard.com/lush-primo-artificial-turf/",
+      "severity": "warning",
+      "category": "on-page",
+      "finding": "Pages contain broken outbound links (linking to the broken PDF or other 4xx/broken URLs)",
+      "recommendation": "Fix or remove all broken links on these pages; the lush-primo-turf-spec.pdf is the primary culprit."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-artificial-turf-for-dogs-phoenix/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Duplicate content detected on 5 pages",
+      "recommendation": "Review and differentiate page content; add canonical tags where appropriate to consolidate signals."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-turf-for-dogs/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Duplicate content detected on 5 pages",
+      "recommendation": "Review and differentiate page content; add canonical tags where appropriate to consolidate signals."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-much-infill-for-synthetic-grass/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Duplicate content detected on 5 pages",
+      "recommendation": "Review and differentiate page content; add canonical tags where appropriate to consolidate signals."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-clean-artificial-turf/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Duplicate content detected on 5 pages",
+      "recommendation": "Review and differentiate page content; add canonical tags where appropriate to consolidate signals."
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-install-artificial-turf/",
+      "severity": "info",
+      "category": "on-page",
+      "finding": "Duplicate content detected on 5 pages",
+      "recommendation": "Review and differentiate page content; add canonical tags where appropriate to consolidate signals."
+    }
+  ],
+  "competitors": [
+    {
+      "domain": "theturfyard.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 764
+    },
+    {
+      "domain": "youtube.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 706
+    },
+    {
+      "domain": "facebook.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 590
+    },
+    {
+      "domain": "instagram.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 502
+    },
+    {
+      "domain": "homedepot.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 458
+    },
+    {
+      "domain": "syntheticgrasswarehouse.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 424
+    },
+    {
+      "domain": "artificialturfsupply.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 418
+    },
+    {
+      "domain": "installartificial.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 400
+    },
+    {
+      "domain": "reddit.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 391
+    },
+    {
+      "domain": "turffactorydirect.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 365
+    },
+    {
+      "domain": "yelp.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 352
+    },
+    {
+      "domain": "nexgenlawns.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 341
+    },
+    {
+      "domain": "lowes.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 333
+    },
+    {
+      "domain": "purchasegreen.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 309
+    },
+    {
+      "domain": "syntheticgrassstore.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 306
+    },
+    {
+      "domain": "flooringinc.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 294
+    },
+    {
+      "domain": "smartturf.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 290
+    },
+    {
+      "domain": "turfkingz.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 259
+    },
+    {
+      "domain": "amazon.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 235
+    },
+    {
+      "domain": "greatmats.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 226
+    },
+    {
+      "domain": "dfwturf.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 211
+    },
+    {
+      "domain": "synlawn.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 207
+    },
+    {
+      "domain": "southernturfco.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 205
+    },
+    {
+      "domain": "azturfmasters.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 195
+    },
+    {
+      "domain": "bigbullyturf.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 192
+    },
+    {
+      "domain": "turfnetwork.org",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 191
+    },
+    {
+      "domain": "turfdistributors.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 190
+    },
+    {
+      "domain": "artificialturffactoryoutlet.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 190
+    },
+    {
+      "domain": "thumbtack.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 187
+    },
+    {
+      "domain": "atxturf.com",
+      "organic_keywords": null,
+      "organic_traffic": null,
+      "dr": null,
+      "common_keywords": 187
+    }
+  ],
+  "keyword_rankings": [
+    {
+      "keyword": "turf yard",
+      "position": 1,
+      "url": "https://theturfyard.com/",
+      "search_volume": 590,
+      "location": "US"
+    },
+    {
+      "keyword": "the turf yard",
+      "position": 1,
+      "url": "https://theturfyard.com/",
+      "search_volume": 210,
+      "location": "US"
+    },
+    {
+      "keyword": "turf calculator cost",
+      "position": 1,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 140,
+      "location": "US"
+    },
+    {
+      "keyword": "turf cost calculator",
+      "position": 1,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 140,
+      "location": "US"
+    },
+    {
+      "keyword": "lush 80 turf",
+      "position": 1,
+      "url": "https://theturfyard.com/lush-80-artificial-turf/",
+      "search_volume": 30,
+      "location": "US"
+    },
+    {
+      "keyword": "turf for yard",
+      "position": 2,
+      "url": "https://theturfyard.com/",
+      "search_volume": 590,
+      "location": "US"
+    },
+    {
+      "keyword": "turf calculator",
+      "position": 2,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 260,
+      "location": "US"
+    },
+    {
+      "keyword": "baseturf",
+      "position": 2,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "search_volume": 70,
+      "location": "US"
+    },
+    {
+      "keyword": "turf calculator square feet",
+      "position": 3,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 50,
+      "location": "US"
+    },
+    {
+      "keyword": "subbase calculator",
+      "position": 3,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "search_volume": 50,
+      "location": "US"
+    },
+    {
+      "keyword": "the turf yard reviews",
+      "position": 3,
+      "url": "https://theturfyard.com/",
+      "search_volume": 30,
+      "location": "US"
+    },
+    {
+      "keyword": "artificial turf installation cost calculator",
+      "position": 5,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 1600,
+      "location": "US"
+    },
+    {
+      "keyword": "synthetic turf yard",
+      "position": 5,
+      "url": "https://theturfyard.com/",
+      "search_volume": 1300,
+      "location": "US"
+    },
+    {
+      "keyword": "turf cal",
+      "position": 5,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "search_volume": 20,
+      "location": "US"
+    },
+    {
+      "keyword": "turf installation cost calculator",
+      "position": 6,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 170,
+      "location": "US"
+    },
+    {
+      "keyword": "turf estimation",
+      "position": 6,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 90,
+      "location": "US"
+    },
+    {
+      "keyword": "cooling grass",
+      "position": 6,
+      "url": "https://theturfyard.com/understanding-artificial-turf-cooling-technology-and-its-benefits/",
+      "search_volume": 30,
+      "location": "US"
+    },
+    {
+      "keyword": "turf peoria az",
+      "position": 6,
+      "url": "https://theturfyard.com/service-areas/arizona/peoria/",
+      "search_volume": 20,
+      "location": "US"
+    },
+    {
+      "keyword": "artificial grass installation cost calculator",
+      "position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 880,
+      "location": "US"
+    },
+    {
+      "keyword": "artificial grass cost calculator",
+      "position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 720,
+      "location": "US"
+    },
+    {
+      "keyword": "artificial turf for soccer fields",
+      "position": 7,
+      "url": "https://theturfyard.com/the-ultimate-guide-to-choosing-artificial-turf-for-sports-fields/",
+      "search_volume": 210,
+      "location": "US"
+    },
+    {
+      "keyword": "artificial turf infill calculator",
+      "position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 170,
+      "location": "US"
+    },
+    {
+      "keyword": "turf infill calculator",
+      "position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 170,
+      "location": "US"
+    },
+    {
+      "keyword": "putting green cost calculator",
+      "position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 140,
+      "location": "US"
+    },
+    {
+      "keyword": "artificial grass installation mesa az",
+      "position": 7,
+      "url": "https://theturfyard.com/",
+      "search_volume": 110,
+      "location": "US"
+    },
+    {
+      "keyword": "artificial turf installation mesa az",
+      "position": 7,
+      "url": "https://theturfyard.com/",
+      "search_volume": 110,
+      "location": "US"
+    },
+    {
+      "keyword": "turf estimate",
+      "position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 90,
+      "location": "US"
+    },
+    {
+      "keyword": "turf it mesa",
+      "position": 7,
+      "url": "https://theturfyard.com/",
+      "search_volume": 70,
+      "location": "US"
+    },
+    {
+      "keyword": "synthetic grass store in mesa",
+      "position": 7,
+      "url": "https://theturfyard.com/",
+      "search_volume": 40,
+      "location": "US"
+    },
+    {
+      "keyword": "quarter minus calculator",
+      "position": 7,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "search_volume": 30,
+      "location": "US"
+    }
+  ],
+  "summary": {
+    "headline": "Full DataForSEO audit \u2014 14 days post-redesign \u00b7 70 pages crawled \u00b7 avg on-page score 96.91 \u00b7 764 ranked keywords",
+    "winners": [
+      {
+        "keyword": "turf yard",
+        "position": 1,
+        "url": "https://theturfyard.com/"
+      },
+      {
+        "keyword": "the turf yard",
+        "position": 1,
+        "url": "https://theturfyard.com/"
+      },
+      {
+        "keyword": "turf calculator cost",
+        "position": 1,
+        "url": "https://theturfyard.com/artificial-turf-calculator/"
+      },
+      {
+        "keyword": "turf cost calculator",
+        "position": 1,
+        "url": "https://theturfyard.com/artificial-turf-calculator/"
+      },
+      {
+        "keyword": "lush 80 turf",
+        "position": 1,
+        "url": "https://theturfyard.com/lush-80-artificial-turf/"
+      }
+    ],
+    "losers": [],
+    "opportunities": [
+      {
+        "keyword": "how to install an artificial lawn",
+        "position": 16,
+        "url": "https://theturfyard.com/diy-guide-to-installing-artificial-turf-in-your-backyard/",
+        "search_volume": 5400
+      },
+      {
+        "keyword": "artificial turf installation cost calculator",
+        "position": 5,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 1600
+      },
+      {
+        "keyword": "turfing a backyard",
+        "position": 12,
+        "url": "https://theturfyard.com/diy-guide-to-installing-artificial-turf-in-your-backyard/",
+        "search_volume": 3600
+      },
+      {
+        "keyword": "synthetic turf yard",
+        "position": 5,
+        "url": "https://theturfyard.com/",
+        "search_volume": 1300
+      },
+      {
+        "keyword": "turfing companies",
+        "position": 12,
+        "url": "https://theturfyard.com/",
+        "search_volume": 1900
+      }
+    ],
+    "content_strategy": [
+      "Close gap on \"grass turf artificial\" (sv 40,500)",
+      "Close gap on \"turfora artificial grass\" (sv 40,500)",
+      "Close gap on \"artificial grass\" (sv 40,500)",
+      "Close gap on \"artificial grass artificial turf\" (sv 40,500)",
+      "Close gap on \"artificial lawn grass turf\" (sv 40,500)"
+    ],
+    "next_steps": [
+      "Remove or replace the broken PDF link (lush-primo-turf-spec.pdf). Either upload the PDF to Vercel public assets or update the link to the correct URL.",
+      "Shorten title tags to 50\u201360 characters for optimal SERP display.",
+      "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    ],
+    "notes": "Snapshot generated from full DataForSEO audit 2026-06-14. Bridge into existing tables; full audit JSON at data/audits/2026-06-14.json."
+  }
+}
