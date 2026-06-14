@@ -1,0 +1,4715 @@
+{
+  "audit_date": "2026-06-14",
+  "generated_at": "2026-06-14T18:44:08Z",
+  "redesign_launch_date": "2026-05-31",
+  "days_since_redesign": 14,
+  "site": "theturfyard.com",
+  "site_info": {
+    "total_urls_in_sitemap": 72,
+    "total_pages_crawled": 71,
+    "html_pages": 70,
+    "broken_resources": 1,
+    "hosting": "Vercel",
+    "https": true
+  },
+  "crawl_summary": {
+    "avg_onpage_score": 96.91,
+    "min_onpage_score": 93.55,
+    "max_onpage_score": 100,
+    "pages_with_issues": 70,
+    "broken_links_count": 2,
+    "broken_resources_count": 0,
+    "duplicate_titles_count": 0,
+    "duplicate_descriptions_count": 0,
+    "duplicate_content_count": 5,
+    "avg_lcp_ms": null,
+    "avg_tti_ms": 174.19,
+    "avg_dom_complete_ms": 218.9,
+    "avg_total_dom_size_kb": 3086.26,
+    "pages_title_too_long": 3,
+    "pages_no_description": 0,
+    "pages_missing_h1": 0,
+    "pages_with_images_no_alt": 65
+  },
+  "pages": [
+    {
+      "url": "https://theturfyard.com/artificial-turf/",
+      "status_code": 200,
+      "title": "Compare Artificial Turf in Arizona & Utah | The Turf Yard",
+      "title_length": 57,
+      "description": "Compare artificial turf by type, pile height, and use — lawns, pets, putting greens, sports, and commercial. AZ & UT pickup. Get a free estimate.",
+      "description_length": 145,
+      "h1_count": 1,
+      "h1_first": "Compare Artificial Turf Products \n By Type, Use and Budget",
+      "h2_count": 26,
+      "canonical": "https://theturfyard.com/artificial-turf/",
+      "onpage_score": 93.55,
+      "click_depth": 1,
+      "internal_links_count": 59,
+      "external_links_count": 5,
+      "images_count": 21,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 279,
+        "dom_complete_ms": 355,
+        "duration_ms": 356,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3793.64,
+      "encoded_size_kb": 38.49,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": true,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/lush-primo-artificial-turf/",
+      "status_code": 200,
+      "title": "Lush Primo Artificial Turf, Thick Premium Lawn",
+      "title_length": 46,
+      "description": "The densest, thickest artificial turf in our lineup — ideal for premium front yards, curb appeal projects, and high-end contractor installs in AZ and UT.",
+      "description_length": 153,
+      "h1_count": 1,
+      "h1_first": "Lush Primo \n Artificial Turf",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/lush-primo-artificial-turf/",
+      "onpage_score": 93.55,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 5,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 165,
+        "dom_complete_ms": 197,
+        "duration_ms": 198,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3165.14,
+      "encoded_size_kb": 33.42,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": true,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-artificial-turf-for-dogs-phoenix/",
+      "status_code": 200,
+      "title": "Dog Turf Phoenix: Pet-Friendly Grass Guide | The Turf Yard",
+      "title_length": 58,
+      "description": "How to choose the best artificial turf for dogs in Phoenix: monsoon-ready drainage, a zeolite infill that handles odor in the heat, and a durable W-Blade fiber.",
+      "description_length": 160,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf for Dogs in Phoenix: How to Pick Pet-Friendly Grass",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/turf-tips/best-artificial-turf-for-dogs-phoenix/",
+      "onpage_score": 94.96,
+      "click_depth": 2,
+      "internal_links_count": 45,
+      "external_links_count": 7,
+      "images_count": 12,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 170,
+        "dom_complete_ms": 218,
+        "duration_ms": 218,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3251.71,
+      "encoded_size_kb": 38.96,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "duplicate_content"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-turf-for-dogs/",
+      "status_code": 200,
+      "title": "Best Turf for Dogs: How to Pick Pet Turf | The Turf Yard",
+      "title_length": 56,
+      "description": "How to choose the best turf for dogs: free-draining backing, durable W-Blade fiber, and a zeolite infill that handles odor at the source — without the hype.",
+      "description_length": 156,
+      "h1_count": 1,
+      "h1_first": "Best Artificial Turf for Dogs & Pets: How to Choose Pet-Friendly Grass",
+      "h2_count": 15,
+      "canonical": "https://theturfyard.com/turf-tips/best-turf-for-dogs/",
+      "onpage_score": 94.96,
+      "click_depth": 2,
+      "internal_links_count": 44,
+      "external_links_count": 7,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 156,
+        "dom_complete_ms": 204,
+        "duration_ms": 205,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3492.35,
+      "encoded_size_kb": 37.77,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "duplicate_content"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-much-infill-for-synthetic-grass/",
+      "status_code": 200,
+      "title": "How Much Infill for Synthetic Grass? | The Turf Yard",
+      "title_length": 52,
+      "description": "How much infill for synthetic grass? Plan on 1 to 2 lbs per square foot, more for pet yards. Here's how to pick the right type and get the exact amount.",
+      "description_length": 152,
+      "h1_count": 1,
+      "h1_first": "How Much Infill Do You Need for Artificial Turf?",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/turf-tips/how-much-infill-for-synthetic-grass/",
+      "onpage_score": 94.96,
+      "click_depth": 2,
+      "internal_links_count": 46,
+      "external_links_count": 7,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 165,
+        "dom_complete_ms": 210,
+        "duration_ms": 210,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3722.45,
+      "encoded_size_kb": 38.07,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "duplicate_content"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-clean-artificial-turf/",
+      "status_code": 200,
+      "title": "How to Clean & Maintain Artificial Turf | The Turf Yard",
+      "title_length": 55,
+      "description": "How to clean and maintain artificial turf — rinsing, brushing, pet odor, weeds, and infill top-ups — with simple steps that keep synthetic grass looking new.",
+      "description_length": 157,
+      "h1_count": 1,
+      "h1_first": "How to Clean and Maintain Artificial Turf",
+      "h2_count": 19,
+      "canonical": "https://theturfyard.com/turf-tips/how-to-clean-artificial-turf/",
+      "onpage_score": 94.96,
+      "click_depth": 2,
+      "internal_links_count": 46,
+      "external_links_count": 4,
+      "images_count": 20,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 140,
+        "dom_complete_ms": 189,
+        "duration_ms": 191,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 4975.84,
+      "encoded_size_kb": 40.29,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "duplicate_content"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-install-artificial-turf/",
+      "status_code": 200,
+      "title": "How to Install Artificial Turf: DIY | The Turf Yard",
+      "title_length": 51,
+      "description": "How to install artificial turf step by step — base prep, grading, seaming, nailing, and infill. A real DIY guide for Arizona and Utah from The Turf Yard.",
+      "description_length": 153,
+      "h1_count": 1,
+      "h1_first": "How to Install Artificial Turf: A Step-by-Step DIY Guide",
+      "h2_count": 22,
+      "canonical": "https://theturfyard.com/turf-tips/how-to-install-artificial-turf/",
+      "onpage_score": 94.96,
+      "click_depth": 1,
+      "internal_links_count": 46,
+      "external_links_count": 9,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 161,
+        "dom_complete_ms": 298,
+        "duration_ms": 299,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3669.56,
+      "encoded_size_kb": 42.42,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "frame",
+        "duplicate_content"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/",
+      "status_code": 200,
+      "title": "The Turf Yard | Premium Artificial Turf & Synthetic Grass Supplier",
+      "title_length": 66,
+      "description": "Premium artificial turf & synthetic grass supplier — contractor pricing for homeowners, DIYers & pros. Pickup, delivery & free samples across Arizona & Utah.",
+      "description_length": 157,
+      "h1_count": 1,
+      "h1_first": "Premium Artificial Turf at  Contractor Pricing",
+      "h2_count": 20,
+      "canonical": "https://theturfyard.com/",
+      "onpage_score": 95.24,
+      "click_depth": 0,
+      "internal_links_count": 60,
+      "external_links_count": 5,
+      "images_count": 24,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 735,
+        "dom_complete_ms": 738,
+        "duration_ms": 738,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 5501.49,
+      "encoded_size_kb": 38.7,
+      "issues": [
+        "low_content_rate",
+        "title_too_long",
+        "no_image_alt",
+        "no_image_title",
+        "frame"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-cost/",
+      "status_code": 200,
+      "title": "Artificial Turf Cost Per Sq Ft & Installed (2026 Guide) | The Turf Yard",
+      "title_length": 71,
+      "description": "What does artificial turf cost? See per-square-foot price ranges, project-size examples, DIY vs installed costs, and the factors that move the price in AZ & UT.",
+      "description_length": 160,
+      "h1_count": 1,
+      "h1_first": "How Much Does \n Artificial Turf Cost?",
+      "h2_count": 17,
+      "canonical": "https://theturfyard.com/artificial-turf-cost/",
+      "onpage_score": 95.24,
+      "click_depth": 1,
+      "internal_links_count": 45,
+      "external_links_count": 7,
+      "images_count": 3,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 149,
+        "dom_complete_ms": 197,
+        "duration_ms": 197,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1298.89,
+      "encoded_size_kb": 33.46,
+      "issues": [
+        "low_content_rate",
+        "title_too_long",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/does-artificial-turf-get-hot/",
+      "status_code": 200,
+      "title": "Does Artificial Turf Get Hot? Yes — and How to Cool It | The Turf Yard",
+      "title_length": 70,
+      "description": "Does artificial turf get hot? Yes, in full Arizona sun it warms up — here's what drives surface heat and the simple levers that keep it comfortable.",
+      "description_length": 148,
+      "h1_count": 1,
+      "h1_first": "Does Artificial Turf Get Hot? The Honest Answer for Arizona Yards",
+      "h2_count": 15,
+      "canonical": "https://theturfyard.com/turf-tips/does-artificial-turf-get-hot/",
+      "onpage_score": 95.24,
+      "click_depth": 1,
+      "internal_links_count": 44,
+      "external_links_count": 7,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 151,
+        "dom_complete_ms": 198,
+        "duration_ms": 199,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3670.54,
+      "encoded_size_kb": 37.48,
+      "issues": [
+        "low_content_rate",
+        "title_too_long",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/",
+      "status_code": 200,
+      "title": "Turf Tips, Artificial Turf Guides & Advice",
+      "title_length": 42,
+      "description": "Practical guides on choosing, planning, and caring for artificial turf in Arizona and Utah, from pet lawns to putting greens.",
+      "description_length": 125,
+      "h1_count": 1,
+      "h1_first": "Turf Tips &  Expert Advice",
+      "h2_count": 7,
+      "canonical": "https://theturfyard.com/turf-tips/",
+      "onpage_score": 95.98,
+      "click_depth": 1,
+      "internal_links_count": 59,
+      "external_links_count": 4,
+      "images_count": 23,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 137,
+        "dom_complete_ms": 160,
+        "duration_ms": 161,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 5760.49,
+      "encoded_size_kb": 28.03,
+      "issues": [
+        "low_content_rate",
+        "low_character_count",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/artificial-pet-turf/",
+      "status_code": 200,
+      "title": "Artificial Pet Turf for Dogs in Arizona & Utah",
+      "title_length": 46,
+      "description": "Durable artificial pet turf for dogs, backyards, and dog runs in Arizona and Utah. Drains fast, controls odor, handles dog traffic. Free estimate.",
+      "description_length": 146,
+      "h1_count": 1,
+      "h1_first": "Artificial Pet Turf for Dogs, \n Backyards and Dog Runs",
+      "h2_count": 19,
+      "canonical": "https://theturfyard.com/artificial-pet-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 47,
+      "external_links_count": 5,
+      "images_count": 16,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 135,
+        "dom_complete_ms": 216,
+        "duration_ms": 217,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3350.29,
+      "encoded_size_kb": 31.7,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "status_code": 200,
+      "title": "Artificial Turf Cost Calculator – Free Instant Estimate",
+      "title_length": 55,
+      "description": "Estimate your artificial turf or grass project in seconds — square footage, rolls, infill, seams, and a real materials cost range for AZ & UT. Free, no email.",
+      "description_length": 158,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Cost Calculator",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/artificial-turf-calculator/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 4,
+      "images_count": 2,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 144,
+        "dom_complete_ms": 186,
+        "duration_ms": 187,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1132.54,
+      "encoded_size_kb": 39.78,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-gallery/",
+      "status_code": 200,
+      "title": "Artificial Turf Project Gallery: Backyard Ideas | The Turf Yard",
+      "title_length": 63,
+      "description": "Real artificial turf projects from The Turf Yard — backyards, front lawns, putting greens, and before-and-after transformations across Arizona and Utah.",
+      "description_length": 152,
+      "h1_count": 1,
+      "h1_first": "Real Turf Yard \n Project Gallery",
+      "h2_count": 9,
+      "canonical": "https://theturfyard.com/artificial-turf-gallery/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 5,
+      "images_count": 16,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 167,
+        "dom_complete_ms": 214,
+        "duration_ms": 214,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 4584.25,
+      "encoded_size_kb": 25.89,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-glue/",
+      "status_code": 200,
+      "title": "Artificial Turf Glue, Seam & Glue-Down Adhesive",
+      "title_length": 47,
+      "description": "Pro-grade artificial turf glue for seams and glue-downs on concrete, base, and more. No mixing, weather-tough. Pickup or delivery across Arizona & Utah.",
+      "description_length": 152,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf  Glue",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/artificial-turf-glue/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 5,
+      "images_count": 7,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 146,
+        "dom_complete_ms": 188,
+        "duration_ms": 189,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1803.0,
+      "encoded_size_kb": 29.4,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-installation/",
+      "status_code": 200,
+      "title": "Artificial Turf Installation in Arizona & Utah – Built to Last",
+      "title_length": 62,
+      "description": "Premium artificial turf installation across Arizona & Utah. Engineered base, hand-finished seams, turf done right — not paved over. Get a free quote.",
+      "description_length": 149,
+      "h1_count": 1,
+      "h1_first": "Premium Artificial Turf Installation \n For Arizona & Utah Yards",
+      "h2_count": 21,
+      "canonical": "https://theturfyard.com/artificial-turf-installation/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 53,
+      "external_links_count": 6,
+      "images_count": 19,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 164,
+        "dom_complete_ms": 219,
+        "duration_ms": 220,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 4461.66,
+      "encoded_size_kb": 33.27,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "frame"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-project-planner/",
+      "status_code": 200,
+      "title": "Artificial Turf Project Planner | Plan Your Installation",
+      "title_length": 56,
+      "description": "Plan your artificial turf project step by step — product selection, measuring, materials estimation, DIY vs contractor, and getting a quote in AZ & UT.",
+      "description_length": 151,
+      "h1_count": 1,
+      "h1_first": "Plan Your \n Artificial Turf Project",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/artificial-turf-project-planner/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 4,
+      "images_count": 12,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 151,
+        "dom_complete_ms": 224,
+        "duration_ms": 225,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2881.0,
+      "encoded_size_kb": 39.87,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/artificial-turf-wholesaler/",
+      "status_code": 200,
+      "title": "Wholesale Artificial Turf Supplier | Arizona & Utah",
+      "title_length": 51,
+      "description": "Wholesale artificial turf supplier in Arizona and Utah. Full rolls, contractor pricing, Mesa & Provo pickup, or jobsite delivery. Request pricing.",
+      "description_length": 146,
+      "h1_count": 1,
+      "h1_first": "Wholesale Artificial Turf Supplier \n In Arizona & Utah",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/artificial-turf-wholesaler/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 40,
+      "external_links_count": 5,
+      "images_count": 12,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 160,
+        "dom_complete_ms": 225,
+        "duration_ms": 227,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2783.91,
+      "encoded_size_kb": 32.38,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/commercial-artificial-turf/",
+      "status_code": 200,
+      "title": "Commercial Artificial Turf in Arizona & Utah",
+      "title_length": 44,
+      "description": "Commercial artificial turf for businesses, HOAs, and property managers in Arizona and Utah. Bulk pricing, contractor support, and free quotes.",
+      "description_length": 142,
+      "h1_count": 1,
+      "h1_first": "Commercial Artificial Turf for \n High-Traffic Business Properties",
+      "h2_count": 19,
+      "canonical": "https://theturfyard.com/commercial-artificial-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 5,
+      "images_count": 16,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 153,
+        "dom_complete_ms": 181,
+        "duration_ms": 181,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3028.54,
+      "encoded_size_kb": 31.0,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/contractor-turf-pricing/",
+      "status_code": 200,
+      "title": "Contractor Turf Pricing | Trade Accounts & Bulk Rolls",
+      "title_length": 53,
+      "description": "Contractor turf pricing in Arizona, plus Utah. Trade rates, bulk rolls, and will-call pickup for landscapers and installers. Apply for a trade account.",
+      "description_length": 151,
+      "h1_count": 1,
+      "h1_first": "Contractor Turf Pricing \n For Landscapers & Installers",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/contractor-turf-pricing/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 5,
+      "images_count": 9,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 229,
+        "dom_complete_ms": 255,
+        "duration_ms": 256,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2404.62,
+      "encoded_size_kb": 32.95,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/lucky-77-artificial-turf/",
+      "status_code": 200,
+      "title": "Lucky 77 Artificial Turf, Durable Dark Green Lawn",
+      "title_length": 49,
+      "description": "Lucky 77 is our darkest green artificial turf, built tough for contractors, commercial spaces, and residential DIY projects in Arizona and Utah.",
+      "description_length": 144,
+      "h1_count": 1,
+      "h1_first": "Lucky 77 \n Artificial Turf",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/lucky-77-artificial-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 5,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 147,
+        "dom_complete_ms": 174,
+        "duration_ms": 174,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3164.7,
+      "encoded_size_kb": 33.56,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/lush-70-artificial-turf/",
+      "status_code": 200,
+      "title": "Lush 70 Artificial Turf, Budget-Friendly Lawn",
+      "title_length": 45,
+      "description": "Compare Lush 70 artificial turf — a value-focused 70 oz landscape turf for homes and contractor projects. See specs, fit, and estimate options.",
+      "description_length": 143,
+      "h1_count": 1,
+      "h1_first": "Lush 70 \n Artificial Turf",
+      "h2_count": 17,
+      "canonical": "https://theturfyard.com/lush-70-artificial-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 44,
+      "external_links_count": 5,
+      "images_count": 19,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 146,
+        "dom_complete_ms": 180,
+        "duration_ms": 181,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 4769.11,
+      "encoded_size_kb": 33.61,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/lush-80-artificial-turf/",
+      "status_code": 200,
+      "title": "Lush 80 Artificial Turf, Heat-Smart Premium Lawn",
+      "title_length": 48,
+      "description": "Compare Lush 80 artificial turf for residential lawns, pet-friendly yards, and active outdoor spaces. See specs, best uses, and estimate options.",
+      "description_length": 145,
+      "h1_count": 1,
+      "h1_first": "Lush 80 \n Artificial Turf",
+      "h2_count": 17,
+      "canonical": "https://theturfyard.com/lush-80-artificial-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 44,
+      "external_links_count": 5,
+      "images_count": 19,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 152,
+        "dom_complete_ms": 203,
+        "duration_ms": 203,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 4633.11,
+      "encoded_size_kb": 33.96,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/petfill-pro-turf-infill/",
+      "status_code": 200,
+      "title": "PetFill Pro Zeolite Infill, Natural Pet Odor Control",
+      "title_length": 52,
+      "description": "PetFill Pro is a natural zeolite turf infill that neutralizes pet urine odor and cools artificial grass, ideal for dog runs and pet turf. AZ & UT pickup.",
+      "description_length": 153,
+      "h1_count": 1,
+      "h1_first": "PetFill Pro  Zeolite Infill",
+      "h2_count": 15,
+      "canonical": "https://theturfyard.com/petfill-pro-turf-infill/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 5,
+      "images_count": 5,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 141,
+        "dom_complete_ms": 198,
+        "duration_ms": 199,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1385.12,
+      "encoded_size_kb": 28.54,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/putting-green-turf/",
+      "status_code": 200,
+      "title": "Putting Green Turf in Arizona & Utah | The Turf Yard",
+      "title_length": 52,
+      "description": "Backyard putting green turf in Arizona and Utah. Materials, cost estimates, and our free putting green calculator. Get a quote.",
+      "description_length": 127,
+      "h1_count": 1,
+      "h1_first": "Putting Green Turf for \n Backyard and Commercial Golf Spaces",
+      "h2_count": 19,
+      "canonical": "https://theturfyard.com/putting-green-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 5,
+      "images_count": 20,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 160,
+        "dom_complete_ms": 193,
+        "duration_ms": 194,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 4342.19,
+      "encoded_size_kb": 31.53,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/residential-turf/",
+      "status_code": 200,
+      "title": "Residential & Backyard Artificial Turf in Arizona & Utah",
+      "title_length": 56,
+      "description": "Low-maintenance residential and backyard artificial turf in Arizona & Utah. Front yards, backyards, dog-friendly lawns. See real transformations. Get a free estimate.",
+      "description_length": 166,
+      "h1_count": 1,
+      "h1_first": "Residential \n Artificial Turf for Low-Maintenance Lawns",
+      "h2_count": 19,
+      "canonical": "https://theturfyard.com/residential-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 44,
+      "external_links_count": 5,
+      "images_count": 20,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 144,
+        "dom_complete_ms": 185,
+        "duration_ms": 186,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 4594.77,
+      "encoded_size_kb": 32.26,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/",
+      "status_code": 200,
+      "title": "Artificial Turf Service Areas in Arizona & Utah",
+      "title_length": 47,
+      "description": "The Turf Yard serves Arizona and Utah from our Mesa and Provo yards. Find your city, get pickup or delivery, and request a free turf quote.",
+      "description_length": 139,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Service Areas \n In Arizona & Utah",
+      "h2_count": 12,
+      "canonical": "https://theturfyard.com/service-areas/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 51,
+      "external_links_count": 7,
+      "images_count": 18,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 388,
+        "dom_complete_ms": 477,
+        "duration_ms": 478,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3759.51,
+      "encoded_size_kb": 29.31,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "frame"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/",
+      "status_code": 200,
+      "title": "Artificial Turf Supplier in Arizona | Phoenix, Mesa & Valley-Wide",
+      "title_length": 65,
+      "description": "Premium artificial turf and grass across Arizona — Phoenix, Mesa, Gilbert, Scottsdale & more. Local pickup in Mesa, delivery Valley-wide. Get a free quote.",
+      "description_length": 155,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier \n Serving Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 48,
+      "external_links_count": 6,
+      "images_count": 17,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 148,
+        "dom_complete_ms": 170,
+        "duration_ms": 171,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3491.08,
+      "encoded_size_kb": 31.86,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "frame"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/buckeye/",
+      "status_code": 200,
+      "title": "Artificial Turf in Buckeye, AZ | New Builds & Wholesale Supplier",
+      "title_length": 64,
+      "description": "Premium artificial turf in Buckeye, AZ for new-build lawns, large lots, pets, and contractors. Water-smart, heat-ready turf. Quote from The Turf Yard.",
+      "description_length": 150,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Buckeye, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/buckeye/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 52,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 139,
+        "dom_complete_ms": 162,
+        "duration_ms": 163,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3000.08,
+      "encoded_size_kb": 31.75,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/chandler/",
+      "status_code": 200,
+      "title": "Artificial Turf in Chandler, AZ | Contractor & Wholesale Supplier",
+      "title_length": 65,
+      "description": "Premium artificial turf in Chandler, AZ for homes, HOAs, and commercial projects — contractor and wholesale pricing. Free quote from The Turf Yard.",
+      "description_length": 147,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Chandler, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/chandler/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 52,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 158,
+        "dom_complete_ms": 179,
+        "duration_ms": 179,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2921.33,
+      "encoded_size_kb": 31.85,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/gilbert/",
+      "status_code": 200,
+      "title": "Artificial Turf in Gilbert, AZ | Homes, Pets & Wholesale Supplier",
+      "title_length": 65,
+      "description": "Premium artificial turf supplier in Gilbert, AZ — family yards, pets, HOAs, and contractor wholesale pricing. Free quote from The Turf Yard.",
+      "description_length": 140,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Gilbert, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/gilbert/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 51,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 158,
+        "dom_complete_ms": 196,
+        "duration_ms": 197,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3015.47,
+      "encoded_size_kb": 32.21,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/glendale/",
+      "status_code": 200,
+      "title": "Wholesale Artificial Turf in Glendale, AZ | Supplier & Contractor",
+      "title_length": 65,
+      "description": "Wholesale artificial turf supplier in Glendale, AZ — bulk rolls, contractor pricing, and sports-grade turf for the West Valley. Quote from The Turf Yard.",
+      "description_length": 153,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Glendale, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/glendale/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 52,
+      "external_links_count": 5,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 178,
+        "dom_complete_ms": 219,
+        "duration_ms": 220,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2857.68,
+      "encoded_size_kb": 31.53,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/mesa/",
+      "status_code": 200,
+      "title": "Artificial Turf in Mesa, AZ | Local Yard, Pickup & Wholesale",
+      "title_length": 60,
+      "description": "Shop turf at our Mesa yard at 328 N. Gilbert Rd — local pickup, free samples, contractor pricing, and fast quotes for East Valley homes.",
+      "description_length": 136,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Mesa, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/mesa/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 48,
+      "external_links_count": 6,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 142,
+        "dom_complete_ms": 175,
+        "duration_ms": 176,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3222.59,
+      "encoded_size_kb": 32.17,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "frame"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/peoria/",
+      "status_code": 200,
+      "title": "Artificial Turf in Peoria, AZ | Supplier, Pet Turf & New Builds",
+      "title_length": 63,
+      "description": "Premium artificial turf in Peoria, AZ for new-build lawns, 55+ communities, pets & putting greens. Free samples, fast delivery. Quote from The Turf Yard.",
+      "description_length": 153,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Peoria, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/peoria/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 52,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 140,
+        "dom_complete_ms": 184,
+        "duration_ms": 185,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3043.32,
+      "encoded_size_kb": 32.12,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/phoenix/",
+      "status_code": 200,
+      "title": "Artificial Turf Supplier in Phoenix, AZ | Heat-Ready Products",
+      "title_length": 61,
+      "description": "Premium artificial turf in Phoenix, AZ — heat-ready products, transparent pricing, and contractor accounts. Mesa-yard pickup or Valley-wide delivery.",
+      "description_length": 149,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Phoenix, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/phoenix/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 52,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 153,
+        "dom_complete_ms": 192,
+        "duration_ms": 192,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2985.33,
+      "encoded_size_kb": 32.17,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/scottsdale/",
+      "status_code": 200,
+      "title": "Artificial Turf in Scottsdale, AZ | Luxury Lawns & Putting Greens",
+      "title_length": 65,
+      "description": "Premium artificial turf in Scottsdale, AZ — luxury lawns, pool surrounds, and putting greens for upscale homes and resorts. Quote from The Turf Yard.",
+      "description_length": 149,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Scottsdale, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/scottsdale/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 51,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 147,
+        "dom_complete_ms": 186,
+        "duration_ms": 186,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2964.19,
+      "encoded_size_kb": 31.88,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/surprise/",
+      "status_code": 200,
+      "title": "Artificial Turf in Surprise, AZ | New Builds, 55+ & Wholesale",
+      "title_length": 61,
+      "description": "Premium artificial turf in Surprise, AZ for new builds, 55+ communities, pets, and contractor orders. Water-smart, heat-ready. Quote from The Turf Yard.",
+      "description_length": 152,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Surprise, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/surprise/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 52,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 214,
+        "dom_complete_ms": 256,
+        "duration_ms": 258,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3250.29,
+      "encoded_size_kb": 31.71,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/arizona/tempe/",
+      "status_code": 200,
+      "title": "Artificial Turf Supplier in Tempe, AZ | Rentals & Wholesale",
+      "title_length": 59,
+      "description": "Artificial turf in Tempe, AZ for rentals, small yards, and businesses near ASU — plus wholesale and contractor pricing. Free quote from The Turf Yard.",
+      "description_length": 150,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Tempe, Arizona",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/arizona/tempe/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 52,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 159,
+        "dom_complete_ms": 224,
+        "duration_ms": 225,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2968.19,
+      "encoded_size_kb": 31.76,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/utah/",
+      "status_code": 200,
+      "title": "Artificial Turf Supplier in Utah | Provo & the Wasatch Front",
+      "title_length": 60,
+      "description": "Premium artificial turf and grass across Utah — Provo, Salt Lake City, Orem & Draper. Local pickup in Provo, Wasatch Front delivery. Free quotes.",
+      "description_length": 145,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier \n Serving Utah",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/utah/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 42,
+      "external_links_count": 6,
+      "images_count": 11,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 153,
+        "dom_complete_ms": 182,
+        "duration_ms": 183,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2485.98,
+      "encoded_size_kb": 31.57,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "frame"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/utah/draper/",
+      "status_code": 200,
+      "title": "Artificial Turf in Draper, UT | Hillside Homes & Pet Turf",
+      "title_length": 57,
+      "description": "Artificial turf supplier in Draper, UT — hillside homes, pets, putting greens. Provo-yard pickup or Wasatch Front delivery. Free quote.",
+      "description_length": 135,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Draper, Utah",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/utah/draper/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 50,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 140,
+        "dom_complete_ms": 161,
+        "duration_ms": 162,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2862.51,
+      "encoded_size_kb": 31.92,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/utah/orem/",
+      "status_code": 200,
+      "title": "Artificial Turf in Orem, UT | Family & Pet Turf Supplier",
+      "title_length": 56,
+      "description": "Premium artificial turf in Orem, UT for families, rentals, pets, and putting greens. Water-saving, winter-ready. Provo-yard pickup or delivery. Free quote.",
+      "description_length": 155,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Orem, Utah",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/utah/orem/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 50,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 146,
+        "dom_complete_ms": 178,
+        "duration_ms": 178,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2959.59,
+      "encoded_size_kb": 31.53,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/utah/provo/",
+      "status_code": 200,
+      "title": "Artificial Turf in Provo, UT | Local Yard & Utah County Supplier",
+      "title_length": 64,
+      "description": "Shop turf at our Provo yard — pickup, free samples, contractor pricing, and Wasatch Front delivery for families, pets, and commercial projects.",
+      "description_length": 143,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Provo, Utah",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/utah/provo/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 48,
+      "external_links_count": 6,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 163,
+        "dom_complete_ms": 194,
+        "duration_ms": 195,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3071.33,
+      "encoded_size_kb": 31.98,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title",
+        "frame"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/service-areas/utah/salt-lake-city/",
+      "status_code": 200,
+      "title": "Artificial Turf in Salt Lake City, UT | Water-Wise Supplier",
+      "title_length": 59,
+      "description": "Artificial turf supplier in Salt Lake City, UT — water-wise, winter-ready products for homes, pets, and commercial. Provo-yard delivery or free quote.",
+      "description_length": 150,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Supplier In \n Salt Lake City, Utah",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/service-areas/utah/salt-lake-city/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 50,
+      "external_links_count": 5,
+      "images_count": 15,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 156,
+        "dom_complete_ms": 196,
+        "duration_ms": 198,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2956.96,
+      "encoded_size_kb": 31.42,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/sports-turf/",
+      "status_code": 200,
+      "title": "Sports Turf for Athletic Fields & Training Areas",
+      "title_length": 48,
+      "description": "Durable sports turf for athletic fields, sled lanes, training areas, and multi-use spaces in Arizona and Utah. Compare specs and get a free quote.",
+      "description_length": 146,
+      "h1_count": 1,
+      "h1_first": "Sports Turf for Athletic, \n Training and Multi-Use Spaces",
+      "h2_count": 18,
+      "canonical": "https://theturfyard.com/sports-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 5,
+      "images_count": 16,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 165,
+        "dom_complete_ms": 209,
+        "duration_ms": 210,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3082.26,
+      "encoded_size_kb": 30.88,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "status_code": 200,
+      "title": "Artificial Turf Sub-Base Calculator | Rock, DG & Base Depth",
+      "title_length": 59,
+      "description": "Free artificial turf sub-base calculator. Estimate base material volume for AZ and Utah projects, including quarter-minus, crusher fines, and base depth.",
+      "description_length": 153,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf \n Sub-Base Calculator",
+      "h2_count": 18,
+      "canonical": "https://theturfyard.com/sub-base-turf-calculator/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 4,
+      "images_count": 2,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 141,
+        "dom_complete_ms": 182,
+        "duration_ms": 183,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1118.62,
+      "encoded_size_kb": 33.37,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-for-balcony/",
+      "status_code": 200,
+      "title": "Artificial Turf for Patios, Balconies & Rooftops",
+      "title_length": 48,
+      "description": "Artificial turf and fake grass for patios, balconies, and rooftops in AZ & UT. Drainage, HOA tips, and product guidance for small outdoor spaces. Free estimate.",
+      "description_length": 160,
+      "h1_count": 1,
+      "h1_first": "Patio & Balcony Turf for Apartments, \n Rooftops and Small Outdoor Spaces",
+      "h2_count": 18,
+      "canonical": "https://theturfyard.com/turf-for-balcony/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 5,
+      "images_count": 16,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 146,
+        "dom_complete_ms": 179,
+        "duration_ms": 180,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3065.6,
+      "encoded_size_kb": 31.62,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-for-gym/",
+      "status_code": 200,
+      "title": "Gym Turf in Arizona & Utah | The Turf Yard",
+      "title_length": 42,
+      "description": "Gym turf for home gyms, CrossFit boxes, sled lanes, and agility areas in Arizona and Utah. Compare gym turf vs rubber flooring. Get product guidance.",
+      "description_length": 149,
+      "h1_count": 1,
+      "h1_first": "Gym Turf for Sled Lanes, \n Agility Areas and Workout Spaces",
+      "h2_count": 18,
+      "canonical": "https://theturfyard.com/turf-for-gym/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 42,
+      "external_links_count": 5,
+      "images_count": 16,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 141,
+        "dom_complete_ms": 201,
+        "duration_ms": 202,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 2728.69,
+      "encoded_size_kb": 30.88,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-for-playgrounds/",
+      "status_code": 200,
+      "title": "Playground Turf in Arizona & Utah | The Turf Yard",
+      "title_length": 49,
+      "description": "Playground turf for schools, parks, HOAs, and backyards in Arizona and Utah. Safety-rated, drainage-focused, and low-maintenance. Get a free quote.",
+      "description_length": 147,
+      "h1_count": 1,
+      "h1_first": "Playground Turf for Safe, Durable \n and Low-Maintenance Play Areas",
+      "h2_count": 19,
+      "canonical": "https://theturfyard.com/turf-for-playgrounds/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 43,
+      "external_links_count": 5,
+      "images_count": 16,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 153,
+        "dom_complete_ms": 199,
+        "duration_ms": 201,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3381.63,
+      "encoded_size_kb": 31.81,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-infill/",
+      "status_code": 200,
+      "title": "Natural Blend Pro Turf Infill for Artificial Grass",
+      "title_length": 50,
+      "description": "Natural Blend Pro turf infill helps keep blades upright and supports cushioning and drainage. Estimate your infill and order across Arizona and Utah.",
+      "description_length": 149,
+      "h1_count": 1,
+      "h1_first": "Natural Blend Pro \n Turf Infill",
+      "h2_count": 13,
+      "canonical": "https://theturfyard.com/turf-infill/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 40,
+      "external_links_count": 4,
+      "images_count": 3,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 146,
+        "dom_complete_ms": 177,
+        "duration_ms": 178,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1192.03,
+      "encoded_size_kb": 27.91,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-seam-tape/",
+      "status_code": 200,
+      "title": "Turf Seam Tape for Strong, Invisible Grass Seams",
+      "title_length": 48,
+      "description": "Heavy-duty seam tape for artificial grass that joins turf rolls with strong, invisible seams. Self-adhesive and glue-on options. AZ & UT pickup.",
+      "description_length": 144,
+      "h1_count": 1,
+      "h1_first": "Turf Seam  Tape",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/turf-seam-tape/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 5,
+      "images_count": 7,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 152,
+        "dom_complete_ms": 180,
+        "duration_ms": 181,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1858.42,
+      "encoded_size_kb": 28.91,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/artificial-turf-for-sports-fields/",
+      "status_code": 200,
+      "title": "Artificial Turf for Sports Fields: How to Choose | The Turf Yard",
+      "title_length": 64,
+      "description": "How to choose artificial turf for sports fields — pile height, infill, shock pads, drainage, and multi-sport vs. single-sport systems, spec'd by real use.",
+      "description_length": 154,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf for Sports Fields: How to Choose",
+      "h2_count": 18,
+      "canonical": "https://theturfyard.com/turf-tips/artificial-turf-for-sports-fields/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 44,
+      "external_links_count": 7,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 149,
+        "dom_complete_ms": 190,
+        "duration_ms": 191,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3703.11,
+      "encoded_size_kb": 39.91,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/artificial-turf-trends-2026/",
+      "status_code": 200,
+      "title": "Artificial Turf Trends 2026: Real vs Hype | The Turf Yard",
+      "title_length": 57,
+      "description": "Artificial turf trends 2026, sorted by a supplier — cooler blades, better drainage backing, pet and organic infill, recyclable turf, and what's just marketing.",
+      "description_length": 159,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf Trends 2026: What's Real vs Hype",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/turf-tips/artificial-turf-trends-2026/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 45,
+      "external_links_count": 7,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 154,
+        "dom_complete_ms": 227,
+        "duration_ms": 228,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3104.73,
+      "encoded_size_kb": 39.11,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/artificial-turf-vs-natural-grass/",
+      "status_code": 200,
+      "title": "Artificial Turf vs. Natural Grass | The Turf Yard",
+      "title_length": 49,
+      "description": "Artificial turf vs. natural grass on upfront cost, water, maintenance, and 10-year value — an honest, no-sales-pitch take for Arizona and Utah homeowners.",
+      "description_length": 154,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf vs. Natural Grass: Cost, Maintenance & Is It Worth It?",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/turf-tips/artificial-turf-vs-natural-grass/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 44,
+      "external_links_count": 7,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 145,
+        "dom_complete_ms": 190,
+        "duration_ms": 190,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3153.31,
+      "encoded_size_kb": 38.26,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/artificial-turf-water-conservation/",
+      "status_code": 200,
+      "title": "Artificial Turf & Water Conservation: AZ & UT | The Turf Yard",
+      "title_length": 61,
+      "description": "Artificial turf water conservation done plainly — how turf ends lawn watering, what it does to your summer water bill, plus AZ and UT rebates and restrictions.",
+      "description_length": 159,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf & Water Conservation: Saving Water in Arizona & Utah",
+      "h2_count": 17,
+      "canonical": "https://theturfyard.com/turf-tips/artificial-turf-water-conservation/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 45,
+      "external_links_count": 12,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 147,
+        "dom_complete_ms": 194,
+        "duration_ms": 194,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3196.82,
+      "encoded_size_kb": 38.54,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/backyard-putting-green/",
+      "status_code": 200,
+      "title": "How to Build a Backyard Putting Green | The Turf Yard",
+      "title_length": 53,
+      "description": "Build a backyard putting green that actually rolls true — plan, base, turf, cups, and infill, step by step, from a turf supplier in Arizona and Utah.",
+      "description_length": 149,
+      "h1_count": 1,
+      "h1_first": "How to Build a Backyard Putting Green",
+      "h2_count": 12,
+      "canonical": "https://theturfyard.com/turf-tips/backyard-putting-green/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 44,
+      "external_links_count": 6,
+      "images_count": 17,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 160,
+        "dom_complete_ms": 198,
+        "duration_ms": 198,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 4065.34,
+      "encoded_size_kb": 35.14,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/best-artificial-turf-for-arizona-heat/",
+      "status_code": 200,
+      "title": "Best Artificial Turf for Arizona Heat | The Turf Yard",
+      "title_length": 53,
+      "description": "How to choose artificial turf for Arizona heat — blade shape, color, and infill that run cooler underfoot, plus the honest limits and how to manage them.",
+      "description_length": 153,
+      "h1_count": 1,
+      "h1_first": "How to Choose the Best Artificial Turf for Arizona Heat",
+      "h2_count": 15,
+      "canonical": "https://theturfyard.com/turf-tips/best-artificial-turf-for-arizona-heat/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 43,
+      "external_links_count": 7,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 159,
+        "dom_complete_ms": 211,
+        "duration_ms": 212,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3712.69,
+      "encoded_size_kb": 37.77,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-long-does-artificial-turf-last/",
+      "status_code": 200,
+      "title": "How Long Does Artificial Turf Last? | The Turf Yard",
+      "title_length": 51,
+      "description": "How long does artificial turf last? Usually 15-20 years. The real difference between 10 years and 20 is almost never the turf - it's the base under it.",
+      "description_length": 151,
+      "h1_count": 1,
+      "h1_first": "How Long Does Artificial Turf Last? Lifespan & What Affects It",
+      "h2_count": 13,
+      "canonical": "https://theturfyard.com/turf-tips/how-long-does-artificial-turf-last/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 44,
+      "external_links_count": 7,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 633,
+        "dom_complete_ms": 633,
+        "duration_ms": 634,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3514.34,
+      "encoded_size_kb": 37.61,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/how-to-choose-artificial-grass/",
+      "status_code": 200,
+      "title": "How to Choose Artificial Grass: Buyer's Guide | The Turf Yard",
+      "title_length": 61,
+      "description": "How to choose artificial grass without the spec-sheet headache — pile height, blade shape, backing, use case, and budget, with our four rolls compared.",
+      "description_length": 151,
+      "h1_count": 1,
+      "h1_first": "How to Choose Artificial Grass: A Buyer's Guide (Pile, Blade, Backing & Supplier)",
+      "h2_count": 17,
+      "canonical": "https://theturfyard.com/turf-tips/how-to-choose-artificial-grass/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 45,
+      "external_links_count": 7,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 146,
+        "dom_complete_ms": 172,
+        "duration_ms": 173,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3417.52,
+      "encoded_size_kb": 37.53,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/pros-and-cons-of-artificial-turf/",
+      "status_code": 200,
+      "title": "Pros and Cons of Artificial Turf | The Turf Yard",
+      "title_length": 48,
+      "description": "The honest pros and cons of artificial turf from a supplier who'll tell you when not to buy it — water, cost, heat, pets, and lifespan, straight.",
+      "description_length": 145,
+      "h1_count": 1,
+      "h1_first": "The Pros and Cons of Artificial Turf, From Someone Who Sells It",
+      "h2_count": 12,
+      "canonical": "https://theturfyard.com/turf-tips/pros-and-cons-of-artificial-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 46,
+      "external_links_count": 7,
+      "images_count": 12,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 150,
+        "dom_complete_ms": 205,
+        "duration_ms": 206,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3033.15,
+      "encoded_size_kb": 35.83,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/sod-vs-artificial-turf/",
+      "status_code": 200,
+      "title": "Sod vs Artificial Turf in Arizona | The Turf Yard",
+      "title_length": 49,
+      "description": "I tore out my Phoenix lawn after years of fighting weeds and brown patches. Here's the honest sod vs artificial turf comparison I needed.",
+      "description_length": 137,
+      "h1_count": 1,
+      "h1_first": "Sod vs Artificial Turf: An Arizona Homeowner's Honest Take",
+      "h2_count": 18,
+      "canonical": "https://theturfyard.com/turf-tips/sod-vs-artificial-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 51,
+      "external_links_count": 9,
+      "images_count": 18,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 161,
+        "dom_complete_ms": 256,
+        "duration_ms": 256,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3672.01,
+      "encoded_size_kb": 41.71,
+      "issues": [
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/the-ultimate-checklist-for-a-flawless-artificial-turf-installation/",
+      "status_code": 200,
+      "title": "Artificial Turf Installation Checklist | The Turf Yard",
+      "title_length": 54,
+      "description": "A field-tested artificial turf installation checklist — the exact supplies, specs, and fasteners to gather before you dig, plus a same-day post-install QA walk.",
+      "description_length": 160,
+      "h1_count": 1,
+      "h1_first": "The Artificial Turf Installation Checklist: Supplies, Specs & a Final QA Walk-Through",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/turf-tips/the-ultimate-checklist-for-a-flawless-artificial-turf-installation/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 43,
+      "external_links_count": 7,
+      "images_count": 14,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 172,
+        "dom_complete_ms": 245,
+        "duration_ms": 246,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3898.4,
+      "encoded_size_kb": 39.46,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/turf-for-events-temporary-installs/",
+      "status_code": 200,
+      "title": "Turf for Events & Temporary Installs | The Turf Yard",
+      "title_length": 52,
+      "description": "Turf for events and pop-ups: temporary install methods over concrete, rent vs buy, reusable rolls, and how The Turf Yard cuts and supplies it across AZ and UT.",
+      "description_length": 159,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf for Events & Temporary Installations",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/turf-tips/turf-for-events-temporary-installs/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 45,
+      "external_links_count": 7,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 152,
+        "dom_complete_ms": 206,
+        "duration_ms": 207,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3230.68,
+      "encoded_size_kb": 37.93,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/types-of-artificial-turf/",
+      "status_code": 200,
+      "title": "Types of Artificial Turf | The Turf Yard",
+      "title_length": 40,
+      "description": "The real types of artificial turf — by material, by use, and by blade shape — plus what turf is actually made of, explained by a supplier without the jargon.",
+      "description_length": 157,
+      "h1_count": 1,
+      "h1_first": "Types of Artificial Turf (and What It's Actually Made Of)",
+      "h2_count": 14,
+      "canonical": "https://theturfyard.com/turf-tips/types-of-artificial-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 47,
+      "external_links_count": 6,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 131,
+        "dom_complete_ms": 177,
+        "duration_ms": 177,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3191.43,
+      "encoded_size_kb": 36.32,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/turf-tips/why-arizona-homeowners-switch-to-turf/",
+      "status_code": 200,
+      "title": "Why Arizona Homeowners Switch to Turf | The Turf Yard",
+      "title_length": 53,
+      "description": "Why Arizona homeowners switch to turf — and why the real reason usually isn't the water bill. Heat, caliche soil, HOA rules, pets, and getting weekends back.",
+      "description_length": 157,
+      "h1_count": 1,
+      "h1_first": "Why Arizona Homeowners Are Switching to Artificial Grass",
+      "h2_count": 17,
+      "canonical": "https://theturfyard.com/turf-tips/why-arizona-homeowners-switch-to-turf/",
+      "onpage_score": 97.07,
+      "click_depth": 2,
+      "internal_links_count": 45,
+      "external_links_count": 7,
+      "images_count": 13,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 140,
+        "dom_complete_ms": 198,
+        "duration_ms": 199,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 3245.27,
+      "encoded_size_kb": 38.59,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/weed-barrier-for-artificial-grass/",
+      "status_code": 200,
+      "title": "Weed Barrier for Artificial Grass, Breathable Fabric",
+      "title_length": 52,
+      "description": "Breathable weed barrier fabric for under artificial turf. Blocks weeds while letting water drain. When you need it, and when you don’t. AZ & UT.",
+      "description_length": 144,
+      "h1_count": 1,
+      "h1_first": "Weed Barrier  for Artificial Grass",
+      "h2_count": 17,
+      "canonical": "https://theturfyard.com/weed-barrier-for-artificial-grass/",
+      "onpage_score": 97.07,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 5,
+      "images_count": 7,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 147,
+        "dom_complete_ms": 168,
+        "duration_ms": 169,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1990.37,
+      "encoded_size_kb": 29.65,
+      "issues": [
+        "low_content_rate",
+        "no_image_alt",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/sms-terms/",
+      "status_code": 200,
+      "title": "SMS Terms | The Turf Yard",
+      "title_length": 25,
+      "description": "Text messaging (SMS) terms for The Turf Yard. Message types, frequency, opt-out instructions, and how we use your phone number.",
+      "description_length": 127,
+      "h1_count": 1,
+      "h1_first": "SMS Terms",
+      "h2_count": 16,
+      "canonical": "https://theturfyard.com/sms-terms/",
+      "onpage_score": 98.17,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 4,
+      "images_count": 1,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 138,
+        "dom_complete_ms": 149,
+        "duration_ms": 150,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1001.5,
+      "encoded_size_kb": 24.29,
+      "issues": [
+        "low_content_rate",
+        "title_too_short",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/about/bennett-brown/",
+      "status_code": 200,
+      "title": "Bennett Brown, Co-Founder | The Turf Yard",
+      "title_length": 41,
+      "description": "Bennett Brown is a co-founder of The Turf Yard, a wholesale artificial turf supplier serving Arizona and Utah from yards in Mesa and Provo.",
+      "description_length": 139,
+      "h1_count": 1,
+      "h1_first": "Bennett Brown",
+      "h2_count": 5,
+      "canonical": "https://theturfyard.com/about/bennett-brown/",
+      "onpage_score": 100,
+      "click_depth": 1,
+      "internal_links_count": 40,
+      "external_links_count": 4,
+      "images_count": 2,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 131,
+        "dom_complete_ms": 145,
+        "duration_ms": 145,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1332.92,
+      "encoded_size_kb": 23.14,
+      "issues": [
+        "low_content_rate",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/contact-us/",
+      "status_code": 200,
+      "title": "Contact The Turf Yard | Quotes, Samples & Pricing",
+      "title_length": 49,
+      "description": "Get a free artificial turf quote, request samples, or ask about contractor pricing. Call (480) 910-2440 or visit our Mesa & Provo yards.",
+      "description_length": 136,
+      "h1_count": 1,
+      "h1_first": "Contact \n The Turf Yard",
+      "h2_count": 10,
+      "canonical": "https://theturfyard.com/contact-us/",
+      "onpage_score": 100,
+      "click_depth": 1,
+      "internal_links_count": 40,
+      "external_links_count": 6,
+      "images_count": 3,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 149,
+        "dom_complete_ms": 266,
+        "duration_ms": 267,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1663.55,
+      "encoded_size_kb": 29.33,
+      "issues": [
+        "low_content_rate",
+        "no_image_title",
+        "frame"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/faqs/",
+      "status_code": 200,
+      "title": "Artificial Turf FAQs | The Turf Yard",
+      "title_length": 36,
+      "description": "Answers to common artificial turf questions — products, pet turf, heat, warranty, roll sizes, pickup and delivery, and pricing across Arizona and Utah.",
+      "description_length": 151,
+      "h1_count": 1,
+      "h1_first": "Artificial Turf \n FAQs",
+      "h2_count": 12,
+      "canonical": "https://theturfyard.com/faqs/",
+      "onpage_score": 100,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 4,
+      "images_count": 1,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 169,
+        "dom_complete_ms": 202,
+        "duration_ms": 203,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1040.8,
+      "encoded_size_kb": 27.01,
+      "issues": [
+        "low_content_rate",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    },
+    {
+      "url": "https://theturfyard.com/privacy-policy/",
+      "status_code": 200,
+      "title": "Privacy Policy | The Turf Yard",
+      "title_length": 30,
+      "description": "How The Turf Yard collects, uses, and protects your information when you request a quote, use our calculators, or contact our Mesa and Provo yards.",
+      "description_length": 147,
+      "h1_count": 1,
+      "h1_first": "Privacy Policy",
+      "h2_count": 17,
+      "canonical": "https://theturfyard.com/privacy-policy/",
+      "onpage_score": 100,
+      "click_depth": 1,
+      "internal_links_count": 39,
+      "external_links_count": 4,
+      "images_count": 1,
+      "page_timing": {
+        "lcp_ms": 0,
+        "tti_ms": 187,
+        "dom_complete_ms": 228,
+        "duration_ms": 229,
+        "fid_ms": 0
+      },
+      "total_dom_size_kb": 1006.68,
+      "encoded_size_kb": 26.16,
+      "issues": [
+        "low_content_rate",
+        "no_image_title"
+      ],
+      "broken_links": false,
+      "broken_resources": false
+    }
+  ],
+  "competitors": [
+    {
+      "domain": "theturfyard.com",
+      "avg_position": 40.71,
+      "intersections": 764,
+      "pos_1": 6,
+      "pos_2_3": 9,
+      "pos_4_10": 65,
+      "pos_11_20": 132,
+      "etv": 2303.49,
+      "is_self": true
+    },
+    {
+      "domain": "youtube.com",
+      "avg_position": 25.47,
+      "intersections": 706,
+      "pos_1": 4751384,
+      "pos_2_3": 7066523,
+      "pos_4_10": 44951464,
+      "pos_11_20": 51710387,
+      "etv": 3497166205.36,
+      "is_self": false
+    },
+    {
+      "domain": "facebook.com",
+      "avg_position": 21.72,
+      "intersections": 590,
+      "pos_1": 2685482,
+      "pos_2_3": 16362220,
+      "pos_4_10": 49127796,
+      "pos_11_20": 26052081,
+      "etv": 3310043094.4,
+      "is_self": false
+    },
+    {
+      "domain": "instagram.com",
+      "avg_position": 31.38,
+      "intersections": 502,
+      "pos_1": 1852431,
+      "pos_2_3": 6833704,
+      "pos_4_10": 22069656,
+      "pos_11_20": 23293560,
+      "etv": 2561028948.72,
+      "is_self": false
+    },
+    {
+      "domain": "homedepot.com",
+      "avg_position": 17.12,
+      "intersections": 458,
+      "pos_1": 639035,
+      "pos_2_3": 858082,
+      "pos_4_10": 1776055,
+      "pos_11_20": 1336304,
+      "etv": 357802121.21,
+      "is_self": false
+    },
+    {
+      "domain": "syntheticgrasswarehouse.com",
+      "avg_position": 21.44,
+      "intersections": 424,
+      "pos_1": 115,
+      "pos_2_3": 408,
+      "pos_4_10": 1211,
+      "pos_11_20": 889,
+      "etv": 117770.2,
+      "is_self": false
+    },
+    {
+      "domain": "artificialturfsupply.com",
+      "avg_position": 33.93,
+      "intersections": 418,
+      "pos_1": 12,
+      "pos_2_3": 41,
+      "pos_4_10": 300,
+      "pos_11_20": 667,
+      "etv": 11852.42,
+      "is_self": false
+    },
+    {
+      "domain": "installartificial.com",
+      "avg_position": 32.57,
+      "intersections": 400,
+      "pos_1": 40,
+      "pos_2_3": 115,
+      "pos_4_10": 497,
+      "pos_11_20": 959,
+      "etv": 64367.15,
+      "is_self": false
+    },
+    {
+      "domain": "reddit.com",
+      "avg_position": 7.7,
+      "intersections": 391,
+      "pos_1": 13333133,
+      "pos_2_3": 24577693,
+      "pos_4_10": 40838185,
+      "pos_11_20": 15073745,
+      "etv": 4780582654.31,
+      "is_self": false
+    },
+    {
+      "domain": "turffactorydirect.com",
+      "avg_position": 21.85,
+      "intersections": 365,
+      "pos_1": 396,
+      "pos_2_3": 726,
+      "pos_4_10": 1214,
+      "pos_11_20": 1275,
+      "etv": 198120.56,
+      "is_self": false
+    },
+    {
+      "domain": "yelp.com",
+      "avg_position": 14.24,
+      "intersections": 352,
+      "pos_1": 1997692,
+      "pos_2_3": 9841715,
+      "pos_4_10": 13196019,
+      "pos_11_20": 4341750,
+      "etv": 1586410032.67,
+      "is_self": false
+    },
+    {
+      "domain": "nexgenlawns.com",
+      "avg_position": 22.73,
+      "intersections": 341,
+      "pos_1": 83,
+      "pos_2_3": 438,
+      "pos_4_10": 1122,
+      "pos_11_20": 952,
+      "etv": 121939.85,
+      "is_self": false
+    },
+    {
+      "domain": "lowes.com",
+      "avg_position": 20.44,
+      "intersections": 333,
+      "pos_1": 195180,
+      "pos_2_3": 387946,
+      "pos_4_10": 1247474,
+      "pos_11_20": 1025250,
+      "etv": 135371759.18,
+      "is_self": false
+    },
+    {
+      "domain": "purchasegreen.com",
+      "avg_position": 24.95,
+      "intersections": 309,
+      "pos_1": 173,
+      "pos_2_3": 319,
+      "pos_4_10": 885,
+      "pos_11_20": 1176,
+      "etv": 52029.53,
+      "is_self": false
+    },
+    {
+      "domain": "syntheticgrassstore.com",
+      "avg_position": 20.47,
+      "intersections": 306,
+      "pos_1": 142,
+      "pos_2_3": 274,
+      "pos_4_10": 590,
+      "pos_11_20": 445,
+      "etv": 98274.52,
+      "is_self": false
+    },
+    {
+      "domain": "flooringinc.com",
+      "avg_position": 28.16,
+      "intersections": 294,
+      "pos_1": 1026,
+      "pos_2_3": 3039,
+      "pos_4_10": 9423,
+      "pos_11_20": 9786,
+      "etv": 672430.54,
+      "is_self": false
+    },
+    {
+      "domain": "smartturf.com",
+      "avg_position": 30.66,
+      "intersections": 290,
+      "pos_1": 222,
+      "pos_2_3": 201,
+      "pos_4_10": 551,
+      "pos_11_20": 733,
+      "etv": 111876.49,
+      "is_self": false
+    },
+    {
+      "domain": "turfkingz.com",
+      "avg_position": 28.56,
+      "intersections": 259,
+      "pos_1": 11,
+      "pos_2_3": 26,
+      "pos_4_10": 170,
+      "pos_11_20": 531,
+      "etv": 8146.11,
+      "is_self": false
+    },
+    {
+      "domain": "amazon.com",
+      "avg_position": 26.49,
+      "intersections": 235,
+      "pos_1": 7416375,
+      "pos_2_3": 7799618,
+      "pos_4_10": 11633607,
+      "pos_11_20": 6149824,
+      "etv": 2384598062.97,
+      "is_self": false
+    },
+    {
+      "domain": "greatmats.com",
+      "avg_position": 28.94,
+      "intersections": 226,
+      "pos_1": 1210,
+      "pos_2_3": 3206,
+      "pos_4_10": 9289,
+      "pos_11_20": 6510,
+      "etv": 518508.95,
+      "is_self": false
+    },
+    {
+      "domain": "dfwturf.com",
+      "avg_position": 38.74,
+      "intersections": 211,
+      "pos_1": 21,
+      "pos_2_3": 93,
+      "pos_4_10": 271,
+      "pos_11_20": 651,
+      "etv": 12615.49,
+      "is_self": false
+    },
+    {
+      "domain": "synlawn.com",
+      "avg_position": 13.66,
+      "intersections": 207,
+      "pos_1": 181,
+      "pos_2_3": 471,
+      "pos_4_10": 1238,
+      "pos_11_20": 735,
+      "etv": 127671.69,
+      "is_self": false
+    },
+    {
+      "domain": "southernturfco.com",
+      "avg_position": 30.4,
+      "intersections": 205,
+      "pos_1": 26,
+      "pos_2_3": 27,
+      "pos_4_10": 173,
+      "pos_11_20": 348,
+      "etv": 8669.47,
+      "is_self": false
+    },
+    {
+      "domain": "azturfmasters.com",
+      "avg_position": 19.72,
+      "intersections": 195,
+      "pos_1": 26,
+      "pos_2_3": 27,
+      "pos_4_10": 73,
+      "pos_11_20": 131,
+      "etv": 9072.11,
+      "is_self": false
+    },
+    {
+      "domain": "bigbullyturf.com",
+      "avg_position": 18.72,
+      "intersections": 192,
+      "pos_1": 17,
+      "pos_2_3": 32,
+      "pos_4_10": 340,
+      "pos_11_20": 243,
+      "etv": 22087.9,
+      "is_self": false
+    },
+    {
+      "domain": "turfnetwork.org",
+      "avg_position": 31.38,
+      "intersections": 191,
+      "pos_1": 10,
+      "pos_2_3": 18,
+      "pos_4_10": 347,
+      "pos_11_20": 357,
+      "etv": 4356.7,
+      "is_self": false
+    },
+    {
+      "domain": "turfdistributors.com",
+      "avg_position": 28.3,
+      "intersections": 190,
+      "pos_1": 32,
+      "pos_2_3": 23,
+      "pos_4_10": 139,
+      "pos_11_20": 303,
+      "etv": 12421.55,
+      "is_self": false
+    },
+    {
+      "domain": "artificialturffactoryoutlet.com",
+      "avg_position": 56.38,
+      "intersections": 190,
+      "pos_1": 3,
+      "pos_2_3": 2,
+      "pos_4_10": 11,
+      "pos_11_20": 30,
+      "etv": 2546.49,
+      "is_self": false
+    },
+    {
+      "domain": "thumbtack.com",
+      "avg_position": 35.38,
+      "intersections": 187,
+      "pos_1": 9505,
+      "pos_2_3": 26589,
+      "pos_4_10": 162438,
+      "pos_11_20": 181174,
+      "etv": 13230250.85,
+      "is_self": false
+    },
+    {
+      "domain": "atxturf.com",
+      "avg_position": 28.64,
+      "intersections": 187,
+      "pos_1": 137,
+      "pos_2_3": 364,
+      "pos_4_10": 666,
+      "pos_11_20": 711,
+      "etv": 81557.18,
+      "is_self": false
+    }
+  ],
+  "keyword_rankings": {
+    "total_ranked": 764,
+    "top_3": 11,
+    "top_10": 47,
+    "top_20": 139,
+    "top_50": 422,
+    "top_100": 708,
+    "by_position_band": {
+      "1": 5,
+      "2-3": 6,
+      "4-10": 36,
+      "11-20": 92,
+      "21-50": 283,
+      "51-100": 286
+    },
+    "top_winners": [
+      {
+        "keyword": "turf yard",
+        "position": 1,
+        "url": "https://theturfyard.com/",
+        "search_volume": 590,
+        "competition": 0.949999988079071,
+        "cpc": 6.559999942779541
+      },
+      {
+        "keyword": "the turf yard",
+        "position": 1,
+        "url": "https://theturfyard.com/",
+        "search_volume": 210,
+        "competition": 0.1599999964237213,
+        "cpc": 17.079999923706055
+      },
+      {
+        "keyword": "turf calculator cost",
+        "position": 1,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 140,
+        "competition": 0.8399999737739563,
+        "cpc": 6.579999923706055
+      },
+      {
+        "keyword": "turf cost calculator",
+        "position": 1,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 140,
+        "competition": 0.8399999737739563,
+        "cpc": 6.579999923706055
+      },
+      {
+        "keyword": "lush 80 turf",
+        "position": 1,
+        "url": "https://theturfyard.com/lush-80-artificial-turf/",
+        "search_volume": 30,
+        "competition": 0.8799999952316284,
+        "cpc": 5.539999961853027
+      },
+      {
+        "keyword": "turf for yard",
+        "position": 2,
+        "url": "https://theturfyard.com/",
+        "search_volume": 590,
+        "competition": 1,
+        "cpc": 4.949999809265137
+      },
+      {
+        "keyword": "turf calculator",
+        "position": 2,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 260,
+        "competition": 0.18000000715255737,
+        "cpc": 8.600000381469727
+      },
+      {
+        "keyword": "baseturf",
+        "position": 2,
+        "url": "https://theturfyard.com/sub-base-turf-calculator/",
+        "search_volume": 70,
+        "competition": 0,
+        "cpc": null
+      },
+      {
+        "keyword": "turf calculator square feet",
+        "position": 3,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 50,
+        "competition": 0.38999998569488525,
+        "cpc": 4.409999847412109
+      },
+      {
+        "keyword": "subbase calculator",
+        "position": 3,
+        "url": "https://theturfyard.com/sub-base-turf-calculator/",
+        "search_volume": 50,
+        "competition": 0.009999999776482582,
+        "cpc": 11.34000015258789
+      },
+      {
+        "keyword": "the turf yard reviews",
+        "position": 3,
+        "url": "https://theturfyard.com/",
+        "search_volume": 30,
+        "competition": 0.009999999776482582,
+        "cpc": null
+      },
+      {
+        "keyword": "artificial turf installation cost calculator",
+        "position": 5,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 1600,
+        "competition": 0,
+        "cpc": 10.619999885559082
+      },
+      {
+        "keyword": "synthetic turf yard",
+        "position": 5,
+        "url": "https://theturfyard.com/",
+        "search_volume": 1300,
+        "competition": 1,
+        "cpc": 2.619999885559082
+      },
+      {
+        "keyword": "turf cal",
+        "position": 5,
+        "url": "https://theturfyard.com/sub-base-turf-calculator/",
+        "search_volume": 20,
+        "competition": 0.7699999809265137,
+        "cpc": 8.5600004196167
+      },
+      {
+        "keyword": "turf installation cost calculator",
+        "position": 6,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 170,
+        "competition": 0.11999999731779099,
+        "cpc": 7.420000076293945
+      },
+      {
+        "keyword": "turf estimation",
+        "position": 6,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 90,
+        "competition": 0.8100000023841858,
+        "cpc": 29.079999923706055
+      },
+      {
+        "keyword": "cooling grass",
+        "position": 6,
+        "url": "https://theturfyard.com/understanding-artificial-turf-cooling-technology-and-its-benefits/",
+        "search_volume": 30,
+        "competition": 0.1899999976158142,
+        "cpc": 0.009999999776482582
+      },
+      {
+        "keyword": "turf peoria az",
+        "position": 6,
+        "url": "https://theturfyard.com/service-areas/arizona/peoria/",
+        "search_volume": 20,
+        "competition": 0.7599999904632568,
+        "cpc": null
+      },
+      {
+        "keyword": "artificial grass installation cost calculator",
+        "position": 7,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 880,
+        "competition": 0.009999999776482582,
+        "cpc": 4.989999771118164
+      },
+      {
+        "keyword": "artificial grass cost calculator",
+        "position": 7,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 720,
+        "competition": 0.550000011920929,
+        "cpc": 4.369999885559082
+      },
+      {
+        "keyword": "artificial turf for soccer fields",
+        "position": 7,
+        "url": "https://theturfyard.com/the-ultimate-guide-to-choosing-artificial-turf-for-sports-fields/",
+        "search_volume": 210,
+        "competition": 0.5199999809265137,
+        "cpc": 3.6700000762939453
+      },
+      {
+        "keyword": "artificial turf infill calculator",
+        "position": 7,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 170,
+        "competition": 0.05999999865889549,
+        "cpc": 7.75
+      },
+      {
+        "keyword": "turf infill calculator",
+        "position": 7,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 170,
+        "competition": 0.07999999821186066,
+        "cpc": 6.960000038146973
+      },
+      {
+        "keyword": "putting green cost calculator",
+        "position": 7,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 140,
+        "competition": 0.5799999833106995,
+        "cpc": 4.28000020980835
+      },
+      {
+        "keyword": "artificial grass installation mesa az",
+        "position": 7,
+        "url": "https://theturfyard.com/",
+        "search_volume": 110,
+        "competition": 0.07999999821186066,
+        "cpc": 3.4200000762939453
+      },
+      {
+        "keyword": "artificial turf installation mesa az",
+        "position": 7,
+        "url": "https://theturfyard.com/",
+        "search_volume": 110,
+        "competition": 0.07999999821186066,
+        "cpc": 3.4200000762939453
+      },
+      {
+        "keyword": "turf estimate",
+        "position": 7,
+        "url": "https://theturfyard.com/artificial-turf-calculator/",
+        "search_volume": 90,
+        "competition": 0.8100000023841858,
+        "cpc": 29.079999923706055
+      },
+      {
+        "keyword": "turf it mesa",
+        "position": 7,
+        "url": "https://theturfyard.com/",
+        "search_volume": 70,
+        "competition": 0.7099999785423279,
+        "cpc": 24.520000457763672
+      },
+      {
+        "keyword": "synthetic grass store in mesa",
+        "position": 7,
+        "url": "https://theturfyard.com/",
+        "search_volume": 40,
+        "competition": 0.699999988079071,
+        "cpc": 16.8700008392334
+      },
+      {
+        "keyword": "quarter minus calculator",
+        "position": 7,
+        "url": "https://theturfyard.com/sub-base-turf-calculator/",
+        "search_volume": 30,
+        "competition": 0,
+        "cpc": null
+      }
+    ]
+  },
+  "keyword_expansion": {
+    "by_seed": {
+      "artificial_grass": {
+        "total_suggestions": 100,
+        "high_value": [
+          {
+            "keyword": "grass turf artificial",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 29,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "turfora artificial grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 29,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 29,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial grass artificial turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 9,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial lawn grass turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 4,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "synthetic grass artificial turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 30,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf synthetic grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 40,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "grass artificial turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 29,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "turf artificial grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 20,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial grass synthetic turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 30,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial synthetic grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 28,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "grass artificial grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 29,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial grass fitting cost",
+            "search_volume": 18100,
+            "competition": 0.11,
+            "cpc": 8.98,
+            "kd": 14,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "cost of artificial grass installation",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 2,
+            "intent": "informational"
+          },
+          {
+            "keyword": "installation of artificial grass cost",
+            "search_volume": 18100,
+            "competition": 0.11,
+            "cpc": 8.98,
+            "kd": 0,
+            "intent": "informational"
+          }
+        ]
+      },
+      "artificial_turf_phoenix": {
+        "total_suggestions": 21,
+        "high_value": [
+          {
+            "keyword": "artificial turf phoenix",
+            "search_volume": 590,
+            "competition": 0.76,
+            "cpc": 52.17,
+            "kd": 21,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf phoenix arizona",
+            "search_volume": 590,
+            "competition": 0.76,
+            "cpc": 52.17,
+            "kd": 23,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "artificial turf in phoenix",
+            "search_volume": 590,
+            "competition": 0.72,
+            "cpc": 18.4,
+            "kd": 27,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf phoenix az",
+            "search_volume": 590,
+            "competition": 0.72,
+            "cpc": 18.4,
+            "kd": 21,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "phoenix artificial turf",
+            "search_volume": 590,
+            "competition": 0.76,
+            "cpc": 52.17,
+            "kd": 23,
+            "intent": "informational"
+          },
+          {
+            "keyword": "artificial turf installation phoenix",
+            "search_volume": 320,
+            "competition": 0.29,
+            "cpc": 22.21,
+            "kd": 26,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "artificial turf wholesale phoenix",
+            "search_volume": 320,
+            "competition": 0.92,
+            "cpc": 6.17,
+            "kd": 7,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "artificial turf installation phoenix az",
+            "search_volume": 260,
+            "competition": 0.35,
+            "cpc": 26.07,
+            "kd": 16,
+            "intent": "commercial"
+          }
+        ]
+      },
+      "backyard_turf": {
+        "total_suggestions": 100,
+        "high_value": [
+          {
+            "keyword": "fake turf backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.2,
+            "kd": 9,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "turf in the backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.2,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "astro turf for backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.2,
+            "kd": 9,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "synthetic turf for backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.41,
+            "kd": 30,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf for the backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.2,
+            "kd": 2,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "turf for backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.41,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic turf backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.41,
+            "kd": 17,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf for backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.2,
+            "kd": 7,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "turf for the backyard",
+            "search_volume": 3600,
+            "competition": 1,
+            "cpc": 5.2,
+            "kd": 5,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf in backyard",
+            "search_volume": 2900,
+            "competition": 1,
+            "cpc": 3.94,
+            "kd": 5,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "fake turf for backyard",
+            "search_volume": 2900,
+            "competition": 1,
+            "cpc": 3.94,
+            "kd": 6,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf grass for backyard",
+            "search_volume": 2900,
+            "competition": 1,
+            "cpc": 3.56,
+            "kd": null,
+            "intent": "informational"
+          },
+          {
+            "keyword": "artificial backyard turf",
+            "search_volume": 2900,
+            "competition": 1,
+            "cpc": 3.56,
+            "kd": 8,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "cost of turf in backyard",
+            "search_volume": 1300,
+            "competition": 1,
+            "cpc": 6.49,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "turf backyard cost",
+            "search_volume": 1300,
+            "competition": 1,
+            "cpc": 6.49,
+            "kd": 0,
+            "intent": "informational"
+          }
+        ]
+      },
+      "how_to_install_artificial_turf": {
+        "total_suggestions": 59,
+        "high_value": [
+          {
+            "keyword": "how to install artificial turf",
+            "search_volume": 5400,
+            "competition": 0.82,
+            "cpc": 1.17,
+            "kd": 15,
+            "intent": "informational"
+          },
+          {
+            "keyword": "artificial turf how to install",
+            "search_volume": 5400,
+            "competition": 0.82,
+            "cpc": 1.17,
+            "kd": 12,
+            "intent": "informational"
+          },
+          {
+            "keyword": "how to install artificial turf grass",
+            "search_volume": 5400,
+            "competition": 0.77,
+            "cpc": 1.27,
+            "kd": 27,
+            "intent": "informational"
+          },
+          {
+            "keyword": "how to install artificial grass turf",
+            "search_volume": 720,
+            "competition": 0.68,
+            "cpc": 1.79,
+            "kd": 27,
+            "intent": "informational"
+          },
+          {
+            "keyword": "how to install artificial lawn turf",
+            "search_volume": 720,
+            "competition": 0.85,
+            "cpc": 1.63,
+            "kd": 20,
+            "intent": "informational"
+          },
+          {
+            "keyword": "how much does it cost to install artificial turf",
+            "search_volume": 590,
+            "competition": 0.65,
+            "cpc": 5.03,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "how much does artificial turf cost to install",
+            "search_volume": 590,
+            "competition": 0.65,
+            "cpc": 5.03,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "how much to install artificial turf",
+            "search_volume": 480,
+            "competition": 0.6,
+            "cpc": 5.85,
+            "kd": 5,
+            "intent": "informational"
+          },
+          {
+            "keyword": "how to install artificial turf on dirt",
+            "search_volume": 390,
+            "competition": 0.92,
+            "cpc": 1.34,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "how to install artificial turf on concrete",
+            "search_volume": 320,
+            "competition": 0.71,
+            "cpc": 1.66,
+            "kd": 0,
+            "intent": "informational"
+          }
+        ]
+      },
+      "pet_turf": {
+        "total_suggestions": 100,
+        "high_value": [
+          {
+            "keyword": "artificial turf pet",
+            "search_volume": 4400,
+            "competition": 1,
+            "cpc": 3.81,
+            "kd": 3,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "pet turf",
+            "search_volume": 4400,
+            "competition": 1,
+            "cpc": 3.81,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "pet artificial turf",
+            "search_volume": 4400,
+            "competition": 1,
+            "cpc": 3.81,
+            "kd": 3,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial grass pet turf",
+            "search_volume": 4400,
+            "competition": 1,
+            "cpc": 3.81,
+            "kd": 3,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "pet synthetic turf",
+            "search_volume": 4400,
+            "competition": 1,
+            "cpc": 3.81,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "pet-friendly turf",
+            "search_volume": 880,
+            "competition": 1,
+            "cpc": 5.48,
+            "kd": 6,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "pet friendly synthetic turf",
+            "search_volume": 880,
+            "competition": 1,
+            "cpc": 5.98,
+            "kd": 6,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf pet friendly",
+            "search_volume": 880,
+            "competition": 0.89,
+            "cpc": 5.33,
+            "kd": 4,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "pet friendly turf",
+            "search_volume": 880,
+            "competition": 1,
+            "cpc": 5.48,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "pet friendly artificial turf",
+            "search_volume": 720,
+            "competition": 1,
+            "cpc": 8.47,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "pet turf for dogs",
+            "search_volume": 480,
+            "competition": 1,
+            "cpc": 6.57,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "is scotts turf builder pet safe",
+            "search_volume": 390,
+            "competition": 0.08,
+            "cpc": 0.52,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "pet turf installation",
+            "search_volume": 320,
+            "competition": 0.74,
+            "cpc": 12.66,
+            "kd": 0,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "installing pet turf",
+            "search_volume": 320,
+            "competition": 0.74,
+            "cpc": 12.66,
+            "kd": 0,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "home depot pet turf",
+            "search_volume": 260,
+            "competition": 1,
+            "cpc": 0.68,
+            "kd": 0,
+            "intent": "transactional"
+          }
+        ]
+      },
+      "putting_green": {
+        "total_suggestions": 100,
+        "high_value": [
+          {
+            "keyword": "putting green",
+            "search_volume": 14800,
+            "competition": 1,
+            "cpc": 2.02,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "green putting",
+            "search_volume": 14800,
+            "competition": 1,
+            "cpc": 1.74,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "golf putting green indoor",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.77,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "home putting green indoor",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.77,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "putting green for indoor",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.73,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "home indoor putting green",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.73,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "indoor home putting green",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.77,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "putting green indoor",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.73,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "putting green indoors",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.77,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "putting green for indoors",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.73,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "indoor putting green",
+            "search_volume": 8100,
+            "competition": 1,
+            "cpc": 1.73,
+            "kd": 0,
+            "intent": "navigational"
+          },
+          {
+            "keyword": "synthetic putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "turf putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic grass putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial grass putting green",
+            "search_volume": 5400,
+            "competition": 0.92,
+            "cpc": 3.39,
+            "kd": 0,
+            "intent": "commercial"
+          }
+        ]
+      },
+      "putting_green_turf": {
+        "total_suggestions": 100,
+        "high_value": [
+          {
+            "keyword": "turf putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic turf for putting green",
+            "search_volume": 5400,
+            "competition": 0.92,
+            "cpc": 3.39,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "putting green synthetic turf",
+            "search_volume": 5400,
+            "competition": 0.92,
+            "cpc": 3.39,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf for golf putting green",
+            "search_volume": 5400,
+            "competition": 0.92,
+            "cpc": 3.39,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "astro turf putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "golf putting green turf",
+            "search_volume": 5400,
+            "competition": 0.92,
+            "cpc": 3.39,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "astro turf for putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf for putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "synthetic turf putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf golf putting green",
+            "search_volume": 5400,
+            "competition": 0.97,
+            "cpc": 3.87,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "putting green artificial turf",
+            "search_volume": 5400,
+            "competition": 0.92,
+            "cpc": 3.39,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "putting green turf",
+            "search_volume": 4400,
+            "competition": 1,
+            "cpc": 2.61,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "golf turf putting green",
+            "search_volume": 4400,
+            "competition": 1,
+            "cpc": 2.61,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "putting green turf outdoor",
+            "search_volume": 1000,
+            "competition": 1,
+            "cpc": 2.35,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "outdoor turf putting green",
+            "search_volume": 1000,
+            "competition": 1,
+            "cpc": 2.8,
+            "kd": 0,
+            "intent": "transactional"
+          }
+        ]
+      },
+      "synthetic_grass": {
+        "total_suggestions": 100,
+        "high_value": [
+          {
+            "keyword": "grass synthetic grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 34,
+            "intent": "informational"
+          },
+          {
+            "keyword": "grass synthetic turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 30,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic turf grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 30,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic grass artificial turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 30,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial turf synthetic grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 40,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "synthetic lawn grass turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 29,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial grass synthetic turf",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 30,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "artificial synthetic grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.2,
+            "kd": 28,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "turf synthetic grass",
+            "search_volume": 40500,
+            "competition": 1,
+            "cpc": 3.09,
+            "kd": 31,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic grass turf",
+            "search_volume": 27100,
+            "competition": 1,
+            "cpc": 4.19,
+            "kd": 30,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic grass installation price",
+            "search_volume": 18100,
+            "competition": 0.11,
+            "cpc": 8.98,
+            "kd": 0,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "synthetic grass installation cost",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 2,
+            "intent": "informational"
+          },
+          {
+            "keyword": "cost of synthetic grass installed",
+            "search_volume": 18100,
+            "competition": 0.11,
+            "cpc": 8.98,
+            "kd": 14,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic grass install cost",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "synthetic grass cost installed",
+            "search_volume": 18100,
+            "competition": 0.11,
+            "cpc": 8.98,
+            "kd": 0,
+            "intent": "informational"
+          }
+        ]
+      },
+      "turf_installation": {
+        "total_suggestions": 100,
+        "high_value": [
+          {
+            "keyword": "artificial turf installation prices",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 0,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "artificial turf installation costs",
+            "search_volume": 18100,
+            "competition": 0.11,
+            "cpc": 8.98,
+            "kd": 0,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "artificial turf installation cost",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 3,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "cost of artificial turf installation",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 0,
+            "intent": "informational"
+          },
+          {
+            "keyword": "turf grass installation cost",
+            "search_volume": 18100,
+            "competition": 0.11,
+            "cpc": 8.98,
+            "kd": 7,
+            "intent": "informational"
+          },
+          {
+            "keyword": "price for artificial turf installation",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 10,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "synthetic turf installation cost",
+            "search_volume": 18100,
+            "competition": 0.11,
+            "cpc": 8.98,
+            "kd": 1,
+            "intent": "informational"
+          },
+          {
+            "keyword": "artificial turf installation price",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 0,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "cost of installation artificial turf",
+            "search_volume": 18100,
+            "competition": 0.09,
+            "cpc": 7.81,
+            "kd": 10,
+            "intent": "informational"
+          },
+          {
+            "keyword": "artificial turf installation",
+            "search_volume": 12100,
+            "competition": 0.3,
+            "cpc": 14.02,
+            "kd": 16,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "artificial turf installation tools",
+            "search_volume": 8100,
+            "competition": 0.19,
+            "cpc": 0.62,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "synthetic turf installation tools",
+            "search_volume": 8100,
+            "competition": 0.19,
+            "cpc": 0.62,
+            "kd": 0,
+            "intent": "transactional"
+          },
+          {
+            "keyword": "turf installation",
+            "search_volume": 5400,
+            "competition": 0.47,
+            "cpc": 17.51,
+            "kd": 13,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "installation of synthetic turf",
+            "search_volume": 4400,
+            "competition": 0.67,
+            "cpc": 12.75,
+            "kd": 0,
+            "intent": "commercial"
+          },
+          {
+            "keyword": "artificial turf grass installation",
+            "search_volume": 4400,
+            "competition": 0.67,
+            "cpc": 12.75,
+            "kd": 15,
+            "intent": "commercial"
+          }
+        ]
+      }
+    }
+  },
+  "gap_keywords": [
+    {
+      "keyword": "grass turf artificial",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 29,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "turfora artificial grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 29,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 29,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass artificial turf",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 9,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial lawn grass turf",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.09,
+      "kd": 4,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "synthetic grass artificial turf",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 30,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial turf synthetic grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.09,
+      "kd": 40,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "grass artificial turf",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.09,
+      "kd": 29,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "turf artificial grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.09,
+      "kd": 20,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass synthetic turf",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 30,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial synthetic grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 28,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "grass artificial grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.09,
+      "kd": 29,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "grass synthetic grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 34,
+      "intent": "informational",
+      "seed": "synthetic_grass"
+    },
+    {
+      "keyword": "grass synthetic turf",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.09,
+      "kd": 30,
+      "intent": "informational",
+      "seed": "synthetic_grass"
+    },
+    {
+      "keyword": "synthetic turf grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.2,
+      "kd": 30,
+      "intent": "informational",
+      "seed": "synthetic_grass"
+    },
+    {
+      "keyword": "synthetic lawn grass turf",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.09,
+      "kd": 29,
+      "intent": "transactional",
+      "seed": "synthetic_grass"
+    },
+    {
+      "keyword": "turf synthetic grass",
+      "search_volume": 40500,
+      "competition": 1,
+      "cpc": 3.09,
+      "kd": 31,
+      "intent": "informational",
+      "seed": "synthetic_grass"
+    },
+    {
+      "keyword": "synthetic grass turf",
+      "search_volume": 27100,
+      "competition": 1,
+      "cpc": 4.19,
+      "kd": 30,
+      "intent": "informational",
+      "seed": "synthetic_grass"
+    },
+    {
+      "keyword": "artificial grass fitting cost",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 14,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "cost of artificial grass installation",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 2,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "installation of artificial grass cost",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass installed price",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "laying artificial grass cost",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "installing artificial grass cost",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass prices installed",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass costs installed",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "cost of installation of artificial grass",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass cost and installation",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 11,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass installation price",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass cost installed",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass cost to install",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "cost to lay artificial grass",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 2,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "cost of artificial grass installed",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "installation cost of artificial grass",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "cost of artificial grass install",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass installed cost",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass installation cost",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 1,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass price installed",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 4,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "cost for installing artificial grass",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "price to install artificial grass",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "cost to install artificial grass",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass installation costs",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "install artificial grass cost",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "installation cost for artificial grass",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass fitted cost",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass install cost",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass fitted prices",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": null,
+      "intent": "transactional",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "installation cost artificial grass",
+      "search_volume": 18100,
+      "competition": 0.11,
+      "cpc": 8.98,
+      "kd": 0,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "artificial grass cost of installation",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "informational",
+      "seed": "artificial_grass"
+    },
+    {
+      "keyword": "price artificial grass installed",
+      "search_volume": 18100,
+      "competition": 0.09,
+      "cpc": 7.81,
+      "kd": 0,
+      "intent": "commercial",
+      "seed": "artificial_grass"
+    }
+  ],
+  "opportunities": [
+    {
+      "keyword": "how to install an artificial lawn",
+      "current_position": 16,
+      "url": "https://theturfyard.com/diy-guide-to-installing-artificial-turf-in-your-backyard/",
+      "search_volume": 5400,
+      "competition": 0.8199999928474426,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial turf installation cost calculator",
+      "current_position": 5,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 1600,
+      "competition": 0,
+      "potential": "high"
+    },
+    {
+      "keyword": "turfing a backyard",
+      "current_position": 12,
+      "url": "https://theturfyard.com/diy-guide-to-installing-artificial-turf-in-your-backyard/",
+      "search_volume": 3600,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "synthetic turf yard",
+      "current_position": 5,
+      "url": "https://theturfyard.com/",
+      "search_volume": 1300,
+      "competition": 1,
+      "potential": "high"
+    },
+    {
+      "keyword": "turfing companies",
+      "current_position": 12,
+      "url": "https://theturfyard.com/",
+      "search_volume": 1900,
+      "competition": 0.6200000047683716,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial grass installation cost calculator",
+      "current_position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 880,
+      "competition": 0.009999999776482582,
+      "potential": "high"
+    },
+    {
+      "keyword": "artificial grass cost calculator",
+      "current_position": 7,
+      "url": "https://theturfyard.com/artificial-turf-calculator/",
+      "search_volume": 720,
+      "competition": 0.550000011920929,
+      "potential": "high"
+    },
+    {
+      "keyword": "arizona turf",
+      "current_position": 10,
+      "url": "https://theturfyard.com/",
+      "search_volume": 880,
+      "competition": 0.4399999976158142,
+      "potential": "high"
+    },
+    {
+      "keyword": "do it yourself artificial turf installation",
+      "current_position": 15,
+      "url": "https://theturfyard.com/diy-guide-to-installing-artificial-turf-in-your-backyard/",
+      "search_volume": 1300,
+      "competition": 0.7300000190734863,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial turf yard",
+      "current_position": 11,
+      "url": "https://theturfyard.com/",
+      "search_volume": 880,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial lawn types",
+      "current_position": 8,
+      "url": "https://theturfyard.com/how-to-choose-the-right-artificial-grass/",
+      "search_volume": 590,
+      "competition": 1,
+      "potential": "high"
+    },
+    {
+      "keyword": "turfing and landscaping",
+      "current_position": 18,
+      "url": "https://theturfyard.com/service-areas/utah/salt-lake-city/",
+      "search_volume": 1300,
+      "competition": 0.75,
+      "potential": "medium"
+    },
+    {
+      "keyword": "best artificial grass for lawns",
+      "current_position": 20,
+      "url": "https://theturfyard.com/choosing-the-best-artificial-grass-how-to-pick-the-right-turf-supplier/",
+      "search_volume": 1000,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial lawn wholesalers",
+      "current_position": 13,
+      "url": "https://theturfyard.com/",
+      "search_volume": 590,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "diy artificial turf",
+      "current_position": 18,
+      "url": "https://theturfyard.com/diy-guide-to-installing-artificial-turf-in-your-backyard/",
+      "search_volume": 720,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "synthetic turf diy",
+      "current_position": 20,
+      "url": "https://theturfyard.com/diy-guide-to-installing-artificial-turf-in-your-backyard/",
+      "search_volume": 720,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "do-it-yourself artificial turf",
+      "current_position": 20,
+      "url": "https://theturfyard.com/diy-guide-to-installing-artificial-turf-in-your-backyard/",
+      "search_volume": 720,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "wholesale turf phoenix",
+      "current_position": 9,
+      "url": "https://theturfyard.com/",
+      "search_volume": 320,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial grass calculator",
+      "current_position": 8,
+      "url": "https://theturfyard.com/sub-base-turf-calculator/",
+      "search_volume": 260,
+      "competition": 0.17000000178813934,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial grass heat resistant",
+      "current_position": 12,
+      "url": "https://theturfyard.com/synthetic-grass-and-heat-resistance-a-key-consideration-for-hot-climates/",
+      "search_volume": 390,
+      "competition": 0.949999988079071,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial turf for soccer fields",
+      "current_position": 7,
+      "url": "https://theturfyard.com/the-ultimate-guide-to-choosing-artificial-turf-for-sports-fields/",
+      "search_volume": 210,
+      "competition": 0.5199999809265137,
+      "potential": "medium"
+    },
+    {
+      "keyword": "turf on balcony",
+      "current_position": 16,
+      "url": "https://theturfyard.com/turf-for-balcony/",
+      "search_volume": 480,
+      "competition": 1,
+      "potential": "medium"
+    },
+    {
+      "keyword": "artificial grass for sports field",
+      "current_position": 14,
+      "url": "https://theturfyard.com/the-ultimate-guide-to-choosing-artificial-turf-for-sports-fields/",
+      "search_volume": 390,
+      "competition": 0.7099999785423279,
+      "potential": "medium"
+    },
+    {
+      "keyword": "heat resistant artificial turf",
+      "current_position": 15,
+      "url": "https://theturfyard.com/synthetic-grass-and-heat-resistance-a-key-consideration-for-hot-climates/",
+      "search_volume": 390,
+      "competition": 0.949999988079071,
+      "potential": "medium"
+    },
+    {
+      "keyword": "wholesale artificial grass phoenix",
+      "current_position": 13,
+      "url": "https://theturfyard.com/",
+      "search_volume": 320,
+      "competition": 0.9200000166893005,
+      "potential": "medium"
+    }
+  ],
+  "critical_issues": [
+    {
+      "severity": "critical",
+      "issue": "Broken resource: lush-primo-turf-spec.pdf returns status 0 (unreachable)",
+      "affected_pages": [
+        "https://theturfyard.com/downloads/product-spec-sheets/lush-primo-turf-spec.pdf"
+      ],
+      "recommendation": "Remove or replace the broken PDF link (lush-primo-turf-spec.pdf). Either upload the PDF to Vercel public assets or update the link to the correct URL."
+    },
+    {
+      "severity": "high",
+      "issue": "Page titles too long (>60 characters) — Google truncates in SERPs",
+      "affected_pages": [
+        "https://theturfyard.com/",
+        "https://theturfyard.com/artificial-turf-cost/",
+        "https://theturfyard.com/turf-tips/does-artificial-turf-get-hot/"
+      ],
+      "recommendation": "Shorten title tags to 50–60 characters for optimal SERP display."
+    },
+    {
+      "severity": "medium",
+      "issue": "Low content-to-HTML ratio on 69 pages",
+      "affected_pages": [
+        "https://theturfyard.com/artificial-turf/",
+        "https://theturfyard.com/lush-primo-artificial-turf/",
+        "https://theturfyard.com/turf-tips/best-artificial-turf-for-dogs-phoenix/",
+        "https://theturfyard.com/turf-tips/best-turf-for-dogs/",
+        "https://theturfyard.com/turf-tips/how-much-infill-for-synthetic-grass/",
+        "https://theturfyard.com/turf-tips/how-to-clean-artificial-turf/",
+        "https://theturfyard.com/turf-tips/how-to-install-artificial-turf/",
+        "https://theturfyard.com/",
+        "https://theturfyard.com/artificial-turf-cost/",
+        "https://theturfyard.com/turf-tips/does-artificial-turf-get-hot/"
+      ],
+      "recommendation": "Expand body copy, add FAQs or descriptive text to increase content ratio vs. structural HTML."
+    },
+    {
+      "severity": "high",
+      "issue": "Images missing alt text on 65 pages",
+      "affected_pages": [
+        "https://theturfyard.com/artificial-turf/",
+        "https://theturfyard.com/lush-primo-artificial-turf/",
+        "https://theturfyard.com/turf-tips/best-artificial-turf-for-dogs-phoenix/",
+        "https://theturfyard.com/turf-tips/best-turf-for-dogs/",
+        "https://theturfyard.com/turf-tips/how-much-infill-for-synthetic-grass/",
+        "https://theturfyard.com/turf-tips/how-to-clean-artificial-turf/",
+        "https://theturfyard.com/turf-tips/how-to-install-artificial-turf/",
+        "https://theturfyard.com/",
+        "https://theturfyard.com/artificial-turf-cost/",
+        "https://theturfyard.com/turf-tips/does-artificial-turf-get-hot/"
+      ],
+      "recommendation": "Add descriptive alt text to all images for accessibility (WCAG) and image-search SEO."
+    },
+    {
+      "severity": "high",
+      "issue": "Pages contain broken outbound links (linking to the broken PDF or other 4xx/broken URLs)",
+      "affected_pages": [
+        "https://theturfyard.com/artificial-turf/",
+        "https://theturfyard.com/lush-primo-artificial-turf/"
+      ],
+      "recommendation": "Fix or remove all broken links on these pages; the lush-primo-turf-spec.pdf is the primary culprit."
+    },
+    {
+      "severity": "medium",
+      "issue": "Duplicate content detected on 5 pages",
+      "affected_pages": [
+        "https://theturfyard.com/turf-tips/best-artificial-turf-for-dogs-phoenix/",
+        "https://theturfyard.com/turf-tips/best-turf-for-dogs/",
+        "https://theturfyard.com/turf-tips/how-much-infill-for-synthetic-grass/",
+        "https://theturfyard.com/turf-tips/how-to-clean-artificial-turf/",
+        "https://theturfyard.com/turf-tips/how-to-install-artificial-turf/"
+      ],
+      "recommendation": "Review and differentiate page content; add canonical tags where appropriate to consolidate signals."
+    }
+  ],
+  "phoenix_notes": "DataForSEO Labs API does not accept city-level location codes — Phoenix-specific gap/keyword analysis was permanently blocked at the Labs endpoint. Phoenix-local SERP data is available only via the regular SERP endpoint (location 1024118) and is collected by the weekly snapshot cron, not this audit.",
+  "data_notes": [
+    "Schema detection note: DataForSEO crawler flags has_micromarkup=false on many pages, but rendered HTML inspection (2026-06-02) confirmed comprehensive JSON-LD schema (Organization, LocalBusiness, FAQPage, etc.) is present. Do not treat has_micromarkup=false as a real issue — DataForSEO crawler does not detect JSON-LD reliably."
+  ]
+}
