@@ -108,59 +108,59 @@ const seedPages = db.transaction(() => {
 seedPages();
 
 /* ===================== 4. ga4_daily ===================== */
-// The baseline JSON stores 28-day GA4 aggregates only. We distribute them
-// across the 27 baseline days with light deterministic variation so the
-// trend charts have a realistic daily shape while exactly preserving the
-// 28-day per-day averages on average. (No randomness — reproducible build.)
+// Still used by the traffic-source / channel seeding further down.
 const ga4 = baseline.ga4;
-const days = GSC_DAILY.map((r) => r[0]); // reuse the same 27 baseline dates
-const n = days.length;
 
-const totals = ga4.totals_28d;
-// Per-day baselines derived from totals.
-const baseSessions = totals.sessions / n;
-const baseUsers = totals.totalUsers / n;
-const baseNew = totals.newUsers / n;
-const baseEngaged = totals.engagedSessions / n;
-const baseViews = totals.screenPageViews / n;
-
-// Deterministic weekly-shaped multiplier (weekday vs weekend dip).
-function dayFactor(iso: string): number {
-  const d = new Date(iso + 'T00:00:00Z').getUTCDay(); // 0 Sun .. 6 Sat
-  // Slightly lower on weekends, peak midweek.
-  const map: Record<number, number> = { 0: 0.82, 1: 1.05, 2: 1.08, 3: 1.07, 4: 1.04, 5: 0.98, 6: 0.86 };
-  return map[d] ?? 1;
-}
-// Normalize factors so the average is exactly 1 (preserves totals).
-const factors = days.map(dayFactor);
-const factorMean = factors.reduce((a, b) => a + b, 0) / n;
-const normFactors = factors.map((f) => f / factorMean);
+// Real observed GA4 daily rows for the locked baseline window (2026-05-03 .. 2026-05-30).
+//
+// These used to be SYNTHESISED: the 28-day totals were spread across 27 days with a
+// hardcoded weekday curve, and every day was given the same flat avg_session_duration.
+// That made daily GA4 shape fiction, gave the baseline no engagement-time value at all,
+// and — because it covered 27 days not 28 — put baseline sessions/week at 514 instead of
+// the documented 496. These are the actual per-day figures pulled from the GA4 API.
+//
+// [date, sessions, users, newUsers, engaged, engRate, avgSessDur, avgEngTime,
+//  bounceRate, views, conversions, sessionsExclAuto, engagedExclAuto]
+const GA4_DAILY_BASELINE: [string, number, number, number, number, number, number, number, number, number, number, number, number][] = [
+  ['2026-05-03', 63, 54, 49, 34, 0.5397, 222.0, 98.3, 0.4603, 164, 0, 60, 33],
+  ['2026-05-04', 83, 66, 54, 52, 0.6265, 256.8, 78.8, 0.3735, 170, 0, 81, 52],
+  ['2026-05-05', 79, 71, 54, 46, 0.5823, 226.1, 65.6, 0.4177, 140, 0, 74, 44],
+  ['2026-05-06', 69, 62, 47, 36, 0.5217, 195.2, 56.0, 0.4783, 101, 0, 67, 36],
+  ['2026-05-07', 71, 63, 52, 43, 0.6056, 145.4, 58.6, 0.3944, 131, 0, 67, 42],
+  ['2026-05-08', 71, 62, 53, 42, 0.5915, 217.0, 37.2, 0.4084, 127, 0, 68, 41],
+  ['2026-05-09', 75, 60, 47, 45, 0.6000, 336.3, 52.6, 0.4, 119, 0, 72, 45],
+  ['2026-05-10', 60, 51, 39, 31, 0.5167, 207.7, 79.0, 0.4833, 151, 0, 59, 31],
+  ['2026-05-11', 68, 58, 42, 39, 0.5735, 111.2, 45.9, 0.4265, 128, 0, 67, 38],
+  ['2026-05-12', 74, 64, 44, 35, 0.4730, 217.8, 51.7, 0.527, 111, 0, 73, 35],
+  ['2026-05-13', 61, 52, 39, 36, 0.5902, 301.0, 83.5, 0.4098, 129, 0, 60, 36],
+  ['2026-05-14', 79, 71, 55, 47, 0.5949, 302.3, 54.1, 0.4051, 191, 0, 74, 47],
+  ['2026-05-15', 101, 74, 58, 53, 0.5248, 521.0, 55.7, 0.4753, 222, 0, 95, 53],
+  ['2026-05-16', 72, 62, 51, 44, 0.6111, 153.9, 68.7, 0.3889, 215, 0, 72, 44],
+  ['2026-05-17', 60, 54, 35, 34, 0.5667, 293.1, 77.6, 0.4333, 167, 0, 59, 34],
+  ['2026-05-18', 90, 74, 53, 43, 0.4778, 184.2, 33.5, 0.5222, 180, 0, 88, 43],
+  ['2026-05-19', 82, 72, 56, 47, 0.5732, 235.1, 61.4, 0.4268, 135, 0, 78, 46],
+  ['2026-05-20', 88, 72, 53, 52, 0.5909, 556.8, 39.6, 0.4091, 126, 0, 84, 51],
+  ['2026-05-21', 81, 65, 51, 45, 0.5556, 231.8, 44.4, 0.4444, 139, 0, 75, 44],
+  ['2026-05-22', 61, 52, 43, 35, 0.5738, 195.9, 79.1, 0.4262, 110, 0, 58, 34],
+  ['2026-05-23', 65, 55, 37, 37, 0.5692, 196.3, 55.8, 0.4308, 113, 0, 63, 36],
+  ['2026-05-24', 52, 44, 29, 21, 0.4038, 187.1, 63.8, 0.5961, 94, 0, 51, 21],
+  ['2026-05-25', 68, 58, 48, 34, 0.5000, 143.1, 53.4, 0.5, 144, 0, 66, 33],
+  ['2026-05-26', 68, 59, 43, 37, 0.5441, 165.1, 44.9, 0.4559, 112, 0, 63, 37],
+  ['2026-05-27', 43, 40, 33, 29, 0.6744, 241.3, 40.9, 0.3256, 67, 0, 37, 27],
+  ['2026-05-28', 86, 78, 65, 31, 0.3605, 150.3, 42.8, 0.6395, 147, 0, 53, 31],
+  ['2026-05-29', 52, 42, 34, 30, 0.5769, 141.4, 37.7, 0.4231, 96, 0, 50, 30],
+  ['2026-05-30', 64, 54, 42, 34, 0.5312, 277.6, 62.5, 0.4688, 145, 0, 56, 34],
+];
 
 const insGa4Daily = db.prepare(
   `INSERT OR REPLACE INTO ga4_daily
      (date, sessions, total_users, new_users, engaged_sessions, engagement_rate,
-      avg_session_duration, bounce_rate, page_views, conversions)
-   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+      avg_session_duration, avg_engagement_time, bounce_rate, page_views, conversions,
+      sessions_excl_auto, engaged_sessions_excl_auto)
+   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 );
 const seedGa4Daily = db.transaction(() => {
-  days.forEach((date, i) => {
-    const f = normFactors[i];
-    const sessions = Math.round(baseSessions * f);
-    const engaged = Math.round(baseEngaged * f);
-    const engagementRate = sessions > 0 ? engaged / sessions : totals.engagementRate_avg;
-    insGa4Daily.run(
-      date,
-      sessions,
-      Math.round(baseUsers * f),
-      Math.round(baseNew * f),
-      engaged,
-      Number(engagementRate.toFixed(4)),
-      Number(totals.averageSessionDuration_seconds_avg.toFixed(1)),
-      Number(totals.bounceRate_avg.toFixed(4)),
-      Math.round(baseViews * f),
-      0
-    );
-  });
+  for (const r of GA4_DAILY_BASELINE) insGa4Daily.run(...r);
 });
 seedGa4Daily();
 

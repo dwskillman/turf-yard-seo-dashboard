@@ -627,7 +627,10 @@
     "avg_session_duration": 158.6418,
     "bounce_rate": 0.6429,
     "page_views": 112,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 56.57,
+    "sessions_excl_auto": 62,
+    "engaged_sessions_excl_auto": 25
    },
    {
     "date": "2026-07-21",
@@ -639,7 +642,10 @@
     "avg_session_duration": 169.8491,
     "bounce_rate": 0.5,
     "page_views": 140,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 91.65,
+    "sessions_excl_auto": 67,
+    "engaged_sessions_excl_auto": 35
    },
    {
     "date": "2026-07-22",
@@ -651,7 +657,10 @@
     "avg_session_duration": 180.6531,
     "bounce_rate": 0.5584,
     "page_views": 137,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 91.22,
+    "sessions_excl_auto": 64,
+    "engaged_sessions_excl_auto": 33
    },
    {
     "date": "2026-07-23",
@@ -663,7 +672,10 @@
     "avg_session_duration": 178.0317,
     "bounce_rate": 0.589,
     "page_views": 221,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 85.37,
+    "sessions_excl_auto": 58,
+    "engaged_sessions_excl_auto": 29
    }
   ],
   "channels": [

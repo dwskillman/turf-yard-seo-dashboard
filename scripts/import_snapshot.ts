@@ -121,6 +121,9 @@ function ga4DailyRow(row: any) {
     bounce_rate: pick(row, 'bounce_rate', 'bounceRate'),
     page_views: pick(row, 'page_views', 'screenPageViews', 'pageViews'),
     conversions: pick(row, 'conversions') ?? 0,
+    avg_engagement_time: pick(row, 'avg_engagement_time', 'averageEngagementTimePerSession'),
+    sessions_excl_auto: pick(row, 'sessions_excl_auto'),
+    engaged_sessions_excl_auto: pick(row, 'engaged_sessions_excl_auto'),
   };
 }
 function ga4ChannelRow(row: any) {
@@ -217,14 +220,22 @@ const tx = db.transaction(() => {
   if (snap.ga4?.daily?.length) {
     const stmt = db.prepare(`
       INSERT INTO ga4_daily (date, sessions, total_users, new_users, engaged_sessions,
-        engagement_rate, avg_session_duration, bounce_rate, page_views, conversions, created_at)
+        engagement_rate, avg_session_duration, avg_engagement_time, bounce_rate, page_views,
+        conversions, sessions_excl_auto, engaged_sessions_excl_auto, created_at)
       VALUES (@date, @sessions, @total_users, @new_users, @engaged_sessions,
-        @engagement_rate, @avg_session_duration, @bounce_rate, @page_views, @conversions, datetime('now'))
+        @engagement_rate, @avg_session_duration, @avg_engagement_time, @bounce_rate, @page_views,
+        @conversions, @sessions_excl_auto, @engaged_sessions_excl_auto, datetime('now'))
       ON CONFLICT(date) DO UPDATE SET
         sessions=excluded.sessions, total_users=excluded.total_users, new_users=excluded.new_users,
         engaged_sessions=excluded.engaged_sessions, engagement_rate=excluded.engagement_rate,
-        avg_session_duration=excluded.avg_session_duration, bounce_rate=excluded.bounce_rate,
-        page_views=excluded.page_views, conversions=excluded.conversions, created_at=excluded.created_at
+        avg_session_duration=excluded.avg_session_duration,
+        -- keep an existing value if a legacy snapshot re-imports without these fields
+        avg_engagement_time=COALESCE(excluded.avg_engagement_time, ga4_daily.avg_engagement_time),
+        bounce_rate=excluded.bounce_rate,
+        page_views=excluded.page_views, conversions=excluded.conversions,
+        sessions_excl_auto=COALESCE(excluded.sessions_excl_auto, ga4_daily.sessions_excl_auto),
+        engaged_sessions_excl_auto=COALESCE(excluded.engaged_sessions_excl_auto, ga4_daily.engaged_sessions_excl_auto),
+        created_at=excluded.created_at
     `);
     for (const row of snap.ga4.daily) stmt.run(ga4DailyRow(row));
     console.log(`  ✓ ga4_daily: ${snap.ga4.daily.length} rows`);

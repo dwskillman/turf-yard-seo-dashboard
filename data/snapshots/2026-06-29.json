@@ -725,7 +725,10 @@
     "avg_session_duration": 120.104,
     "bounce_rate": 0.4773,
     "page_views": 80,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 51.7,
+    "sessions_excl_auto": 39,
+    "engaged_sessions_excl_auto": 23
    },
    {
     "date": "2026-06-30",
@@ -737,7 +740,10 @@
     "avg_session_duration": 214.0754,
     "bounce_rate": 0.6061,
     "page_views": 97,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 48.94,
+    "sessions_excl_auto": 54,
+    "engaged_sessions_excl_auto": 26
    },
    {
     "date": "2026-07-01",
@@ -749,7 +755,10 @@
     "avg_session_duration": 69.7285,
     "bounce_rate": 0.6029,
     "page_views": 110,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 39.88,
+    "sessions_excl_auto": 53,
+    "engaged_sessions_excl_auto": 27
    },
    {
     "date": "2026-07-02",
@@ -761,7 +770,10 @@
     "avg_session_duration": 185.3737,
     "bounce_rate": 0.5542,
     "page_views": 200,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 67.63,
+    "sessions_excl_auto": 64,
+    "engaged_sessions_excl_auto": 37
    },
    {
     "date": "2026-07-03",
@@ -773,7 +785,10 @@
     "avg_session_duration": 133.3692,
     "bounce_rate": 0.5362,
     "page_views": 93,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 28.7,
+    "sessions_excl_auto": 60,
+    "engaged_sessions_excl_auto": 32
    },
    {
     "date": "2026-07-04",
@@ -785,7 +800,10 @@
     "avg_session_duration": 112.5909,
     "bounce_rate": 0.6061,
     "page_views": 58,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 37.85,
+    "sessions_excl_auto": 28,
+    "engaged_sessions_excl_auto": 13
    },
    {
     "date": "2026-07-05",
@@ -797,7 +815,10 @@
     "avg_session_duration": 248.3344,
     "bounce_rate": 0.5283,
     "page_views": 98,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 67.81,
+    "sessions_excl_auto": 47,
+    "engaged_sessions_excl_auto": 25
    }
   ],
   "channels": [

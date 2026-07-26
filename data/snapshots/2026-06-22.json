@@ -781,7 +781,10 @@
     "avg_session_duration": 121.9216,
     "bounce_rate": 0.5902,
     "page_views": 106,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 43.59,
+    "sessions_excl_auto": 47,
+    "engaged_sessions_excl_auto": 25
    },
    {
     "date": "2026-06-23",
@@ -793,7 +796,10 @@
     "avg_session_duration": 123.4952,
     "bounce_rate": 0.4328,
     "page_views": 116,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 41.82,
+    "sessions_excl_auto": 59,
+    "engaged_sessions_excl_auto": 38
    },
    {
     "date": "2026-06-24",
@@ -805,7 +811,10 @@
     "avg_session_duration": 120.0913,
     "bounce_rate": 0.5,
     "page_views": 140,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 47.49,
+    "sessions_excl_auto": 57,
+    "engaged_sessions_excl_auto": 33
    },
    {
     "date": "2026-06-25",
@@ -817,7 +826,10 @@
     "avg_session_duration": 199.6474,
     "bounce_rate": 0.4667,
     "page_views": 68,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 63.89,
+    "sessions_excl_auto": 37,
+    "engaged_sessions_excl_auto": 24
    },
    {
     "date": "2026-06-26",
@@ -829,7 +841,10 @@
     "avg_session_duration": 143.7034,
     "bounce_rate": 0.5634,
     "page_views": 112,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 38.94,
+    "sessions_excl_auto": 54,
+    "engaged_sessions_excl_auto": 31
    },
    {
     "date": "2026-06-27",
@@ -841,7 +856,10 @@
     "avg_session_duration": 226.6111,
     "bounce_rate": 0.4828,
     "page_views": 123,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 69.22,
+    "sessions_excl_auto": 47,
+    "engaged_sessions_excl_auto": 28
    },
    {
     "date": "2026-06-28",
@@ -853,7 +871,10 @@
     "avg_session_duration": 166.1834,
     "bounce_rate": 0.4918,
     "page_views": 125,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 99.36,
+    "sessions_excl_auto": 57,
+    "engaged_sessions_excl_auto": 31
    }
   ],
   "channels": [

@@ -290,13 +290,26 @@ export function getRedesignImpact(redesignDate: string, now: Date = new Date()):
     )
     .get(redesignDate) as { clicks: number; impressions: number; position: number };
 
+  // Rates and durations are session-weighted, not a plain mean of daily values:
+  // AVG(engagement_rate) lets a 30-session Sunday count as much as a 90-session Tuesday.
+  // avg_engagement_time / *_excl_auto are nullable, so they are averaged only over the
+  // rows that actually carry them.
+  const GA4_AGG = `
+      AVG(sessions) AS sessions,
+      SUM(engaged_sessions) * 1.0 / NULLIF(SUM(sessions), 0) AS engagement_rate,
+      SUM(avg_session_duration * sessions) / NULLIF(SUM(sessions), 0) AS dur,
+      SUM(CASE WHEN avg_engagement_time IS NOT NULL THEN avg_engagement_time * sessions END)
+        / NULLIF(SUM(CASE WHEN avg_engagement_time IS NOT NULL THEN sessions END), 0) AS engtime,
+      SUM(engaged_sessions_excl_auto) * 1.0 / NULLIF(SUM(sessions_excl_auto), 0) AS eng_clean,
+      SUM(sessions) - SUM(sessions_excl_auto) AS auto_sessions,
+      COUNT(*) AS n`;
+
   const ga4Base = db
-    .prepare(
-      `SELECT AVG(sessions) AS sessions, AVG(engagement_rate) AS engagement_rate,
-              AVG(avg_session_duration) AS dur
-         FROM ga4_daily WHERE date < ?`
-    )
-    .get(redesignDate) as { sessions: number; engagement_rate: number; dur: number };
+    .prepare(`SELECT ${GA4_AGG} FROM ga4_daily WHERE date < ?`)
+    .get(redesignDate) as {
+      sessions: number; engagement_rate: number; dur: number;
+      engtime: number | null; eng_clean: number | null; auto_sessions: number | null; n: number;
+    };
 
   // Calculator page sessions (baseline weekly landing page sessions for the two calculator pages)
   const baseLandingWeek = db.prepare(`SELECT MIN(week_start) AS w FROM ga4_landing_weekly`).get() as {
@@ -352,12 +365,11 @@ export function getRedesignImpact(redesignDate: string, now: Date = new Date()):
     .get(redesignDate) as { clicks: number; impressions: number; position: number; n: number };
 
   const ga4Post = db
-    .prepare(
-      `SELECT AVG(sessions) AS sessions, AVG(engagement_rate) AS engagement_rate,
-              AVG(avg_session_duration) AS dur, COUNT(*) AS n
-         FROM ga4_daily WHERE date >= ?`
-    )
-    .get(redesignDate) as { sessions: number; engagement_rate: number; dur: number; n: number };
+    .prepare(`SELECT ${GA4_AGG} FROM ga4_daily WHERE date >= ?`)
+    .get(redesignDate) as {
+      sessions: number; engagement_rate: number; dur: number;
+      engtime: number | null; eng_clean: number | null; auto_sessions: number | null; n: number;
+    };
 
   const hasGscPost = (gscPost?.n ?? 0) > 0 && sufficient;
   const hasGa4Post = (ga4Post?.n ?? 0) > 0 && sufficient;
@@ -454,15 +466,44 @@ export function getRedesignImpact(redesignDate: string, now: Date = new Date()):
       sufficient: hasGa4Post,
     },
     {
-      key: 'avg_session_duration',
-      label: 'Avg session duration',
+      // Replaces the old "Avg session duration" tile.
+      //
+      // GA4's averageSessionDuration is (last event - first event), so a session with a
+      // single timestamped event scores ~0 regardless of how long the visitor actually
+      // read the page. Between the baseline and the current window it fell 34% while
+      // averageEngagementTimePerSession — the SDK's foreground visibility timer, i.e.
+      // actual attention — moved less than 5%. The old tile was reporting a change in
+      // session *shape*, not in engagement, so it is replaced rather than supplemented.
+      key: 'avg_engagement_time',
+      label: 'Avg engagement time / session',
       unit: 'seconds',
-      baseline: ga4Base.dur,
-      current: hasGa4Post ? ga4Post.dur : null,
-      pctChange: hasGa4Post ? percentChange(ga4Base.dur, ga4Post.dur) : null,
+      baseline: ga4Base.engtime ?? 0,
+      current: hasGa4Post ? ga4Post.engtime : null,
+      pctChange:
+        hasGa4Post && ga4Base.engtime && ga4Post.engtime
+          ? percentChange(ga4Base.engtime, ga4Post.engtime)
+          : null,
       invert: false,
       sparkline: [],
-      sufficient: hasGa4Post,
+      sufficient: hasGa4Post && ga4Post.engtime != null,
+    },
+    {
+      // Engagement rate after removing sessions from known cloud/datacenter egress
+      // locations that register ~0s engagement time. That traffic went from 5.8% to
+      // 18.1% of all sessions at the relaunch, so the headline engagement rate above
+      // overstates the decline roughly twofold.
+      key: 'engagement_rate_excl_auto',
+      label: 'Engagement rate (excl. automated)',
+      unit: 'percent',
+      baseline: ga4Base.eng_clean ?? 0,
+      current: hasGa4Post ? ga4Post.eng_clean : null,
+      pctChange:
+        hasGa4Post && ga4Base.eng_clean && ga4Post.eng_clean
+          ? percentChange(ga4Base.eng_clean, ga4Post.eng_clean)
+          : null,
+      invert: false,
+      sparkline: [],
+      sufficient: hasGa4Post && ga4Post.eng_clean != null,
     },
     {
       key: 'calculator_sessions',

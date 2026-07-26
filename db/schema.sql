@@ -41,10 +41,19 @@ CREATE TABLE IF NOT EXISTS ga4_daily (
   new_users            INTEGER NOT NULL,
   engaged_sessions     INTEGER NOT NULL,
   engagement_rate      REAL    NOT NULL,
-  avg_session_duration REAL    NOT NULL,   -- seconds
+  avg_session_duration REAL    NOT NULL,   -- seconds; last event - first event. Collapses to ~0
+                                           -- for single-event sessions, so it is NOT a measure of
+                                           -- attention. Retained for continuity; prefer the next column.
+  avg_engagement_time  REAL,               -- seconds; GA4 averageEngagementTimePerSession, i.e. the
+                                           -- SDK's foreground visibility timer. The honest "time on site".
   bounce_rate          REAL    NOT NULL,
   page_views           INTEGER NOT NULL,
   conversions          INTEGER NOT NULL,
+  -- Sessions remaining after removing known cloud/datacenter egress locations whose
+  -- measured engagement time is ~0s (see SNAPSHOT_SCHEMA.md "automated traffic").
+  -- Nullable: rows imported before this was tracked have no value.
+  sessions_excl_auto        INTEGER,
+  engaged_sessions_excl_auto INTEGER,
   created_at           TEXT    DEFAULT (datetime('now'))
 );
 

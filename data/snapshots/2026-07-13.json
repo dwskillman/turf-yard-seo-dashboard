@@ -704,7 +704,10 @@
     "avg_session_duration": 81.0997,
     "bounce_rate": 0.6731,
     "page_views": 85,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 15.65,
+    "sessions_excl_auto": 39,
+    "engaged_sessions_excl_auto": 16
    },
    {
     "date": "2026-07-14",
@@ -716,7 +719,10 @@
     "avg_session_duration": 197.8228,
     "bounce_rate": 0.5217,
     "page_views": 112,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 43.71,
+    "sessions_excl_auto": 53,
+    "engaged_sessions_excl_auto": 33
    },
    {
     "date": "2026-07-15",
@@ -728,7 +734,10 @@
     "avg_session_duration": 332.3551,
     "bounce_rate": 0.5714,
     "page_views": 114,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 32.97,
+    "sessions_excl_auto": 58,
+    "engaged_sessions_excl_auto": 33
    },
    {
     "date": "2026-07-16",
@@ -740,7 +749,10 @@
     "avg_session_duration": 104.3728,
     "bounce_rate": 0.6441,
     "page_views": 105,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 62.68,
+    "sessions_excl_auto": 44,
+    "engaged_sessions_excl_auto": 19
    },
    {
     "date": "2026-07-17",
@@ -752,7 +764,10 @@
     "avg_session_duration": 136.5112,
     "bounce_rate": 0.6327,
     "page_views": 91,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 53.02,
+    "sessions_excl_auto": 41,
+    "engaged_sessions_excl_auto": 18
    },
    {
     "date": "2026-07-18",
@@ -764,7 +779,10 @@
     "avg_session_duration": 104.895,
     "bounce_rate": 0.5472,
     "page_views": 83,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 49.58,
+    "sessions_excl_auto": 45,
+    "engaged_sessions_excl_auto": 24
    },
    {
     "date": "2026-07-19",
@@ -776,7 +794,10 @@
     "avg_session_duration": 114.4929,
     "bounce_rate": 0.5278,
     "page_views": 99,
-    "conversions": 0
+    "conversions": 0,
+    "avg_engagement_time": 26.19,
+    "sessions_excl_auto": 24,
+    "engaged_sessions_excl_auto": 14
    }
   ],
   "channels": [
