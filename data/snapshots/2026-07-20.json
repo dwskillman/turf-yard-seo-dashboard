@@ -956,6 +956,78 @@
    "Keyword positions: DataForSEO Labs ranked-keywords index plus live SERP verification for 13 priority-1 brand/product/calculator terms the index does not cover. US locale only this run \u2014 the Phoenix-local variants tracked in earlier snapshots were not re-pulled."
   ]
  },
+ "events_weekly": [
+  {
+   "event_name": "session_start",
+   "event_count": 293,
+   "total_users": 221
+  },
+  {
+   "event_name": "page_view",
+   "event_count": 610,
+   "total_users": 217
+  },
+  {
+   "event_name": "first_visit",
+   "event_count": 200,
+   "total_users": 200
+  },
+  {
+   "event_name": "user_engagement",
+   "event_count": 428,
+   "total_users": 126
+  },
+  {
+   "event_name": "form_start",
+   "event_count": 81,
+   "total_users": 58
+  },
+  {
+   "event_name": "calculator_start",
+   "event_count": 46,
+   "total_users": 36
+  },
+  {
+   "event_name": "location_page_view",
+   "event_count": 75,
+   "total_users": 36
+  },
+  {
+   "event_name": "calculator_complete",
+   "event_count": 45,
+   "total_users": 35
+  },
+  {
+   "event_name": "scroll",
+   "event_count": 26,
+   "total_users": 18
+  },
+  {
+   "event_name": "phone_click",
+   "event_count": 12,
+   "total_users": 9
+  },
+  {
+   "event_name": "quote_request_click",
+   "event_count": 9,
+   "total_users": 9
+  },
+  {
+   "event_name": "generate_lead",
+   "event_count": 8,
+   "total_users": 8
+  },
+  {
+   "event_name": "click",
+   "event_count": 3,
+   "total_users": 3
+  },
+  {
+   "event_name": "form_submit",
+   "event_count": 2,
+   "total_users": 1
+  }
+ ],
  "keyword_rankings": [
   {
    "keyword": "the turf yard",

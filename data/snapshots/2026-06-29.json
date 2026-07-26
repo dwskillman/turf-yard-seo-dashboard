@@ -1143,5 +1143,77 @@
   "notes": [
    "Backfilled 2026-07-25. The weekly cron last ran for 2026-06-15, so weeks 2026-06-22 through 2026-07-20 were generated in one pass from Windsor.ai (GSC + GA4 property 407057852), DataForSEO and Ahrefs."
   ]
- }
+ },
+ "events_weekly": [
+  {
+   "event_name": "session_start",
+   "event_count": 416,
+   "total_users": 326
+  },
+  {
+   "event_name": "page_view",
+   "event_count": 736,
+   "total_users": 323
+  },
+  {
+   "event_name": "first_visit",
+   "event_count": 297,
+   "total_users": 297
+  },
+  {
+   "event_name": "user_engagement",
+   "event_count": 464,
+   "total_users": 164
+  },
+  {
+   "event_name": "form_start",
+   "event_count": 96,
+   "total_users": 72
+  },
+  {
+   "event_name": "location_page_view",
+   "event_count": 94,
+   "total_users": 62
+  },
+  {
+   "event_name": "calculator_start",
+   "event_count": 63,
+   "total_users": 55
+  },
+  {
+   "event_name": "calculator_complete",
+   "event_count": 60,
+   "total_users": 52
+  },
+  {
+   "event_name": "scroll",
+   "event_count": 36,
+   "total_users": 26
+  },
+  {
+   "event_name": "quote_request_click",
+   "event_count": 22,
+   "total_users": 21
+  },
+  {
+   "event_name": "phone_click",
+   "event_count": 9,
+   "total_users": 8
+  },
+  {
+   "event_name": "generate_lead",
+   "event_count": 6,
+   "total_users": 6
+  },
+  {
+   "event_name": "file_download",
+   "event_count": 5,
+   "total_users": 3
+  },
+  {
+   "event_name": "click",
+   "event_count": 1,
+   "total_users": 1
+  }
+ ]
 }
