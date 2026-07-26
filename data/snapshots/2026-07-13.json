@@ -1,0 +1,1117 @@
+{
+ "week_start": "2026-07-13",
+ "week_end": "2026-07-19",
+ "generated_at": "2026-07-25T00:00:00Z",
+ "redesign_launch_date": "2026-05-31",
+ "days_since_redesign": 49,
+ "site": {
+  "domain": "theturfyard.com",
+  "gsc_property": "sc-domain:theturfyard.com",
+  "ga4_property": "properties/407057852"
+ },
+ "gsc": {
+  "totals": {
+   "clicks": 140,
+   "impressions": 22305,
+   "ctr": 0.00628,
+   "avg_position": 23.37
+  },
+  "daily": [
+   {
+    "date": "2026-07-13",
+    "clicks": 16,
+    "impressions": 3964,
+    "ctr": 0.004,
+    "position": 24.07
+   },
+   {
+    "date": "2026-07-14",
+    "clicks": 25,
+    "impressions": 2858,
+    "ctr": 0.0087,
+    "position": 25.32
+   },
+   {
+    "date": "2026-07-15",
+    "clicks": 22,
+    "impressions": 3186,
+    "ctr": 0.0069,
+    "position": 22.4
+   },
+   {
+    "date": "2026-07-16",
+    "clicks": 19,
+    "impressions": 3013,
+    "ctr": 0.0063,
+    "position": 22.77
+   },
+   {
+    "date": "2026-07-17",
+    "clicks": 23,
+    "impressions": 3338,
+    "ctr": 0.0069,
+    "position": 23.41
+   },
+   {
+    "date": "2026-07-18",
+    "clicks": 19,
+    "impressions": 2778,
+    "ctr": 0.0068,
+    "position": 21.59
+   },
+   {
+    "date": "2026-07-19",
+    "clicks": 16,
+    "impressions": 3168,
+    "ctr": 0.0051,
+    "position": 23.76
+   }
+  ],
+  "queries": [
+   {
+    "query": "turf yard",
+    "clicks": 8,
+    "impressions": 53,
+    "ctr": 0.1509,
+    "position": 5.28
+   },
+   {
+    "query": "turf calculator",
+    "clicks": 5,
+    "impressions": 32,
+    "ctr": 0.1562,
+    "position": 8.78
+   },
+   {
+    "query": "the turf yard",
+    "clicks": 4,
+    "impressions": 15,
+    "ctr": 0.2667,
+    "position": 1.4
+   },
+   {
+    "query": "lush 80 turf",
+    "clicks": 4,
+    "impressions": 7,
+    "ctr": 0.5714,
+    "position": 1
+   },
+   {
+    "query": "lucky 77",
+    "clicks": 3,
+    "impressions": 152,
+    "ctr": 0.0197,
+    "position": 9.17
+   },
+   {
+    "query": "turf yard base layer calculator",
+    "clicks": 3,
+    "impressions": 4,
+    "ctr": 0.75,
+    "position": 1
+   },
+   {
+    "query": "putting green cost calculator",
+    "clicks": 2,
+    "impressions": 32,
+    "ctr": 0.0625,
+    "position": 7.16
+   },
+   {
+    "query": "turf yard calculator",
+    "clicks": 2,
+    "impressions": 4,
+    "ctr": 0.5,
+    "position": 1
+   },
+   {
+    "query": "the turf yard calculator",
+    "clicks": 2,
+    "impressions": 3,
+    "ctr": 0.6667,
+    "position": 1
+   },
+   {
+    "query": "artificial turf",
+    "clicks": 1,
+    "impressions": 290,
+    "ctr": 0.0034,
+    "position": 23.02
+   },
+   {
+    "query": "turf installation",
+    "clicks": 1,
+    "impressions": 202,
+    "ctr": 0.005,
+    "position": 24.03
+   },
+   {
+    "query": "artificial grass",
+    "clicks": 1,
+    "impressions": 160,
+    "ctr": 0.0063,
+    "position": 10.03
+   },
+   {
+    "query": "artificial turf cost calculator",
+    "clicks": 1,
+    "impressions": 134,
+    "ctr": 0.0075,
+    "position": 6.25
+   },
+   {
+    "query": "turf installation cost calculator",
+    "clicks": 1,
+    "impressions": 74,
+    "ctr": 0.0135,
+    "position": 6.54
+   },
+   {
+    "query": "turf cost calculator",
+    "clicks": 1,
+    "impressions": 26,
+    "ctr": 0.0385,
+    "position": 5.65
+   },
+   {
+    "query": "artificial turf calculator",
+    "clicks": 1,
+    "impressions": 25,
+    "ctr": 0.04,
+    "position": 6.16
+   },
+   {
+    "query": "1,000 sq ft artificial grass cost",
+    "clicks": 1,
+    "impressions": 21,
+    "ctr": 0.0476,
+    "position": 11.86
+   },
+   {
+    "query": "turf utah",
+    "clicks": 1,
+    "impressions": 17,
+    "ctr": 0.0588,
+    "position": 33.47
+   },
+   {
+    "query": "turf landscaping",
+    "clicks": 1,
+    "impressions": 16,
+    "ctr": 0.0625,
+    "position": 24.56
+   },
+   {
+    "query": "artificial turf near mesa az",
+    "clicks": 1,
+    "impressions": 14,
+    "ctr": 0.0714,
+    "position": 1.64
+   },
+   {
+    "query": "sub base calculator",
+    "clicks": 1,
+    "impressions": 12,
+    "ctr": 0.0833,
+    "position": 6.75
+   },
+   {
+    "query": "turf calculator cost",
+    "clicks": 1,
+    "impressions": 9,
+    "ctr": 0.1111,
+    "position": 2.33
+   },
+   {
+    "query": "the yard turf",
+    "clicks": 1,
+    "impressions": 6,
+    "ctr": 0.1667,
+    "position": 9.17
+   },
+   {
+    "query": "best artificial turf companies near me",
+    "clicks": 1,
+    "impressions": 5,
+    "ctr": 0.2,
+    "position": 1
+   },
+   {
+    "query": "where to buy artificial grass",
+    "clicks": 1,
+    "impressions": 2,
+    "ctr": 0.5,
+    "position": 16.5
+   },
+   {
+    "query": "landscaping supply",
+    "clicks": 1,
+    "impressions": 1,
+    "ctr": 1,
+    "position": 1
+   },
+   {
+    "query": "artificial turf installation",
+    "clicks": 0,
+    "impressions": 654,
+    "ctr": 0,
+    "position": 32.59
+   },
+   {
+    "query": "77 lucky77",
+    "clicks": 0,
+    "impressions": 289,
+    "ctr": 0,
+    "position": 6.1
+   },
+   {
+    "query": "artificial turf near me",
+    "clicks": 0,
+    "impressions": 249,
+    "ctr": 0,
+    "position": 50.52
+   },
+   {
+    "query": "artificial grass near me",
+    "clicks": 0,
+    "impressions": 202,
+    "ctr": 0,
+    "position": 56.04
+   },
+   {
+    "query": "turf suppliers",
+    "clicks": 0,
+    "impressions": 197,
+    "ctr": 0,
+    "position": 39.43
+   },
+   {
+    "query": "turf near me",
+    "clicks": 0,
+    "impressions": 192,
+    "ctr": 0,
+    "position": 53.7
+   },
+   {
+    "query": "artificial turf seller",
+    "clicks": 0,
+    "impressions": 124,
+    "ctr": 0,
+    "position": 55.28
+   },
+   {
+    "query": "synthetic grass near me",
+    "clicks": 0,
+    "impressions": 119,
+    "ctr": 0,
+    "position": 63.61
+   },
+   {
+    "query": "synthetic grass",
+    "clicks": 0,
+    "impressions": 110,
+    "ctr": 0,
+    "position": 44.97
+   },
+   {
+    "query": "synthetic turf",
+    "clicks": 0,
+    "impressions": 103,
+    "ctr": 0,
+    "position": 28.16
+   },
+   {
+    "query": "turf",
+    "clicks": 0,
+    "impressions": 102,
+    "ctr": 0,
+    "position": 37.54
+   }
+  ],
+  "pages": [
+   {
+    "page": "/artificial-turf-calculator/",
+    "clicks": 36,
+    "impressions": 3155,
+    "ctr": 0.0114,
+    "position": 20.21
+   },
+   {
+    "page": "/sub-base-turf-calculator/",
+    "clicks": 24,
+    "impressions": 764,
+    "ctr": 0.0314,
+    "position": 7.53
+   },
+   {
+    "page": "/service-areas/arizona/mesa/",
+    "clicks": 17,
+    "impressions": 3248,
+    "ctr": 0.0052,
+    "position": 6.72
+   },
+   {
+    "page": "/",
+    "clicks": 13,
+    "impressions": 3772,
+    "ctr": 0.0034,
+    "position": 27.67
+   },
+   {
+    "page": "/service-areas/utah/provo/",
+    "clicks": 6,
+    "impressions": 1379,
+    "ctr": 0.0044,
+    "position": 17.03
+   },
+   {
+    "page": "/lucky-77-artificial-turf/",
+    "clicks": 6,
+    "impressions": 595,
+    "ctr": 0.0101,
+    "position": 7.32
+   },
+   {
+    "page": "/turf-tips/turf-for-events-temporary-installs/",
+    "clicks": 6,
+    "impressions": 127,
+    "ctr": 0.0472,
+    "position": 7.8
+   },
+   {
+    "page": "/turf-tips/how-much-infill-for-synthetic-grass/",
+    "clicks": 5,
+    "impressions": 580,
+    "ctr": 0.0086,
+    "position": 8.98
+   },
+   {
+    "page": "/lush-80-artificial-turf/",
+    "clicks": 5,
+    "impressions": 159,
+    "ctr": 0.0314,
+    "position": 10.03
+   },
+   {
+    "page": "/artificial-turf-cost/",
+    "clicks": 4,
+    "impressions": 1211,
+    "ctr": 0.0033,
+    "position": 21.15
+   },
+   {
+    "page": "/turf-tips/artificial-turf-for-sports-fields/",
+    "clicks": 4,
+    "impressions": 958,
+    "ctr": 0.0042,
+    "position": 21.26
+   },
+   {
+    "page": "/turf-tips/does-artificial-turf-get-hot/",
+    "clicks": 4,
+    "impressions": 523,
+    "ctr": 0.0076,
+    "position": 18.07
+   },
+   {
+    "page": "/turf-tips/how-to-install-artificial-turf/",
+    "clicks": 3,
+    "impressions": 1444,
+    "ctr": 0.0021,
+    "position": 33.44
+   },
+   {
+    "page": "/lush-primo-artificial-turf/",
+    "clicks": 3,
+    "impressions": 113,
+    "ctr": 0.0265,
+    "position": 8.42
+   },
+   {
+    "page": "/service-areas/utah/salt-lake-city/",
+    "clicks": 1,
+    "impressions": 523,
+    "ctr": 0.0019,
+    "position": 54.88
+   },
+   {
+    "page": "/turf-infill/",
+    "clicks": 1,
+    "impressions": 273,
+    "ctr": 0.0037,
+    "position": 29.07
+   },
+   {
+    "page": "/turf-tips/best-turf-for-dogs/",
+    "clicks": 1,
+    "impressions": 154,
+    "ctr": 0.0065,
+    "position": 22.65
+   },
+   {
+    "page": "/artificial-pet-turf/",
+    "clicks": 1,
+    "impressions": 61,
+    "ctr": 0.0164,
+    "position": 23.92
+   },
+   {
+    "page": "/turf-tips/how-to-choose-artificial-grass/",
+    "clicks": 1,
+    "impressions": 61,
+    "ctr": 0.0164,
+    "position": 11.49
+   },
+   {
+    "page": "/turf-tips/artificial-turf-water-conservation/",
+    "clicks": 1,
+    "impressions": 30,
+    "ctr": 0.0333,
+    "position": 10.73
+   },
+   {
+    "page": "/artificial-turf/",
+    "clicks": 0,
+    "impressions": 1383,
+    "ctr": 0,
+    "position": 41.75
+   },
+   {
+    "page": "/service-areas/arizona/gilbert/",
+    "clicks": 0,
+    "impressions": 1158,
+    "ctr": 0,
+    "position": 40.54
+   },
+   {
+    "page": "/service-areas/utah/",
+    "clicks": 0,
+    "impressions": 676,
+    "ctr": 0,
+    "position": 33.78
+   },
+   {
+    "page": "/service-areas/arizona/phoenix/",
+    "clicks": 0,
+    "impressions": 481,
+    "ctr": 0,
+    "position": 51.08
+   },
+   {
+    "page": "/artificial-turf-wholesaler/",
+    "clicks": 0,
+    "impressions": 300,
+    "ctr": 0,
+    "position": 50.88
+   },
+   {
+    "page": "/service-areas/arizona/",
+    "clicks": 0,
+    "impressions": 244,
+    "ctr": 0,
+    "position": 8.48
+   },
+   {
+    "page": "/commercial-artificial-turf/",
+    "clicks": 0,
+    "impressions": 216,
+    "ctr": 0,
+    "position": 36.32
+   },
+   {
+    "page": "/service-areas/utah/orem/",
+    "clicks": 0,
+    "impressions": 172,
+    "ctr": 0,
+    "position": 20.74
+   },
+   {
+    "page": "/service-areas/arizona/buckeye/",
+    "clicks": 0,
+    "impressions": 163,
+    "ctr": 0,
+    "position": 15.29
+   },
+   {
+    "page": "/turf-for-balcony/",
+    "clicks": 0,
+    "impressions": 153,
+    "ctr": 0,
+    "position": 12.91
+   },
+   {
+    "page": "/service-areas/arizona/scottsdale/",
+    "clicks": 0,
+    "impressions": 152,
+    "ctr": 0,
+    "position": 46.39
+   },
+   {
+    "page": "/service-areas/arizona/chandler/",
+    "clicks": 0,
+    "impressions": 139,
+    "ctr": 0,
+    "position": 20.68
+   },
+   {
+    "page": "/service-areas/",
+    "clicks": 0,
+    "impressions": 135,
+    "ctr": 0,
+    "position": 8.62
+   },
+   {
+    "page": "/service-areas/arizona/surprise/",
+    "clicks": 0,
+    "impressions": 118,
+    "ctr": 0,
+    "position": 14.45
+   },
+   {
+    "page": "/service-areas/arizona/glendale/",
+    "clicks": 0,
+    "impressions": 116,
+    "ctr": 0,
+    "position": 25.24
+   },
+   {
+    "page": "/turf-tips/how-long-does-artificial-turf-last/",
+    "clicks": 0,
+    "impressions": 111,
+    "ctr": 0,
+    "position": 30.46
+   },
+   {
+    "page": "/turf-tips/types-of-artificial-turf/",
+    "clicks": 0,
+    "impressions": 110,
+    "ctr": 0,
+    "position": 47.65
+   },
+   {
+    "page": "/lush-70-artificial-turf/",
+    "clicks": 0,
+    "impressions": 109,
+    "ctr": 0,
+    "position": 10.1
+   },
+   {
+    "page": "/turf-tips/turf-infill-types/",
+    "clicks": 0,
+    "impressions": 107,
+    "ctr": 0,
+    "position": 60.86
+   },
+   {
+    "page": "/turf-tips/best-artificial-turf-for-arizona-heat/",
+    "clicks": 0,
+    "impressions": 101,
+    "ctr": 0,
+    "position": 15.82
+   },
+   {
+    "page": "/turf-for-playgrounds/",
+    "clicks": 0,
+    "impressions": 96,
+    "ctr": 0,
+    "position": 47.88
+   },
+   {
+    "page": "/service-areas/arizona/peoria/",
+    "clicks": 0,
+    "impressions": 87,
+    "ctr": 0,
+    "position": 25.14
+   },
+   {
+    "page": "/artificial-turf-glue/",
+    "clicks": 0,
+    "impressions": 85,
+    "ctr": 0,
+    "position": 8.51
+   },
+   {
+    "page": "/turf-tips/artificial-turf-vs-natural-grass/",
+    "clicks": 0,
+    "impressions": 85,
+    "ctr": 0,
+    "position": 20.09
+   },
+   {
+    "page": "/putting-green-turf/",
+    "clicks": 0,
+    "impressions": 80,
+    "ctr": 0,
+    "position": 41.77
+   },
+   {
+    "page": "/turf-tips/the-ultimate-checklist-for-a-flawless-artificial-turf-installation/",
+    "clicks": 0,
+    "impressions": 78,
+    "ctr": 0,
+    "position": 13.86
+   },
+   {
+    "page": "/turf-tips/artificial-turf-trends-2026/",
+    "clicks": 0,
+    "impressions": 70,
+    "ctr": 0,
+    "position": 19.66
+   },
+   {
+    "page": "/turf-tips/why-arizona-homeowners-switch-to-turf/",
+    "clicks": 0,
+    "impressions": 68,
+    "ctr": 0,
+    "position": 7.87
+   },
+   {
+    "page": "/service-areas/arizona/tempe/",
+    "clicks": 0,
+    "impressions": 65,
+    "ctr": 0,
+    "position": 37.92
+   },
+   {
+    "page": "/turf-seam-tape/",
+    "clicks": 0,
+    "impressions": 59,
+    "ctr": 0,
+    "position": 14.2
+   }
+  ]
+ },
+ "ga4": {
+  "totals": {
+   "sessions": 395,
+   "total_users": 358,
+   "new_users": 307,
+   "engaged_sessions": 163,
+   "page_views": 689,
+   "conversions": 0.0,
+   "engagement_rate": 0.41266,
+   "bounce_rate": 0.58734,
+   "avg_session_duration": 167.05
+  },
+  "daily": [
+   {
+    "date": "2026-07-13",
+    "sessions": 52,
+    "total_users": 46,
+    "new_users": 40,
+    "engaged_sessions": 17,
+    "engagement_rate": 0.3269,
+    "avg_session_duration": 81.0997,
+    "bounce_rate": 0.6731,
+    "page_views": 85,
+    "conversions": 0
+   },
+   {
+    "date": "2026-07-14",
+    "sessions": 69,
+    "total_users": 61,
+    "new_users": 54,
+    "engaged_sessions": 33,
+    "engagement_rate": 0.4783,
+    "avg_session_duration": 197.8228,
+    "bounce_rate": 0.5217,
+    "page_views": 112,
+    "conversions": 0
+   },
+   {
+    "date": "2026-07-15",
+    "sessions": 77,
+    "total_users": 66,
+    "new_users": 58,
+    "engaged_sessions": 33,
+    "engagement_rate": 0.4286,
+    "avg_session_duration": 332.3551,
+    "bounce_rate": 0.5714,
+    "page_views": 114,
+    "conversions": 0
+   },
+   {
+    "date": "2026-07-16",
+    "sessions": 59,
+    "total_users": 55,
+    "new_users": 43,
+    "engaged_sessions": 21,
+    "engagement_rate": 0.3559,
+    "avg_session_duration": 104.3728,
+    "bounce_rate": 0.6441,
+    "page_views": 105,
+    "conversions": 0
+   },
+   {
+    "date": "2026-07-17",
+    "sessions": 49,
+    "total_users": 46,
+    "new_users": 39,
+    "engaged_sessions": 18,
+    "engagement_rate": 0.3673,
+    "avg_session_duration": 136.5112,
+    "bounce_rate": 0.6327,
+    "page_views": 91,
+    "conversions": 0
+   },
+   {
+    "date": "2026-07-18",
+    "sessions": 53,
+    "total_users": 48,
+    "new_users": 43,
+    "engaged_sessions": 24,
+    "engagement_rate": 0.4528,
+    "avg_session_duration": 104.895,
+    "bounce_rate": 0.5472,
+    "page_views": 83,
+    "conversions": 0
+   },
+   {
+    "date": "2026-07-19",
+    "sessions": 36,
+    "total_users": 36,
+    "new_users": 30,
+    "engaged_sessions": 17,
+    "engagement_rate": 0.4722,
+    "avg_session_duration": 114.4929,
+    "bounce_rate": 0.5278,
+    "page_views": 99,
+    "conversions": 0
+   }
+  ],
+  "channels": [
+   {
+    "channel": "AI Assistant",
+    "sessions": 8,
+    "engaged_sessions": 3,
+    "conversions": 0
+   },
+   {
+    "channel": "Direct",
+    "sessions": 170,
+    "engaged_sessions": 35,
+    "conversions": 0
+   },
+   {
+    "channel": "Organic Search",
+    "sessions": 197,
+    "engaged_sessions": 115,
+    "conversions": 0
+   },
+   {
+    "channel": "Organic Social",
+    "sessions": 4,
+    "engaged_sessions": 2,
+    "conversions": 0
+   },
+   {
+    "channel": "Organic Video",
+    "sessions": 15,
+    "engaged_sessions": 8,
+    "conversions": 0
+   },
+   {
+    "channel": "Referral",
+    "sessions": 1,
+    "engaged_sessions": 0,
+    "conversions": 0
+   }
+  ],
+  "landing_pages": [
+   {
+    "landing_page": "/",
+    "sessions": 112,
+    "engaged_sessions": 40,
+    "avg_duration": 134.2805,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/artificial-turf-calculator",
+    "sessions": 52,
+    "engaged_sessions": 32,
+    "avg_duration": 110.3066,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/sub-base-turf-calculator",
+    "sessions": 36,
+    "engaged_sessions": 17,
+    "avg_duration": 652.0583,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/service-areas/arizona/mesa",
+    "sessions": 19,
+    "engaged_sessions": 11,
+    "avg_duration": 120.6961,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/turf-tips/artificial-turf-for-sports-fields",
+    "sessions": 15,
+    "engaged_sessions": 8,
+    "avg_duration": 119.708,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/service-areas/utah/provo",
+    "sessions": 11,
+    "engaged_sessions": 8,
+    "avg_duration": 240.3154,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/turf-tips/how-much-infill-for-synthetic-grass",
+    "sessions": 11,
+    "engaged_sessions": 3,
+    "avg_duration": 165.3533,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/contact-us",
+    "sessions": 9,
+    "engaged_sessions": 6,
+    "avg_duration": 63.1091,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/turf-tips/turf-for-events-temporary-installs",
+    "sessions": 9,
+    "engaged_sessions": 4,
+    "avg_duration": 190.0492,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/turf-tips/does-artificial-turf-get-hot",
+    "sessions": 8,
+    "engaged_sessions": 4,
+    "avg_duration": 382.7997,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/lush-80-artificial-turf",
+    "sessions": 7,
+    "engaged_sessions": 5,
+    "avg_duration": 260.133,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/turf-tips/how-to-install-artificial-turf",
+    "sessions": 7,
+    "engaged_sessions": 1,
+    "avg_duration": 2.0226,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/faqs",
+    "sessions": 6,
+    "engaged_sessions": 1,
+    "avg_duration": 2.8173,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/artificial-turf",
+    "sessions": 5,
+    "engaged_sessions": 3,
+    "avg_duration": 184.1658,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/lush-primo-artificial-turf",
+    "sessions": 5,
+    "engaged_sessions": 2,
+    "avg_duration": 99.7026,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/artificial-turf-cost",
+    "sessions": 4,
+    "engaged_sessions": 1,
+    "avg_duration": 44.2947,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/contractor-turf-pricing",
+    "sessions": 4,
+    "engaged_sessions": 0,
+    "avg_duration": 0,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/turf-tips/the-ultimate-checklist-for-a-flawless-artificial-turf-installation",
+    "sessions": 4,
+    "engaged_sessions": 2,
+    "avg_duration": 54.7571,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/lucky-77-artificial-turf",
+    "sessions": 3,
+    "engaged_sessions": 3,
+    "avg_duration": 324.996,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/service-areas/arizona/gilbert",
+    "sessions": 3,
+    "engaged_sessions": 3,
+    "avg_duration": 253.5567,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/turf-tips/artificial-turf-trends-2026",
+    "sessions": 3,
+    "engaged_sessions": 0,
+    "avg_duration": 0,
+    "conversions": 0
+   },
+   {
+    "landing_page": "/turf-tips/how-to-choose-artificial-grass",
+    "sessions": 3,
+    "engaged_sessions": 1,
+    "avg_duration": 68.8984,
+    "conversions": 0
+   }
+  ]
+ },
+ "baseline": {
+  "clicks_per_week": 204,
+  "impressions_per_week": 23816,
+  "avg_position": 17.21,
+  "sessions_per_week": 496,
+  "engagement_rate": 0.558,
+  "ctr": 0.00858
+ },
+ "redesign_impact": {
+  "clicks": {
+   "baseline": 204,
+   "current": 140,
+   "delta_abs": -64,
+   "delta_pct": -31.4
+  },
+  "impressions": {
+   "baseline": 23816,
+   "current": 22305,
+   "delta_abs": -1511,
+   "delta_pct": -6.3
+  },
+  "avg_position": {
+   "baseline": 17.21,
+   "current": 23.37,
+   "delta_abs": 6.16
+  },
+  "sessions": {
+   "baseline": 496,
+   "current": 395,
+   "delta_pct": -20.4
+  },
+  "engagement_rate": {
+   "baseline": 0.558,
+   "current": 0.41266,
+   "delta_pp": -14.53
+  },
+  "ctr": {
+   "baseline": 0.00858,
+   "current": 0.00628,
+   "delta_pct": -26.8
+  }
+ },
+ "summary": {
+  "headline": "Day 49 post-redesign: 140 clicks / 22,305 impressions at avg position 23.37",
+  "winners": [
+   {
+    "query": "lush 80 turf",
+    "old_position": 1,
+    "new_position": 1,
+    "clicks_delta": 2
+   },
+   {
+    "query": "turf installation",
+    "old_position": 26.2,
+    "new_position": 24.0,
+    "clicks_delta": 1
+   },
+   {
+    "query": "artificial grass",
+    "old_position": 10.8,
+    "new_position": 10.0,
+    "clicks_delta": 1
+   },
+   {
+    "query": "artificial turf cost calculator",
+    "old_position": 7.2,
+    "new_position": 6.2,
+    "clicks_delta": 1
+   }
+  ],
+  "losers": [
+   {
+    "query": "turf yard",
+    "old_position": 4.0,
+    "new_position": 5.3,
+    "clicks_delta": -6
+   },
+   {
+    "query": "turf yard calculator",
+    "old_position": 1.4,
+    "new_position": 1,
+    "clicks_delta": -3
+   },
+   {
+    "query": "the turf yard",
+    "old_position": 1.9,
+    "new_position": 1.4,
+    "clicks_delta": -3
+   },
+   {
+    "query": "artificial turf near me",
+    "old_position": 53.5,
+    "new_position": 50.5,
+    "clicks_delta": -1
+   },
+   {
+    "query": "turf installation cost calculator",
+    "old_position": 12.3,
+    "new_position": 6.5,
+    "clicks_delta": -1
+   }
+  ],
+  "opportunities": [
+   {
+    "query": "artificial turf installation",
+    "impressions": 654,
+    "position": 32.59,
+    "ctr": 0
+   },
+   {
+    "query": "artificial turf",
+    "impressions": 290,
+    "position": 23.02,
+    "ctr": 0.0034
+   },
+   {
+    "query": "77 lucky77",
+    "impressions": 289,
+    "position": 6.1,
+    "ctr": 0
+   },
+   {
+    "query": "artificial turf near me",
+    "impressions": 249,
+    "position": 50.52,
+    "ctr": 0
+   },
+   {
+    "query": "turf installation",
+    "impressions": 202,
+    "position": 24.03,
+    "ctr": 0.005
+   }
+  ],
+  "content_strategy": [],
+  "next_steps": [],
+  "notes": [
+   "Backfilled 2026-07-25. The weekly cron last ran for 2026-06-15, so weeks 2026-06-22 through 2026-07-20 were generated in one pass from Windsor.ai (GSC + GA4 property 407057852), DataForSEO and Ahrefs."
+  ]
+ }
+}

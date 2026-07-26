@@ -17,24 +17,31 @@ const ROOT = resolve(import.meta.dirname, "..");
 const DB_PATH = join(ROOT, "data", "seo.db");
 const SNAP_DIR = join(ROOT, "data", "snapshots");
 
-function pickSnapshot(): string {
+/**
+ * With an explicit filename, import just that snapshot.
+ *
+ * With NO argument (how `npm run import:latest` and therefore CI invoke this),
+ * import EVERY snapshot in chronological order rather than only the newest.
+ * Each file carries just its own week of gsc_daily/ga4_daily rows, so importing
+ * only the latest leaves a gap between the seeded baseline and the current week
+ * and the 60-day trend charts and redesign-impact averages are computed over
+ * that hole. Order matters: getTrackedKeywords derives "last week" as
+ * latestWeek - 7 days.
+ */
+function pickSnapshots(): string[] {
   const arg = process.argv[2];
   if (arg) {
     const explicit = join(SNAP_DIR, arg);
     if (!existsSync(explicit)) throw new Error(`Snapshot not found: ${explicit}`);
-    return explicit;
+    return [explicit];
   }
   const files = readdirSync(SNAP_DIR)
     .filter((f) => f.endsWith(".json"))
-    .sort()
-    .reverse();
+    .sort();
   if (files.length === 0) throw new Error(`No snapshots in ${SNAP_DIR}`);
-  return join(SNAP_DIR, files[0]);
+  return files.map((f) => join(SNAP_DIR, f));
 }
-
-const snapPath = pickSnapshot();
-console.log(`Importing snapshot: ${snapPath}`);
-const snap = JSON.parse(readFileSync(snapPath, "utf8"));
+const snapPaths = pickSnapshots();
 
 if (!existsSync(DB_PATH)) {
   throw new Error(`Database not found at ${DB_PATH}. Run \`npm run db:init\` first.`);
@@ -42,6 +49,10 @@ if (!existsSync(DB_PATH)) {
 
 const db = new Database(DB_PATH);
 db.pragma("journal_mode = WAL");
+
+for (const snapPath of snapPaths) {
+console.log(`\nImporting snapshot: ${snapPath}`);
+const snap = JSON.parse(readFileSync(snapPath, "utf8"));
 
 const weekStart: string = snap.week_start;
 if (!weekStart) throw new Error("Snapshot missing required field: week_start");
@@ -82,6 +93,85 @@ function categoryFor(eventName: string): string {
 }
 
 const TARGET_CITIES = new Set(['Phoenix','Mesa','Gilbert','Chandler','Tempe','Glendale','Peoria','Scottsdale','Surprise','Buckeye','Avondale','Goodyear','San Tan Valley','Apache Junction','Queen Creek','Maricopa','Casa Grande','Fountain Hills','Flagstaff','Tucson','Marana','Provo','Orem','Lehi','Spanish Fork','Eagle Mountain','West Jordan','Pleasant View','Murray','Springville','Salt Lake City','Lindon','Ogden','Heber City','Draper','Cottonwood Heights','Pleasant Grove','Manti','Vernal','West Haven']);
+
+
+/**
+ * GA4 field-name normaliser.
+ *
+ * Snapshots written before 2026-06-08 use raw GA4 API camelCase (`totalUsers`,
+ * `screenPageViews`) and, in a couple of files, ad-hoc short forms (`users`,
+ * `engRate`, `avgSessDur`, `pageViews`). Everything from 2026-06-08 onward is
+ * snake_case. better-sqlite3 throws "Missing named parameter" on the first
+ * mismatch and the whole transaction rolls back, so normalise before binding
+ * rather than assuming one convention.
+ */
+function pick(row: any, ...names: string[]): any {
+  for (const n of names) if (row[n] !== undefined) return row[n];
+  return null;
+}
+function ga4DailyRow(row: any) {
+  return {
+    date: row.date,
+    sessions: pick(row, 'sessions'),
+    total_users: pick(row, 'total_users', 'totalUsers', 'users'),
+    new_users: pick(row, 'new_users', 'newUsers'),
+    engaged_sessions: pick(row, 'engaged_sessions', 'engagedSessions'),
+    engagement_rate: pick(row, 'engagement_rate', 'engagementRate', 'engRate'),
+    avg_session_duration: pick(row, 'avg_session_duration', 'averageSessionDuration', 'avgSessDur'),
+    bounce_rate: pick(row, 'bounce_rate', 'bounceRate'),
+    page_views: pick(row, 'page_views', 'screenPageViews', 'pageViews'),
+    conversions: pick(row, 'conversions') ?? 0,
+  };
+}
+function ga4ChannelRow(row: any) {
+  return {
+    channel: pick(row, 'channel', 'sessionDefaultChannelGroup'),
+    sessions: pick(row, 'sessions'),
+    engaged_sessions: pick(row, 'engaged_sessions', 'engagedSessions'),
+    conversions: pick(row, 'conversions') ?? 0,
+  };
+}
+function ga4LandingRow(row: any) {
+  return {
+    landing_page: pick(row, 'landing_page', 'landingPage'),
+    sessions: pick(row, 'sessions'),
+    engaged_sessions: pick(row, 'engaged_sessions', 'engagedSessions'),
+    avg_duration: pick(row, 'avg_duration', 'averageSessionDuration', 'avgSessDur', 'avg_session_duration'),
+    conversions: pick(row, 'conversions') ?? 0,
+  };
+}
+
+function keywordRankRow(row: any) {
+  return {
+    keyword: pick(row, 'keyword'),
+    position: pick(row, 'position'),
+    url: pick(row, 'url'),
+    search_volume: pick(row, 'search_volume', 'searchVolume', 'volume'),
+    location: pick(row, 'location') ?? 'US',
+  };
+}
+/**
+ * Severity vocabulary has drifted across snapshot generations: lowercase
+ * (`warning`, `low`), uppercase (`WARNING`, `INFO`) and priority words
+ * (`high`, `medium`). audit.astro groups strictly on critical|warning|info,
+ * so anything outside that set silently vanishes from the page. Fold them here.
+ */
+function normSeverity(v: any): string {
+  const x = String(v ?? '').trim().toLowerCase();
+  if (['critical', 'high', 'error'].includes(x)) return 'critical';
+  if (['warning', 'warn', 'medium', 'moderate'].includes(x)) return 'warning';
+  return 'info';
+}
+function auditRow(row: any) {
+  const finding = pick(row, 'finding', 'issue');
+  return {
+    url: pick(row, 'url', 'page'),
+    severity: normSeverity(pick(row, 'severity')),
+    category: pick(row, 'category') ?? finding,
+    finding,
+    recommendation: pick(row, 'recommendation', 'fix'),
+  };
+}
 
 const tx = db.transaction(() => {
   // ---- GSC daily ----
@@ -136,7 +226,7 @@ const tx = db.transaction(() => {
         avg_session_duration=excluded.avg_session_duration, bounce_rate=excluded.bounce_rate,
         page_views=excluded.page_views, conversions=excluded.conversions, created_at=excluded.created_at
     `);
-    for (const row of snap.ga4.daily) stmt.run(row);
+    for (const row of snap.ga4.daily) stmt.run(ga4DailyRow(row));
     console.log(`  ✓ ga4_daily: ${snap.ga4.daily.length} rows`);
   }
 
@@ -149,7 +239,7 @@ const tx = db.transaction(() => {
         sessions=excluded.sessions, engaged_sessions=excluded.engaged_sessions,
         conversions=excluded.conversions
     `);
-    for (const row of snap.ga4.channels) stmt.run(weekStart, row);
+    for (const row of snap.ga4.channels) stmt.run(weekStart, ga4ChannelRow(row));
     console.log(`  ✓ ga4_channel_weekly: ${snap.ga4.channels.length} rows`);
   }
 
@@ -162,7 +252,7 @@ const tx = db.transaction(() => {
         sessions=excluded.sessions, engaged_sessions=excluded.engaged_sessions,
         avg_duration=excluded.avg_duration, conversions=excluded.conversions
     `);
-    for (const row of snap.ga4.landing_pages) stmt.run(weekStart, row);
+    for (const row of snap.ga4.landing_pages) stmt.run(weekStart, ga4LandingRow(row));
     console.log(`  ✓ ga4_landing_weekly: ${snap.ga4.landing_pages.length} rows`);
   }
 
@@ -174,7 +264,7 @@ const tx = db.transaction(() => {
       ON CONFLICT(week_start, keyword, location) DO UPDATE SET
         position=excluded.position, url=excluded.url, search_volume=excluded.search_volume
     `);
-    for (const row of snap.keyword_rankings) stmt.run(weekStart, row);
+    for (const row of snap.keyword_rankings) stmt.run(weekStart, keywordRankRow(row));
     console.log(`  ✓ keyword_rank_weekly: ${snap.keyword_rankings.length} rows`);
   }
 
@@ -202,13 +292,30 @@ const tx = db.transaction(() => {
       VALUES (?, @url, @severity, @category, @finding, @recommendation, 'open')
     `);
     let added = 0;
-    for (const row of snap.audit_findings) {
+    for (const raw of snap.audit_findings) {
+      const row = auditRow(raw);
       if (!exists.get(row.url, row.category, row.finding)) {
         insert.run(snap.audit_date || weekStart, row);
         added++;
       }
     }
     console.log(`  ✓ audit_findings: ${added} new (${snap.audit_findings.length} scanned)`);
+  }
+
+  // ---- Audit findings resolved since the last scan ----
+  // The insert path only ever adds findings, and seed_from_baseline re-inserts the
+  // pre-redesign list as 'open' on every CI build, so without this a long-fixed issue
+  // reappears as open forever. Match on the same (url, category, finding) triple.
+  if (snap.audit_resolved?.length) {
+    const resolve = db.prepare(`
+      UPDATE audit_findings SET status='fixed'
+       WHERE url=? AND category=? AND finding=? AND status='open'
+    `);
+    let closed = 0;
+    for (const row of snap.audit_resolved) {
+      closed += resolve.run(row.url, row.category, row.finding).changes;
+    }
+    console.log(`  \u2713 audit_findings resolved: ${closed} (${snap.audit_resolved.length} reported)`);
   }
 
   // ---- Backlinks ----
@@ -439,5 +546,7 @@ const tx = db.transaction(() => {
 });
 
 tx();
+}
+
 db.close();
-console.log(`\n✓ Import complete. Next: npm run build`);
+console.log(`\n✓ Imported ${snapPaths.length} snapshot(s). Next: npm run build`);

@@ -299,12 +299,29 @@ export function getRedesignImpact(redesignDate: string, now: Date = new Date()):
     .get(redesignDate) as { sessions: number; engagement_rate: number; dur: number };
 
   // Calculator page sessions (baseline weekly landing page sessions for the two calculator pages)
+  const baseLandingWeek = db.prepare(`SELECT MIN(week_start) AS w FROM ga4_landing_weekly`).get() as {
+    w: string | null;
+  };
   const calcBase = db
     .prepare(
-      `SELECT AVG(sessions) AS s FROM ga4_landing_weekly
-        WHERE landing_page LIKE '%calculator%'`
+      `SELECT SUM(sessions) AS s FROM ga4_landing_weekly
+        WHERE week_start = ? AND landing_page LIKE '%calculator%'`
     )
-    .get() as { s: number | null };
+    .get(baseLandingWeek.w) as { s: number | null };
+
+  // Calculator sessions for the latest post-redesign week.
+  const latestLandingWeek = latestWeek('ga4_landing_weekly');
+  const hasPostLanding = !!(
+    latestLandingWeek && baseLandingWeek.w && latestLandingWeek > baseLandingWeek.w
+  );
+  const calcPost = hasPostLanding
+    ? (db
+        .prepare(
+          `SELECT SUM(sessions) AS s FROM ga4_landing_weekly
+            WHERE week_start = ? AND landing_page LIKE '%calculator%'`
+        )
+        .get(latestLandingWeek) as { s: number | null })
+    : { s: null };
 
   // Baseline keyword counts come from the seeded baseline rank week.
   const baseRankWeek = db.prepare(`SELECT MIN(week_start) AS w FROM keyword_rank_weekly`).get() as {
@@ -452,11 +469,12 @@ export function getRedesignImpact(redesignDate: string, now: Date = new Date()):
       label: 'Calculator page sessions / week',
       unit: 'count',
       baseline: calcBase.s ?? 0,
-      current: null,
-      pctChange: null,
+      current: calcPost.s ?? null,
+      pctChange:
+        calcPost.s != null && calcBase.s ? percentChange(calcBase.s, calcPost.s) : null,
       invert: false,
       sparkline: [],
-      sufficient: false,
+      sufficient: calcPost.s != null,
     },
     {
       key: 'top10_keywords',

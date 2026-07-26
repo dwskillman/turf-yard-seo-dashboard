@@ -15,11 +15,15 @@ const grouped = order.map((sev) => ({
   items: findings.filter((f) => f.severity === sev),
 }));
 
+// Headline counts track OPEN work only. Findings the site has since fixed stay in
+// their severity table with a "fixed" badge, but must not keep inflating the totals.
+const openFindings = findings.filter((f) => f.status === 'open');
 const counts = {
-  critical: findings.filter((f) => f.severity === 'critical').length,
-  warning: findings.filter((f) => f.severity === 'warning').length,
-  info: findings.filter((f) => f.severity === 'info').length,
+  critical: openFindings.filter((f) => f.severity === 'critical').length,
+  warning: openFindings.filter((f) => f.severity === 'warning').length,
+  info: openFindings.filter((f) => f.severity === 'info').length,
 };
+const fixedCount = findings.filter((f) => f.status === 'fixed').length;
 
 function statusBadge(status: string): string {
   const map: Record<string, string> = {
@@ -36,7 +40,7 @@ function statusBadge(status: string): string {
   <Section
     eyebrow="On-page audit"
     title="Audit findings"
-    subtitle="Technical and on-page issues found in the pre-redesign crawl. Grouped by severity."
+    subtitle={`Technical and on-page issues, grouped by severity. Counts below are open items only${fixedCount > 0 ? ` — ${fixedCount} pre-redesign finding${fixedCount === 1 ? '' : 's'} confirmed fixed` : ''}.`}
   />
 
   <!-- Summary counts -->
